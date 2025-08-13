@@ -1,0 +1,70 @@
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #ddd;
+
+}
+
+.inicio, #entrada, #registro{
+
+    border: 1px solid black;
+    width: 600px;
+    height: auto;
+    padding: 20px;
+    margin: 10% 0;
+    border-radius: 7px;
+    background-color: #fff;
+
+}
+.inicio p{
+
+    color: red;
+
+}
+
+input{
+
+    width: 250px;
+    height: 30px;
+    border-radius: 4px;
+    margin: 10px 0;
+    border: 1px solid black;
+
+}
+button{
+
+    width: auto;
+    height: 35px;
+    border-radius: 4px;
+    margin: 10px 0;
+    background-color: rgb(4, 142, 27);
+    color: white;
+    padding: 10px;
+    border: none;
+
+}
+button:hover{
+
+    background-color: rgb(4, 104, 20);
+    color: white;
+    cursor: pointer;
+
+}
+
+#valores{
+
+    background-color: #ddd;
+    width: 500px;
+    height: 150px;
+    padding: 0 10px;
+    font-size: 16px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    overflow: auto;
+
+}

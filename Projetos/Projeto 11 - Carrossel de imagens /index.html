@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carrocel de imagens</title>
+        <link rel="stylesheet" href="estilo.css">
+
+    </head>
+    <body>
+
+        <div class="carrossel">
+
+            <div class="imagens-carrossel">
+
+                <img src="imagem1.jpg" alt="Imagem 1" class="imagem-ativa" onclick="abrirEmNovaAba('imagem1.jpg')">
+                <img src="imagem2.jpg" alt="Imagem 2" class="imagem-ativa" onclick="abrirEmNovaAba('imagem2.jpg')">
+                <img src="imagem3.jpg" alt="Imagem 3" class="imagem-ativa" onclick="abrirEmNovaAba('imagem3.jpg')">
+                <img src="imagem4.jpg" alt="Imagem 4" class="imagem-ativa" onclick="abrirEmNovaAba('imagem4.jpg')">
+                <img src="imagem5.jpg" alt="Imagem 5" class="imagem-ativa" onclick="abrirEmNovaAba('imagem5.jpg')">
+
+            </div>
+
+            <div class="miniaturas">
+
+                <img src="imagem1.jpg" alt="Imagem 1" onclick="selecionarImagem(0)">
+                <img src="imagem2.jpg" alt="Imagem 2" onclick="selecionarImagem(1)">
+                <img src="imagem3.jpg" alt="Imagem 3" onclick="selecionarImagem(2)">
+                <img src="imagem4.jpg" alt="Imagem 4" onclick="selecionarImagem(3)">
+                <img src="imagem5.jpg" alt="Imagem 5" onclick="selecionarImagem(4)">
+
+            </div>
+
+            <button class="botao-proximo" onclick="mover(-1)">Anterior</button>
+            <button class="botao-anterior" onclick="mover(1)">Próximo</button>
+
+        </div>
+
+        <script src="script.js"></script>
+        
+    </body>
+</html>

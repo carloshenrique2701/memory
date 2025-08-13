@@ -1,0 +1,83 @@
+body, html{
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+}
+
+h1{
+
+    text-align: center;
+    color: #333;
+    margin: 20px 0;
+
+}
+
+#container-editor{
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    margin-bottom: 20px;/*Margem inferior*/
+
+}
+
+.barra-ferramentas{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.barra-ferramentas > *{/*Aplica valoes a todos os elementos flihos*/
+
+    margin: 5px;
+    font-size: 18px;
+
+}
+
+.editor{
+
+    background-color: #ffffff;
+    border: none;
+    min-height: 300px;
+    width: 100vw;
+    overflow: auto;
+    padding: 10px;
+    font-size: 16px;
+
+}
+
+.barra-ferramentas button, 
+.barra-ferramentas select,
+.barra-ferramentas input[type="color"],
+.barra-ferramentas input[type="file"] {
+
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: #f7f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+}
+
+#entrada-imagem{
+
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+
+}
+

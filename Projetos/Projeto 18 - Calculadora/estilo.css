@@ -1,0 +1,157 @@
+body{
+
+    background-color: #ddd;
+    margin: 20px 300px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.container{
+
+    background-color: #fff;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+    border: none;
+    width: 300px;
+    height: auto;
+    padding: 10px;
+
+}
+
+h1{
+
+    font-size: 26px;
+    margin: 10px;
+    margin-top: 0;
+
+}
+p{
+
+    margin: 0;
+    padding: 0;
+}
+
+#tela{
+
+    width: 280px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 10px 10px;
+    margin-top: 0;
+
+}
+
+.fileira-1{
+
+    display: flex;
+    justify-content: space-between;
+
+}
+.fileira-1 div{
+
+    background-color: green;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    padding: 8px;
+    border-radius: 6px;
+    color: #ddd;
+
+}
+
+.fileira-2{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.fileira-2 div{
+
+    background-color: green;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    padding: 8px;
+    border-radius: 6px;
+    color: #ddd;
+
+}
+
+.fileira-3{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.fileira-3 div{
+
+    background-color: green;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    padding: 8px;
+    border-radius: 6px;
+    color: #ddd;
+
+}
+.fileira-4{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.fileira-4 div{
+
+    background-color: green;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    padding: 8px;
+    border-radius: 6px;
+    color: #ddd;
+
+}
+
+.fileira-5{
+
+    display: flex;
+
+}
+.fileira-5 div{
+
+    background-color: green;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    padding: 8px;
+    border-radius: 6px;
+    color: #ddd;
+
+}
+
+.num:hover, #elemento:hover{
+
+    cursor: pointer;
+    background-color: rgb(2, 38, 2);
+
+}

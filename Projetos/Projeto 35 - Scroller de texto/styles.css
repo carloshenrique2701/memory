@@ -1,0 +1,327 @@
+body{
+
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.container{
+
+    text-align: center;
+
+}
+
+h1{
+
+    font-size: 36px;
+    margin-bottom: 20px;    
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+
+}
+
+.botoes{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;;
+    gap: 15px;
+
+}
+
+button{
+
+    display: block;
+    width: 750px;
+    height: 130px;
+    padding: 15px 30px;
+    font-size: 50px;
+    background-color: #ffa600;
+    color: #000000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, text-shadow 0.3s ease;
+    text-align: center;
+    border-radius: 10px;
+    line-height: 20px;
+    box-shadow: 5px 5px 30px rgba(183, 153, 47, 0.5);
+
+}
+
+button:hover{
+
+    background-color: #ffcc00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+
+}
+
+.scroller-fade{
+
+    width: 100%;
+    overflow: hidden;  
+    position: relative;
+    height: 300px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(247, 247, 247, 0.3);
+    display: flex;
+    align-items: center;
+
+}
+
+.conteudo-fade{
+
+    position: absolute;
+    white-space: nowrap;
+    font-size: 100px;
+    color: #fff;
+    animation: deslizar-fade 30s linear infinite;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+
+}
+
+@keyframes deslizar-fade{
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.scroller-bounce{
+
+    width: 100%;
+    overflow: hidden;  
+    position: relative;
+    height: 500px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(247, 247, 247, 0.3);
+    display: flex;
+    align-items: center;
+
+}
+
+.conteudo-bounce{
+
+    position: absolute;
+    white-space: nowrap;
+    font-size: 100px;
+    color: #fff;
+    animation: deslizar-bounce 30s ease-in-out infinite;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+
+}
+
+@keyframes deslizar-bounce{
+    0%{
+        transform: translateX(100%);
+    }
+    25%{
+        transform: translateX(75%) translateY(-150%);
+    }
+    50%{
+        transform: translateX(50%) translateY(150%);
+    }
+    75%{
+        transform: translateX(25%) translateY(-150%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+.scroller-zoom{
+
+    width: 100%;
+    overflow: hidden;  
+    position: relative;
+    height: 400px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(247, 247, 247, 0.3);
+    display: flex;
+    align-items: center
+
+}
+
+.conteudo-zoom{
+
+    position: absolute;
+    white-space: nowrap;
+    font-size: 25px;
+    color: #fff;
+    animation: deslizar-zoom 30s linear infinite;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+
+}
+
+@keyframes deslizar-zoom{
+    0%{
+        transform: translateX(500%) scale(1);
+    }
+    25%{
+        transform: translateX(400%) scale(1.8);
+    }
+    50%{
+        transform: translateX(200%) scale(2);
+    }
+    75%{
+        transform: translateX(100%) scale(1.8);
+    }
+    100%{
+        transform: translateX(-100%) scale(1);
+    }
+}
+
+.scroller-led{
+
+    width: 100%;
+    overflow: hidden;  
+    position: relative;
+    height: 300px;
+    background: url('fundo_led.jpg') repeat;
+    display:flex;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(247, 247, 247, 0.3);
+
+}
+
+.conteudo-led{
+    
+    font-size: 220px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    animation: deslizar-led 30s linear infinite, piscar 1s step-start infinite;
+    padding: 10px 20px;
+    white-space: nowrap; /*Faz com que não tenha quebra de linhas*/
+
+}
+
+@keyframes deslizar-led{
+    0%{
+        transform: translateX(50%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes piscar{
+
+    0%, 100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+
+}
+
+.scroller-rotate{
+
+    width: 100%;
+    overflow: hidden;  
+    position: relative;
+    height: 800px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(247, 247, 247, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.conteudo-rotate{
+
+    position: absolute;
+    white-space: nowrap;
+    font-size: 25px;
+    left: 100%;
+    color: #fff;
+    animation: deslizar-rotate 30s linear infinite;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+
+}
+
+@keyframes deslizar-rotate{
+    0%{
+        transform:  translateX(0) rotate(0deg);
+    }
+    50%{
+        transform: translateX(-150%) rotate(720deg);
+    }
+    100%{
+        transform: translateX(-450%) rotate(1440deg);
+    }
+}
+
+.scroller-imagem{
+
+    width: 100%;
+    overflow: hidden;  
+    position: relative;
+    height: 300px;
+    background-color: #cbcbcb;
+    border-radius: 10px;
+    box-shadow: 2px 8px 10px rgba(247, 247, 247, 0.3);
+    display: flex;
+    align-items: center;
+
+}
+
+.conteudo-imagem{
+
+    position: absolute;
+    white-space: nowrap;
+    font-size: 100px;
+    color: #000000;
+    animation: deslizar-imagem 30s linear infinite;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+
+}
+
+.conteudo-imagem img{
+
+    width: auto;
+    height: 200px;
+    margin-right: 20px;
+
+}
+
+@keyframes deslizar-imagem{
+    0%{
+        transform: translateX(calc(0% + 100vw));
+    }
+    100%{
+        transform: translateX(calc(-50% - 100vw));
+    }
+}

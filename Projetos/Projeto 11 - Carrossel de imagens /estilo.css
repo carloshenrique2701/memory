@@ -1,0 +1,54 @@
+.imagens-carrossel img{
+
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: none;
+
+}
+
+.imagem-ativa{
+
+    display: block;
+
+}
+
+.miniaturas img{
+
+    width: auto;
+    max-width: 65px;
+    height: 60px;
+    object-fit: cover;
+    display: inline-block;
+    cursor: pointer;
+
+}
+
+.miniaturas{
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    
+}
+
+.botao-proximo, .botao-anterior{
+
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+
+}
+
+.botao-anterior{
+
+    right: 0;
+
+}

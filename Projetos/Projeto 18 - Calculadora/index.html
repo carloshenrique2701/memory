@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Calculadora Simples</h1>
+
+        <p id="exibir"><input type="text" readonly id="tela"></p>
+        
+
+        <div class="fileira-1">
+
+            <div class="num" onclick="adicionar('7')">7</div>
+            <div class="num" onclick="adicionar('8')">8</div>
+            <div class="num" onclick="adicionar('9')">9</div>
+            <div class="divisao" id="elemento" onclick="adicionar('/')">/</div>
+
+        </div>
+        <div class="fileira-2">
+
+            <div class="num" onclick="adicionar('4')">4</div>
+            <div class="num" onclick="adicionar('5')">5</div>
+            <div class="num" onclick="adicionar('6')">6</div>
+            <div class="multiplicacao" id="elemento" onclick="adicionar('*')">*</div>
+
+        </div>
+        <div class="fileira-3">
+
+            <div class="num" onclick="adicionar('1')">1</div>
+            <div class="num" onclick="adicionar('2')">2</div>
+            <div class="num" onclick="adicionar('3')">3</div>
+            <div class="subtracao" id="elemento" onclick="adicionar('-')">-</div>
+
+        </div>
+        <div class="fileira-4">
+
+            <div class="num" onclick="adicionar('0')">0</div>
+            <div class="num" onclick="adicionar('.')">.</div>
+            <div class="num" onclick="exibirResultado()">=</div>
+            <div class="adicao" id="elemento" onclick="adicionar('+')">+</div>
+
+        </div>
+        <div class="fileira-5">
+
+            <div class="limpar" id="elemento" onclick="limpar()">C</div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

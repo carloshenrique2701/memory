@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Exemplo de Modal</title>
+
+        <style>
+
+            #modal{
+
+                display: none;
+                position:fixed;
+                left: 0;
+                top: 0;
+                width:100%;
+                height:100%;
+                background-color: rgb(138, 137, 137);
+                
+                z-index: 1;
+
+            }
+
+            #modalContent{
+
+                position: relative;
+                width: 50%;
+                margin: 10% auto;
+                padding:20px;
+                background-color: white;
+
+            }
+
+            #closeModal{
+
+                cursor:pointer;
+
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <button id="openModal">Abrir Modal </button>
+
+        <div id="modal">
+        
+            <div id="modalContent">
+
+                <span id="closeModal">&times;</span>
+        
+                <p>Conteúdo do modal</p>>
+
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+        
+    </body>
+
+</html>

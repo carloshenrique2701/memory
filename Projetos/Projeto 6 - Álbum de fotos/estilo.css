@@ -1,0 +1,87 @@
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#galeria{
+
+    display: grid;/*Ativa o layout de grade, muito intuitivo e flexível para criar designs eficiêntes*/
+    grid-template-columns: repeat(3, 1fr);/*cria 3 colunas de igual largura onde 1fr é uma fração do espaço disponível, um terço do espaço total*/
+    gap: 10px;/*Cria espaçamento entre as células da grade, no caso, 10px para todas as direções*/
+
+}
+
+.imagem{
+
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;/*Esconde qualquer excesso*/
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*Define a direção principal do flex container como coluna. Sendo queos itens filhos agr serão empilhados verticalmente*/
+
+}
+
+.imagem img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/*Faz com que a img cubra o esaço do container sem distorcê-las. Corta o excesso se necessário*/
+
+}
+
+#modal{
+
+    display:none;
+    position: fixed;
+    z-index: 100;
+    left:0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+    overflow: auto;/*Permite barra de rolagem se o conteúdo do modal exceder o tamanho do item*/
+    
+}
+
+#modal img{
+
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;/*Centraliza e ajusta as img automaticamente*/
+    display: block;
+
+}
+
+#modal .descricao{
+
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+
+}
+
+#modal button{
+
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+

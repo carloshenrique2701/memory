@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de Pop-ups</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <h1>Exemplos de Pop-ups</h1>
+
+    <div class="botoes">
+
+        <button id="botaoModal">Abrir Modal</button>
+        <button id="botaoAlerta">Mostrar Alerta</button>
+        <button id="botaoToolTip" class="toolTip">Mostrar ToolTip <span class="toolTipTexto">Texto do ToolTip</span></button>
+        <button id="botaoNotificacao">Mostrar Notificação</button>
+        <button id="botaoLightbox">Abrir Lightbox</button>
+        <button id="botaoMenuContexto">Abrir Menu de Contexto</button>
+        <button id="botaoConfirmacao">Mostrar Confirmação</button>
+        <button id="botaoEntradaTexto">Mostrar Entrada de Texto</button>
+
+    </div>
+
+    <div id="meuModal" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar" id="fechar">&times</span>
+            <p>Este é um modal pop-up</p>
+        </div>
+    </div>
+
+    <div class="notificacao" id="notificacao">
+        <span class="fechar" id="botao-fechar">&times</span>
+        <p>Esta é uma notificação!</p>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="fechar fechar-lightbox" id="fechar">&times</span>
+        <img class="lightbox-conteudo" id="imagemLightbox">
+        <div id="legenda"></div>
+    </div>
+
+    <img src="img1.png" alt="Imagem da lightbox" id="imagem" style="display: none;" onclick="abrirLightBox(this)">
+
+    <div id="menu-conteudo" class="menu-conteudo">
+        <ul>
+            <li onclick="acao1()">Ação 1</li>
+            <li onclick="acao2()">Ação 2</li>
+            <li onclick="acao3()">Ação 3</li>
+        </ul>
+    </div>
+
+    <div class="confirmacao" id="confirmacao">
+        <div class="confirmacao-conteudo">
+            <span class="fechar" id="fechar">&times;</span>
+            <p>Você que mudar a cor de fundo do site?</p>
+            <button id="botaoSim">Sim</button>
+            <button id="botaoNao">Não</button>
+        </div>
+    </div>
+
+    <div id="entradaTexto" class="entrada-texto">
+        <div class="entrada-texto-conteudo">
+            <span class="fechar" id="fechar">&times;</span>
+            <p>Digite Algo</p>
+            <input type="text" id="textoEntrada">
+            <button id="botaoEnviar">Enviar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Currículo</title>
+        <link rel="stylesheet" href="estilo.css">
+
+        <style id="test">
+
+            
+
+        </style>
+
+    </head>
+    <body>
+        
+        <header>
+
+            <h1>Carlos Henrique Rodrigues Ribeiro</h1>
+
+            <p>Desenvolvedor Web full-stack</p>
+
+        </header>
+
+        <nav>
+            
+            <a href="#" onclick="mostrarPagina('inicio')">Inicio</a>
+
+            <a href="#" onclick="mostrarPagina('experiencia')">Experiência</a>
+
+            <a href="#" onclick="mostrarPagina('educacao')">Educação</a>
+
+            <a href="#" onclick="mostrarPagina('habilidades')">Habilidades</a>
+        
+        </nav>
+
+        <section id="conteudo">
+
+
+
+        </section>
+
+        <script>
+
+            function mostrarPagina(pagina) {
+
+                const secao = document.getElementById('conteudo');
+
+                const stilo = document.getElementById('test')
+
+                let conteudoCss = '';
+
+                let conteudo = '';
+
+                switch (pagina) {
+                    case 'inicio':
+
+                        conteudo=`
+                        
+                        <h2>inicio</h2>
+
+                            <p>Bem-vindo ao meu curriculo profissional. Sou desenvolvedor Web full-stack e planejo muito para o futuro.</p>
+                        
+                        `
+                        
+                        break;
+                    case 'experiencia':
+
+                        conteudo=`
+                        
+                        <h2>Experiência</h2>
+
+                            <p>Não tenho nenhuma experiência ainda, porém, estou sempre disposto a aprender.</p>
+                        
+                        `
+                        conteudoCss = `
+                        
+                        body{
+
+                            background-color: #333;
+
+                            }
+
+                        `
+                        
+                        break;
+                    case 'educacao':
+                        conteudo=`
+                        
+                        <h2>Educação</h2>
+
+                            <p>Sou formado em Análise e Desenvolvimento de Softwares. Tenho também um certificado de especialisação em javaScript e um curso de 190 horas da área.</p>
+                        
+                        `
+                        
+                        break;
+                    case 'habilidades':
+
+                        conteudo=`
+                        
+                        <h2>Habilidades</h2>
+
+                            <p>Espacializado em:<br>
+                                1- JavaScript/HTML/CSS;<br>
+                                2- Canva/figma;<br>
+                                3- World/power point/power BI.   
+                            </p>
+                        
+                        `
+                        
+                        break;
+                
+                    default:
+                        conteudo=`
+                        
+                        <h2>Página não encontrada</h2>
+
+                            <p>Verifique sua conexão com a internet.<br>
+                                Pode ser um problema nosso também.<br>
+                                Peço compreensão.
+                            </p>
+                        
+                        `
+                        break;
+                }
+
+                secao.innerHTML = conteudo;/*O innerHTML, atualiza o conteúdo no html*/
+                stilo.innerHTML = conteudoCss;
+                
+            }
+
+            mostrarPagina('inicio');
+
+        </script>
+
+    </body>
+</html>

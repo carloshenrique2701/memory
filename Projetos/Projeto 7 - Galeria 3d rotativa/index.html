@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Galeria 3d</title>
+        <link rel="stylesheet" href="istilo.css">
+
+    </head>
+    <body>
+
+        <h1>Galeria de Imagens 3D</h1>
+
+        <div class="caixa">
+
+            <span style="--i:1;">
+
+                <img src="opalla.jpg" alt="Carro 1 - Opala ss 71" onclick="abrirImagem('opalla.jpg', 'Opala ss 1971 v8. Um carro dos sonhos para quem gosta de adrenalina.')">
+                <p>Opala ss 71</p>
+
+            </span>
+            <span style="--i:2;">
+
+                <img src="chevette.jpg" alt="Carro 2 - chevette" onclick="abrirImagem('chevette.jpg', 'Chevette é um carro para quem está começando nessa onda de carros antigos.')">
+                <p>Chevrolet Chevette</p>
+
+            </span>
+            <span style="--i:3;">
+
+                <img src="caravan.jpg" alt="Carro 3 - Caravan" onclick="abrirImagem('caravan.jpg', 'A Caravan é um carro com seu design único que lembra um pouco Opala, porém, é mais espaçosa.')">
+                <p>Caravan</p>
+
+            </span>
+            <span style="--i:4;">
+
+                <img src="maverick-70.jpg" alt="Carro 4 - Maverick" onclick="abrirImagem('maverick-70.jpg', 'Maverick é um carro que era muito muito popular entre os jovens e era sempre cheio de emoção.')">
+                <p>Maverick 70</p>
+
+            </span>
+            <span style="--i:5;">
+
+                <img src="buick-Riviera.jpg" alt="Carro 5 - Buick Riviera" onclick="abrirImagem('buick-Riviera.jpg', 'O Buick Riviera é um carro extremamente estiloso e considero um carro de luxo tanto na época como hoje.')">
+                <p>Buick Riviera</p>
+
+            </span>
+            <span style="--i:6;">
+
+                <img src="bugatti1939.jpg" alt="Carro 6 - Bugatti" onclick="abrirImagem('bugatti1939.jpg', 'Bugatti 1939 é um dos carros que eu acho mais bonitos, já que eu não sou muito fã de grande maioria dos carros mais novos.')">
+                <p>Bugatti 1939</p>
+
+            </span>
+            <span style="--i:7;">
+
+                <img src="impala 67.jpg" alt="Carro 7 - Impala 67" onclick="abrirImagem('impala 67.jpg', 'O Impala 67 é um dos carros mais bonitos que eu ja vi. Considero ele como um carro extremamente luxuoso.')">
+                <p>Impala 67</p>
+
+            </span>
+            <span style="--i:8;">
+
+                <img src="dodge-demon.jpg" alt="Carro 8 - Dogdge Challenger Demon" onclick="abrirImagem('dodge-demon.jpg', 'O Dogdge Challenger Demon é um carro de arrepiar e transmite uma aura como nenhuma outra.')">
+                <p>Dodge Challenger Demon</p>
+
+            </span>
+            <span style="--i:9;">
+
+                <img src="corvette2017.jpg" alt="Carro 9 - Corvette" onclick="abrirImagem('corvette2017.jpg', 'O Corvette 2017 é um dos poucos carros mais novos que gosto, pois ele é tem um design e estilo bem diferenciados.')">
+                <p>Corvette 2017</p>
+
+            </span>
+            <span style="--i:10;">
+
+                <img src="corvette.jpg" alt="Carro 10 - Corvette" onclick="abrirImagem('corvette.jpg', 'Esse Corvette é a única versão mais antiga que achei mais bonita e estilosa.')">
+                <p>Corvette</p>
+
+            </span>
+            <span style="--i:11;">
+
+                <img src="mercedes-evolution-89.jpg" alt="Carro 11 - Mercedes Evolution 89" onclick="abrirImagem('mercedes-evolution-89.jpg', 'A Mercedes Evolution 89 é um carro que acho que seria incrível para fazer drift, por conta de seu design leve.')">
+                <p>Mercedes Evolution 89</p>
+
+            </span>
+            <span style="--i:12;">
+
+                <img src="gol-quadrado.jpg" alt="Carro 12 - Gol Quadrado" onclick="abrirImagem('gol-quadrado.jpg', 'O Gol Quadrado acredito que seja sonho de todo garoto ter um e isso não é diferente para mim. Acho o carro muito bonito e diverso.')">
+                <p>Gol Quadrado</p>
+
+            </span>
+
+        </div>
+
+        <script>
+
+            function abrirImagem(imagem, descricao) {
+                
+                let url = `imagem.html?imagem=${imagem}&descricao=${encodeURIComponent(descricao)}`;
+
+                window.open(url, '_blank');
+                
+
+            }
+
+        </script>
+        
+    </body>
+</html>

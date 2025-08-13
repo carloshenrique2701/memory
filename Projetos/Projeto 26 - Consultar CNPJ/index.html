@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="estilo.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js "></script><!-- Biblioteca para PDF -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script><!-- Biblioteca para Exel -->
+
+    </head>
+    <body>
+        
+        <div class="container">
+
+            <h1>Consulta de CNPJ</h1>
+
+            <div id="formulario">
+
+                <input type="text" id="cnpj" placeholder="Digite o CNPJ" required>
+
+                <button onclick="buscarCNPJ()">Buscar</button>
+
+            </div>
+
+            <div id="resultado">
+
+
+            </div>
+
+            <button onclick="exportarParaPDF()">Exportar para PDF</button>
+            <button onclick="exportarParaExel()">Exportar para Exel</button>
+
+        </div>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>

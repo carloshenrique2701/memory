@@ -1,0 +1,128 @@
+:root{
+
+    --prev-next-opacity: 0.7; 
+    /*Define uma variavel CSS de escopo global (fica disponível em todo o documento)
+    Esta armazena um valor em opacidade -.7, que pode ser usado em varios lugares do css para
+        manter a consistencia e facilitar ajustes futuros. */
+
+}
+
+body{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;/*100%*/
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+h1{
+
+    margin-bottom: 20px;
+
+}
+
+.carrossel-container{
+
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    height: 500px;
+    perspective: 1000px;/*afeta a profundidade percebida dos elementos 3D quando são transformados*/
+    overflow: hidden;
+
+}
+
+.carrossel{
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;/*perspectiva 3d real em relação ao coontainer carrossel*/
+    transform: translateZ(-200px);/*movimento*/
+
+}
+
+.slide{
+
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    left: 50%;
+    top: 10%;
+    transition: transform 1s, opacity 1s;/*Aplica transição suave para as propriedades durante 1s*/
+
+}
+.slide a{
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+}
+.slide img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/*Ajusta o modo como a img é ajustada dentro do container, garantindo q ela cubrabra completamente o espaço disponível sem ser distorcida, recortando o excesso se necessário*/
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1/*10%*/);
+
+}
+.slide .info{
+
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0,0,0,0.5/*50%*/);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+.slide.active{
+
+    transform: translateX(-50%) translateZ(200px);/*Aplica transformações no slide ativo horizontalmente e traze-lo 200px para frente do eixo Z, destacando-o dos outros*/
+    opacity: 1;
+
+}
+.slide.prev{
+
+    transform: translateX(-150%) translateZ(100px);/*Deloca o slide anterior 150% para a esquerda do centro e traz para frente no eixo Z. Posicionado parcialmente fora da visão principal e ligeiramente atrás do slide ativo*/
+    opacity: var(--prev-next-opacity);/*Define a opacidade do slide anterior com baze na varialvel*/
+
+}
+.slide.next{
+
+    transform: translateX(50%) translateZ(100px);/*desloca o slide seguinte 50% para a direita do centro e também o traz 100px para frente no eixo Z, similar ao anterior mas do lado oposto*/
+    opacity: var(--prev-next-opacity);/*Define a opacidade do slide anterior com baze na varialvel*/
+
+}
+
+button{
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5/*50%*/);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+
+}
+button.anterior{
+
+    left: 10px;
+
+} 
+button.proximo{
+
+    right: 10px;
+
+} 

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Banners</title>
+        <link rel="stylesheet" href="estilos.css">
+
+    </head>
+    <body>
+
+        <header>
+
+            <div class="logo">
+
+                <img src="imgs/cachorro.jpg" alt="Golden Retriever">
+                
+                <h1>Golden Retriever</h1>
+
+            </div>
+
+            <nav>
+
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#parceiros">Parceiros</a></li>
+                    <li><a href="#pedidos">Pedidos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+
+            </nav>
+
+        </header>
+
+        <div class="banner-responsivo" id="banner-responsivo">
+
+            <div class="conteudo-banner" onclick="abrirGoogle()">
+
+                <h2>Banner Responsivo</h2>
+                <p>Este banner se adapta ao tamanho da tela do dispositivo.</p>
+
+            </div>
+
+            <button class="fechar-banner-responsivo" onclick="fecharBannerResponsivo(event)">X</button>
+
+        </div>
+
+        <div class="container-carousel">
+
+            <div class="carousel">
+
+                <div class="carousel-interno">
+
+                    <div class="item-carousel ativo" onclick="abrirLink('https://www.udemy.com/course/excel-basico-ao-avancado-aprenda-a-automatizar-12-planilhas/?referralCode=477073AE57D910FB2391')">
+
+                        <img src="imgs/img1.jpg" alt="img1">
+
+                    </div>                    
+                    <div class="item-carousel ativo" onclick="abrirLink('https://www.udemy.com/course/python-rpa-e-excel-aprenda-automatizar-processos-e-planilhas/?referralCode=75F06FB2C5443C0A1FBF')">
+
+                        <img src="imgs/img2.jpg" alt="img2">
+
+                    </div>  
+
+                                        <div class="item-carousel ativo" onclick="abrirLink('https://www.udemy.com/course/algoritmos-e-logica-de-programacao-visualg-c-e-qt-creator/?referralCode=3D37392361EEA1BFB488')">
+
+                        <img src="imgs/img3.jpg" alt="img3">
+
+                    </div>
+                </div>
+                <button class="controle-carousel anterior" onclick="slideAnterior()"><</button>
+                <button class="controle-carousel proximo" onclick="slideProximo()">></button>
+
+                <button class="fechar-carousel" onclick="fecharCarousel()">X</button>
+
+            </div>
+            
+        </div>
+
+        <main class="sobre-pets" id="sobre-pets">
+            <div class="conteudo-principal">
+                <h2>Cuidadndo de nossos amigos peludos nas Ondas de Calor</h2>
+
+                <p>1 de agosto de 2025</p>
+
+                <p>Verão é sinonimo de sol e alegria para muitos, porém, não podemos nos esquecer de 
+                    que o clima quente pode ser prejudicial para nossos amigos peludos.
+                    Aqui estão algumas dicas para manter seu pet confortável e seguro durante as altas temperaturas:
+                </p>
+
+                <h3>1. Mantenha-o hidratado</h3>
+                <p>Certifique-se de que seu pet esteja hidratado adequadamente, especialmente durante o verão.
+                    Ofereça água fresca e limpa regularmente, e considere adicionar gelo à água para mantê-la fria.
+                    A falta de hidratação pode levar a problemas de saúde graves, como desidratação e insolação.
+                </p>
+
+                <h3>2. Evite passeios em horários quentes</h3>
+                <p>Evite levar seu pet para passear durante as horas mais quentes do dia, geralmente entre 10h e 16h.
+                    Prefira passeios pela manhã cedo ou no final da tarde, quando as temperaturas estão mais amenas.
+                    O calor excessivo pode causar queimaduras nas patas e exaustão por calor.
+                </p>
+                <h3>3. Proporcione sombra e ventilação</h3>
+                <p>Certifique-se de que seu pet tenha acesso a sombra e ventilação adequada
+                    quando estiver ao ar livre. Se possível, crie um espaço fresco e arejado para
+                    que ele possa descansar. Evite deixar seu pet preso em um carro quente, pois isso
+                    pode ser fatal em poucos minutos.
+                </p>
+
+                <img src="imgs/dog.jpg" alt="Dois Goldens">
+            </div>
+        </main>
+
+        <footer class="rodape">
+
+            <p>Saiba mais sobre nos em: <a href="mailto:7oNlK@example.com" target="_blank">Email</a></p>
+
+        </footer>
+
+        <div class="banner-animado" id="banner-animado" onclick="abrirGoogle()">
+
+            <img src="imgs/animacao.gif" alt="Banner animado">
+
+            <button class="fechar-banner-animado" onclick="fecharBannerAnimado(event)">X</button>
+
+        </div>
+        
+        <script src="script.js"></script>
+
+    </body>
+</html>

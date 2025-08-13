@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Navegação no DOM</title>
+
+    </head>
+
+    <body>
+        
+        <div id="divPrincipal">
+
+            <p>Eiiitaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+
+
+            <ul>
+                <li id="iten1">First</li>
+                <li id="iten2">Second
+
+                    <ul>
+                        <li id="subiten1">Ta loko</li>
+                        <li id="subiten2">Raaaaaaaaaaaaaaaaaaaaaaan</li>
+                    </ul>
+
+                </li>
+
+                <li id="iten3">Cagada</li>
+                <li id="iten4">Lascado</li>
+                <li id="iten5">Morto</li>
+
+
+            </ul>
+
+        </div>
+
+        <button onclick="acessarPai()">Acessar elemento pai</button>
+        <button onclick="listarChildren()">Listar Filhos</button>
+        <button onclick="irProximo()">Ir para o próximo irmão</button>
+        <button onclick="irAnterior()">Ir para o irmão anterior</button>
+
+        <p>Resultados:</p>
+        <p id="resultados"></p>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>

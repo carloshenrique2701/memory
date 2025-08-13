@@ -1,0 +1,63 @@
+body{
+
+    margin: 0;
+    padding: 0;
+    background-color: #eceff1;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh
+
+}
+
+.container{
+
+    width: 90%;
+    max-width: 800px;
+    padding:20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+
+}
+
+#formulario{
+
+    margin-bottom: 20px;
+
+}
+
+input[type="text"], button{
+
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+
+}
+
+button{
+
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+
+}
+button:hover{
+
+    background-color: #45a049
+
+}
+
+#resultado{
+
+    text-align: left;
+    padding: 20px;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    overflow: auto;
+    max-height: 400px;
+
+}

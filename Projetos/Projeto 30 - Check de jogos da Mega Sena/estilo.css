@@ -1,0 +1,203 @@
+body{
+
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+
+.container {
+
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1200px;
+
+}
+
+header {
+
+    background-color: #128d17;
+    color: white;
+    padding: 10px 0;
+    border-radius: 10px 10px 0 0;
+
+}
+
+.cabecalho-imagem {
+
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px 10px 0 0;
+
+}
+
+h1 {
+
+    font-size: 2.5em;/*em significa tamanho relativo ao tamanho da fonte do elemento pai*/
+    margin-bottom: 20px;
+
+}
+
+button {
+
+    background-color: #128d17;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
+
+}
+
+button:hover {
+
+    background-color: #0f6b13;
+
+}
+
+.modal {
+
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; /* Permite rolagem se necessário */
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); /* Fundo preto com opacidade */
+
+}
+
+.modal-conteudo {
+
+    font-size: 24px;
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 1500px; 
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.fechar{
+
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+
+}
+
+.fechar:hover,
+.fechar:focus {
+
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+input[type="number"] {
+
+    width: 60px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+
+}
+input[type="number"]:focus {
+
+    outline: none;
+    border-color: #128d17;
+
+}
+
+
+.secao-conferir {
+
+    margin-top: 20px;
+
+}
+
+ul {
+
+    list-style-type: none;
+    padding: 0;
+    max-height: 400px;
+    overflow-y: auto;
+    margin: 20px 0;
+
+}
+
+li {
+
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+li span {
+
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-right: 10px;
+
+}
+
+.correto {
+
+    font-weight: bold;
+    background-color: #0f6b13;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+
+.todos-certos {
+
+    font-weight: bold;
+    background-color: #128d17;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+
+.acertos-4-5-6 {
+
+    font-weight: bold;
+    background-color: #f39c12;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}

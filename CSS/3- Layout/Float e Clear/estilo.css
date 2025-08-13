@@ -1,0 +1,39 @@
+.container{
+
+    width: 100%;
+    height: 200px;
+    border: 1px solid black;
+    overflow: auto; /*Barra de rolagem no container se o conteúdo dentro exede o limite estabelecido pelo height*/
+
+}
+
+.float-left{
+
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    margin: 10px;
+    padding: 10px;
+    
+}
+
+.float-right{
+
+    float: right;
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+.clear-both{
+
+    clear: both; /*Remove o efeito de float, assim o conteúdo não fica entre as caixas de float*/
+    background-color: burlywood;
+    padding: 20px;
+
+}
+

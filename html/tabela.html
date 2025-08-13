@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Tabelas</title>
+
+    </head>
+    <body>
+
+        <h1>Tipos de tabalas + atributos (colspan, rowlspan)</h1>
+
+
+        <table border="1">
+
+            <caption>Horário de aulas</caption>
+
+            <thead>
+                <tr>
+                    <th>Dia</th>
+                    <th colspan="3">Manhã</th><!--Aqui colspan="3" junta 3 colunas em uma só--><!--essa tag trata de um "titulo da tabela" geralmente em negrito-->
+                    <th colspan="3">Tarde</th><!--essa tag trata de um "titulo da tabela" geralmente em negrito-->
+                </tr>
+                <tr>
+                    <th>Horário</th>
+
+                    <th>8h-9h</th><!--essa tag trata de um "titulo da tabela" geralmente em negrito-->
+                    <th>9h-10h</th><!--essa tag trata de um "titulo da tabela" geralmente em negrito-->
+                    <th>10h-11h</th><!--essa tag trata de um "titulo da tabela" geralmente em negrito-->
+
+                    <th>13h-14h</th><!--essa tag trata de um "titulo da tabela" geralmente em negrito-->
+                    <th>14h-15h</th><!--essa tag trata de um "titulo da tabela" geralmente em negrito-->
+                    <th>15h-16h</th><!--essa tag trata de um "titulo da tabela" geralmente em negrito-->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Segunda-feira</td>
+                    <td rowspan="2">Math</td><!--Se em colspan="2" juntamos duas colunas, rowspan="2" juntamos duas linhas da tabela-->
+                    <td rowspan="2">Physic</td><!--Se em colspan="2" juntamos duas colunas, rowspan="2" juntamos duas linhas da tabela-->
+                    <td>Quimica</td>
+                    <td colspan="2">Literatura</td>
+                    <td rowspan="3">Artes</td><!--Se em colspan="2" juntamos duas colunas, rowspan="2" juntamos duas linhas da tabela-->
+                </tr>
+
+                <tr>
+                    <td>Terça-feira</td>
+
+                    <td>Geography</td>
+                    <td colspan="2">Tempo livre</td>
+                </tr>
+                <tr>
+                    <td>Quarta-feira</td>
+
+                    <td colspan="2">Biology</td>
+                    <td>Portuguese</td>
+                    <td>history</td>
+                    <td>Physic Education</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="7">Aqui é o roda-pé, onde podemos dar um final para a tabela</td>
+                </tr>
+            </tfoot>
+        </table>
+
+
+    </body>
+
+</html>

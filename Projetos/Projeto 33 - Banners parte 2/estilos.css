@@ -1,0 +1,390 @@
+body{
+
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6e5e5;
+    position: relative;
+
+}
+
+header{
+
+    background-color: #00a699;
+    color: white;
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo{
+
+    display: flex;
+    align-items: center;
+
+}
+
+.logo img{
+
+    width: 110px;
+    height: 90px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+nav ul{
+
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+
+}
+
+nav ul li a{
+
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+nav ul li a:hover{
+
+    text-decoration: underline;
+
+}
+
+.banner-responsivo{
+
+    background-color: #00a68d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    border-radius: 10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1002;
+
+}
+
+.banner-responsivo .conteudo-banner{
+
+    cursor: pointer;
+
+}
+
+.banner-responsivo .conteudo-banner h2{
+
+    margin: 0;
+    font-size: 1.7em;
+    font-weight: bold;  
+
+}
+
+.banner-responsivo .conteudo-banner p{
+
+    margin: 10px 0 0;
+    font-size: 1.2em;
+
+}
+
+.fechar-banner-responsivo{
+
+    position: absolute;
+    top: 10px;
+    right: 120px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: white;
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+
+}
+.fechar-banner-responsivo:hover{
+
+    background-color: rgba(255, 255, 255, 0.2);
+
+}
+
+.container-carousel{
+
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    z-index: 1001;
+
+}
+
+.carousel{
+
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+.carousel-interno{
+
+    display: flex;
+    transform: transform 0.5s ease-in-out;
+
+}
+
+
+.item-carousel{
+
+    min-width: 100%;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+
+}
+.item-carousel img{
+
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+.controle-carousel{
+
+    position:  absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+
+}
+
+.controle-carousel.anterior{
+
+    left: 10px;
+    transition: background-color 0.2s;
+}
+
+.controle-carousel.proximo{
+
+    right: 10px;
+    transition: background-color 0.2s;
+
+}
+
+.controle-carousel.anterior:hover,
+.controle-carousel.proximo:hover{
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+
+.fechar-carousel{
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    transition: background-color 0.2s;
+    z-index: 3;
+
+}
+.fechar-carousel:hover{
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+
+.conteudo-principal{
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+
+}
+
+.sobre-pets{
+
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 0;
+
+}
+
+.sobre-pets img{
+
+    width: 90%;
+    height: auto;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+footer{
+
+    background-color: #00a699;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+
+}
+
+footer a{
+
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+footer a:hover{
+
+    text-decoration: underline;
+
+}
+
+.banner-animado{
+
+    position:fixed;
+    bottom: 20px;
+    left:50%;
+    transform: translateX(-50%);
+    z-index: 1003;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00a699;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+.banner-animado:hover{
+
+    background-color: #008f85;
+
+}
+
+.banner-animado img{
+
+    width: 100px;
+    height: 100px;
+    animation: bounce 2s infinite;
+
+}
+
+.fechar-banner-animado{
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2em;
+    background-color: transparent;
+    border: none;
+    transition: color 0.3s;
+
+}
+.fechar-banner-animado:hover{
+    color: #e5b7b7;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .banner-responsivo, .container-carousel, .sobre-pets {
+        
+        width: 90%;
+    }
+
+    .conteudo-principal{
+
+        width: 100%;
+
+    }
+
+    .banner-animado img{
+
+        width: 80px;
+        height: 80px;
+
+    }
+
+    nav ul{
+
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    nav ul li{
+
+        margin: 10px;
+
+    }
+
+
+}
+
+@media (max-width: 480px) {
+
+    .logo img{
+
+        width: 90px;
+        height: 70px;
+
+    }
+
+    .banner-responsivo .conteudo-banner h2{
+
+        font-size: 1.5em;
+
+    }
+
+    .banner-responsivo .conteudo-banner p{
+
+        font-size: 1em;
+
+    }
+
+}

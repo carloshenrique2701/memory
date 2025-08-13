@@ -1,0 +1,26 @@
+.container{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    background-color: azure;
+    padding: 20px;
+    border: 2px solid black;
+
+}
+
+.box{
+
+    line-height: 1.5;
+    width: 110px;
+    height: 110px;
+    padding: 20px; /* Define um espaço entre as bordas e o conteúdo*/
+    border: 5px solid black;
+    margin: 0 10;
+    background-color: rgb(121, 209, 209);
+    text-align: center;
+    line-height: 10px;
+    box-sizing: border-box;
+
+}

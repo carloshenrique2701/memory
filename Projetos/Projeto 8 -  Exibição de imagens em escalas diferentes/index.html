@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fotografias</title>
+        <link rel="stylesheet" href="estilo.css">
+
+    </head>
+    <body>
+
+       <div class="titulo">
+
+            <h1>Fotografias</h1>
+            <small>Escolha uma:</small>
+
+       </div>
+
+       <div class="galeria">
+
+            <img src="Imagem1.jpg" alt="Imagem 1" onclick="mostrarFoto('Imagem1.jpg', 'descricao1')">
+            <img src="Imagem2.jpg" alt="Imagem 1" onclick="mostrarFoto('Imagem2.jpg', 'descricao2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')">
+            <img src="Imagem3.jpg" alt="Imagem 1" onclick="mostrarFoto('Imagem3.jpg', 'descricao3aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')">
+            <img src="Imagem4.jpg" alt="Imagem 1" onclick="mostrarFoto('Imagem4.jpg', 'descricao4')">
+            <img src="Imagem5.jpg" alt="Imagem 1" onclick="mostrarFoto('Imagem5.jpg', 'descricao5aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')">
+            <img src="Imagem6.jpg" alt="Imagem 1" onclick="mostrarFoto('Imagem6.jpg', 'descricao6aaaaaaaaaaaaaaaaaaaaaaaaaaa')">
+            <img src="Imagem7.jpg" alt="Imagem 1" onclick="mostrarFoto('Imagem7.jpg', 'descricao7aaaaaaaaaaaaaaaaaaaaaaaaaaa')">
+            <img src="Imagem8.jpg" alt="Imagem 1" onclick="mostrarFoto('Imagem8.jpg', 'descricao8')">
+
+       </div>
+
+       <div id="expor">
+
+            <img src="Imagem1.jpg" alt="Imagem Escolhida">
+            <p id="descricao">teste</p>
+       </div>
+
+       <script>
+
+            function mostrarFoto(url1, descricao1) {
+
+                const expor = document.getElementById('expor');
+                const descricao = document.getElementById('descricao');
+
+                // Atualiza a imagem e a descrição
+                expor.querySelector('img').src = url1;//Procura o primeiro elemento img da vaiavel expor que esta ligada ao id expor;
+                descricao.innerHTML = descricao1;
+            }
+            
+       </script>
+
+        
+    </body>
+</html>

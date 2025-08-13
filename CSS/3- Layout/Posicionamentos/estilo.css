@@ -1,0 +1,56 @@
+.relative{
+
+    position: relative;
+    background-color: rgb(109, 236, 236);
+    text-align: center;
+    padding: 20px;
+
+}
+
+.absolute{
+
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background-color: cadetblue;
+    padding: 10px;
+
+}
+
+.fixed{
+
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: brown;
+    padding: 10px;
+    z-index: 501;/*Aqui define ao elemento uma ordem de posicionamento, quanto maior ele ficará na frente de outros elementos*/
+
+}
+
+.stick{
+
+    position:sticky;
+    top: 0;
+    background-color: blanchedalmond;
+    padding: 10px;
+    text-align: center;
+    z-index: 500;
+
+}
+
+.long-content{
+
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 20px 0;
+
+}
+
+.footer{
+
+    background-color: rgb(116, 80, 36);
+    text-align: center;
+    padding: 10px;
+
+}

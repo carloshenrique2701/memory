@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editor de Texto</title>
+        <link rel="stylesheet" href="estilo.css">
+
+    </head>
+    <body>
+
+        <h1>Meu Editor de Texto</h1>
+
+        <div id="container-editor">
+
+            <div class="barra-ferramentas">
+
+                <div class="linha-ferramentas">
+
+                    <button id="botao-negrito"><strong>N</strong></button>
+                    <button id="botao-italico"><em>I</em></button>
+                    <button id="botao-sublinhado">U</button>
+                    <select id="seletor-tamanho-font">
+
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="14">14</option>
+                        <option value="18">18</option>
+                        <option value="20">20</option>
+                        <option value="24">24</option>
+                        <option value="26">26</option>
+                        <option value="28">28</option>
+                        <option value="30">30</option>
+                        <option value="32">32</option>
+                        <option value="36">36</option>
+
+                    </select>
+
+                    <select id="seletor-tipo-font">
+
+                        <option value="Arial">Arial</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Times New Roman">Times New Roman</option>
+
+                    </select>
+
+                </div>
+
+                <div class="linha-ferramentas">
+
+                    <input type="color" id="seletor-cor">
+
+                    <button id="botao-alinhar-esquerda">Esquerda</button>
+                    <button id="botao-alinhar-centro">Centro</button>
+                    <button id="botao-alinhar-direita">Direita</button>
+                    <button id="botao-inserir-marcadores">Marcadores</button>
+                    <button id="botao-inserir-numeracao">Numeração</button>
+                    <button id="botao-inserir-imagem">Inserir Imagem</button>
+
+                    <input type="file" id="entrada-imagem" style="display:none" onchange="inserirImagem(event)">
+
+                    <button id="botao-exportar">Exportar</button>
+
+                </div>
+
+                <div class="editor" contenteditable="true" id="editor">
+
+                    Digite seu texto aqui...
+
+                </div>
+
+            </div>
+
+        </div>
+        
+        <script src="script.js"></script>
+
+    </body>
+</html>

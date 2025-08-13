@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+
+<html lang="pt-br">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tabulação Dinâmica de Conteúdo</title>
+
+        <style>
+
+            .tablinks{
+
+                padding: 10px;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+                cursor:pointer;
+                float: left;
+                margin-right: 4px;
+
+            }
+
+            .tablinks.active, .tablinks:hover{
+
+                background-color: #ddd;
+
+            }
+
+            .tabcontent{
+
+                clear: both;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-top: none;
+                display: none;
+
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="tabs">
+
+            <button class="tablinks" onclick="openTab(event, 'Tab1')">Tab 1</button>
+
+            <button class="tablinks" onclick="openTab(event, 'Tab2')">Tab 2</button>
+
+            <div id="Tab1" class="tabcontent">
+
+                <h3>Tab 1</h3>
+
+                <p>LoucuraLoucuraLoucuraLoucuraLoucuraLoucuraLoucuraLoucura</p>
+                <p>LoucuraLoucuraLoucuraLoucuraLoucuraLoucuraLoucuraLoucura</p>
+                <p>LoucuraLoucuraLoucuraLoucuraLoucuraLoucuraLoucuraLoucura</p>
+                <p>LoucuraLoucuraLoucuraLoucuraLoucuraLoucuraLoucuraLoucura</p>
+                <p>LoucuraLoucuraLoucuraLoucuraLoucuraLoucuraLoucuraLoucura</p>
+
+            </div>
+            <div id="Tab2" class="tabcontent">
+
+                <h3>Tab 2</h3>
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/B4Przic1HbQ?si=fI5UClfuPGNeaooB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </div>
+
+        </div>
+
+        <script src="tabulacao.js"></script>
+        
+    </body>
+
+</html>

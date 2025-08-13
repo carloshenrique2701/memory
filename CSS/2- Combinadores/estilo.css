@@ -1,0 +1,24 @@
+.container p{
+
+    color: green;
+
+}
+
+.subcontainer > p{ /* Somente os elementos que estão dentro do subcontainer, se tiver dentro dele, porém, dentro de mais um outro elemento, não é aplicado */
+
+    font-weight: bold;
+
+}
+
+.botao + .botao{/* seleciona o elemento adjacente */
+
+    background-color: blue;
+    color: white;
+
+}
+
+li:first-child ~ li{ /* Seleciona todos os elementos(Irmãos) subsequente de um elemento especifico, naão importa a distancia*/
+
+    color: red;
+
+}

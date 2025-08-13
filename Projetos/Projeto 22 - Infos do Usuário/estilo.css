@@ -1,0 +1,35 @@
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f7f7f7f7;
+
+}
+
+.informacoes{
+
+    white-space: pre-wrap;/*Mantem a formatação dos espaços e quebras de linha no conteúdo. Para exibir o texto formatado do JSON de forma legivel*/
+    background-color: #e8e8e8;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333333;
+
+}
+
+button{
+
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+button:hover{
+
+    background-color: #4CAF50;
+
+}
+

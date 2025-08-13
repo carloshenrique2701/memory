@@ -1,0 +1,104 @@
+body{
+
+    background-color: #f0f0f0;
+
+}
+
+
+
+.carrossel-top{
+
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-800px) totateY(0deg);
+    transition: transform 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.carrossel-down{
+ 
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-800px) totateY(0deg);
+    transition: transform 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+}
+
+.slides-top{
+
+    width: 1000px;
+    height: 390px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.slides-down{
+
+    width: 1000px;
+    height: 390px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.slides-top img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/*A imagem se encaixar exatamente no tomanho de cada slide mesmo que ntenha que corta-la*/
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5/*50%*/);
+
+
+}
+.slides-down img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/*A imagem se encaixar exatamente no tomanho de cada slide mesmo que ntenha que corta-la*/
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5/*50%*/);
+
+
+}
+
+button {
+    
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+
+}
+
+button.anterior{
+
+    left: 0;
+
+}
+button.proximo{
+
+    right: 0;
+
+}
+

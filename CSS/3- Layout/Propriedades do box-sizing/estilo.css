@@ -1,0 +1,30 @@
+div{
+
+    width: 200px;
+    height: 200px;
+    padding: 30px;
+    border: 10px solid black;
+    margin: 20px;
+    background-color: lightblue;
+    text-align: center;
+    line-height: 200px;
+
+}
+
+.test{
+
+    display: flex;
+
+}
+
+.content-box{
+
+    box-sizing: content-box;
+
+}
+
+.border-box{
+
+    box-sizing: border-box;
+
+}

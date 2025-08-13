@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Álbum</title>
+        <link rel="stylesheet" href="estilo.css">
+
+    </head>
+    <body>
+
+        <h2>Meu Álbum de Fotos</h2>
+                <!--O for é pra onde está mandando a imagem ser carregada-->
+        <label for="seletorArquivo" style="background-color: #0f3794; color: white; padding: 10px; border-radius: 5px; cursor: pointer;">
+            Carregar Imagem
+        </label>
+                                                <!--multiple permite que vários arquivos sejam selecionados ao mesmo tempo-->
+        <input type="file" id="seletorArquivo" multiple accept="Imagem/*" style="display: none;">
+                                                        <!--accept indica os tipos de arquivos que devem ser aceitos-->
+        <div id="galeria"></div>
+
+        <div id="modal" onclick="fecharModal()">
+
+            <button onclick="removerImagem(event)">Remover Imagem</button>
+
+            <img src="" alt="">
+
+            <p class="descricao">Descrição da imagem</p>
+
+        </div>
+
+        <script src="script.js"></script>
+        
+    </body>
+</html>

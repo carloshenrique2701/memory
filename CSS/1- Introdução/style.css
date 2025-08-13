@@ -1,0 +1,91 @@
+p{
+
+    color: rgb(6, 17, 167);
+    font-size: 16px;
+    line-height: 1.5;
+
+}
+
+p[title]:hover{
+
+    background-color: yellow;
+
+}
+
+#titulo-principal{
+
+    color:tomato;
+    font-size: 24px;
+    text-align: center;
+
+}
+
+.highlight{
+
+    color: brown;
+    background-color: rgb(255, 196, 0);
+    font-weight: bold;
+
+}
+
+small{
+
+    color: gray;
+
+}
+
+ul li:first-child{
+
+    font-weight: bold;
+
+}
+ul li:last-child{
+
+    color: orange;
+
+}
+
+p::first-letter{
+
+    font-size: 200%;
+    color: green;
+
+}
+
+input[type="password"]{
+
+    border: 2px solid rgb(235, 0, 0);
+
+}
+input[type="text"]{
+
+    border: 2px solid rgb(118, 6, 245);
+
+}
+
+div.texto::after{
+
+    content:"Adicionado via CSS";
+    color:purple;
+
+}
+
+.texto span::before{
+
+    content: "Texto ";
+    color: yellowgreen;
+
+}
+
+.link{
+
+    color: green;
+    text-decoration: none;
+
+}
+
+.link:hover{
+
+    text-decoration: underline;
+
+}
