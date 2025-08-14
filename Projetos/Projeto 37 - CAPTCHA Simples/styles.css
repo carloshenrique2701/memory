@@ -1,0 +1,123 @@
+html, body{
+
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#container-captcha{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    box-sizing: border-box;
+
+}
+
+#canvas-captcha{
+
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    max-height: 100px;
+
+}
+
+.input-wrapper {
+
+    position: relative;
+    margin: 20px 0;
+    display: flex;
+
+}
+input {
+
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 2px solid #5b5209;
+    padding: 10px;
+    background: #fff;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+}
+input:focus {
+
+    border-color: #5b5209;
+
+}
+ /* Label Base Style */
+label {
+    
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    background: #fff;
+    padding: 0 5px;
+    color: #666;
+    font-size: 16px;
+    transition: transform 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+    pointer-events: none;
+
+}
+ /* Label moves up when input is focused or not empty */
+input:focus + label,
+input:not(:placeholder-shown) + label {
+
+    transform: translateY(-14px);
+    color: #5b5209;
+    font-size: 14px;
+
+}
+ /* Remove outline for accessibility states */
+:focus,
+:focus-visible,
+:focus-within,
+:-moz-focusring,
+:-moz-focus-inner,
+:-moz-focus-outer {
+
+    outline: none;
+
+}
+
+button{
+
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #5b5209;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+button:hover{
+
+    background-color: #403d0e;
+
+}
+
+
