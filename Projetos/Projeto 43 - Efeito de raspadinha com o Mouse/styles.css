@@ -1,0 +1,30 @@
+body, html{
+
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+h1{
+
+    color: #fff;
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+
+}
+
+canvas{
+
+    border: 1px solid #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(225, 225, 225, 0.5);
+    background-image: url("imgs/imagem-inferior.jpg");
+
+}

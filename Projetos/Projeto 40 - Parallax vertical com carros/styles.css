@@ -1,0 +1,128 @@
+body, html{
+
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #000;
+
+}
+
+header{
+
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 ;
+    z-index: 1000;
+    width: 100%;
+
+}
+
+header h1{
+
+    margin: 0;
+    font-size: 24px;
+
+}
+
+nav ul{
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+nav ul li{
+
+    display: inline;
+    margin-right: 20px;
+
+}
+
+nav ul li a{
+
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+
+}
+
+nav ul li a:hover{
+
+    color: #00a699;
+
+}
+
+.parallax{
+
+    min-height: 100vh;
+    background-attachment: fixed; /*Fixa o plano de fundo em relação a view da janela, dando u,m efeito parallax*/
+    background-position: center; /*Move o plano de fundo para o centro*/
+    background-repeat: no-repeat; /*Impede que o plano de fundo se repita*/
+    background-size: cover; /*Assegura que o plano de fundo preencha toda a janela*/
+
+}
+
+.parallax1 {
+
+    background-image: url(imagens/imagem1.jpg);
+
+}
+.parallax2 {
+
+    background-image: url(imagens/imagem2.jpg);
+
+}
+.parallax3 {
+
+    background-image: url(imagens/imagem3.jpg);
+
+}
+
+.conteudo{
+
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.conteudo h2{
+
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.conteudo p{
+
+    font-size: 18px;
+    line-height: 1.6;
+
+}
+
+footer{
+
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    padding: 10px 0;
+    margin-top: 20px;
+
+}

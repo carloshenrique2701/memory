@@ -1,0 +1,170 @@
+body, html{
+
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+}
+
+header{
+
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+header h1{
+
+    margin: 0;
+    font-size: 24px;
+
+}
+
+header nav ul{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+header nav ul li{
+
+    display: inline-block;
+    margin: 5px 15px;
+
+}
+
+header nav ul li a{
+
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+
+}
+
+nav ul li a:hover{
+
+    text-decoration: underline;
+    color: #ccc;
+
+}
+
+
+.container{
+
+    display: flex;
+    height: 100vh;
+    width: 300vw;
+
+}
+
+.parallax{
+
+    width: 100vw;
+    height: 100vh;
+    background-attachment: fixed;
+    /* A propriedade 'background-attachment: fixed' faz com que o 
+                plano de fundo não se mova com a rolagem da página. 
+        Isso é um componente chave do efeito parallax, onde o fundo 
+                permanece estático enquanto os elementos de texto se 
+                movem, criando um senso de profundidade. */
+    background-position: center;
+    /* Centraliza o plano de fundo na janela de visualização, 
+                garantindo que a parte principal da imagem de fundo 
+                esteja visível e bem posicionada, independentemente 
+                das dimensões da tela. */
+    background-repeat: no-repeat;
+    /* Previne a repetição da imagem de fundo. Isso é importante 
+                para evitar que a imagem de fundo se repita ao 
+                longo da seção, mantendo a estética e garantindo que 
+                apenas uma instância da imagem seja exibida. */
+    background-size: cover;
+    /* Faz com que a imagem de fundo cubra completamente a área da 
+                seção, ajustando a dimensão da imagem conforme 
+                necessário para cobrir todo o espaço disponível 
+                sem que haja espaços vazios, independentemente do 
+                tamanho da tela. */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.parallax1{
+
+    background-image: url('imgs/maca.jpg');
+
+}
+
+.parallax2{
+
+    background-image: url('imgs/banana.jpg');
+
+}
+
+.parallax3{
+
+    background-image: url('imgs/laranja.jpg');
+
+}
+
+.conteudo{
+
+    max-width: 70%;
+    width: 70%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    color: #333;
+    word-wrap: break-word;
+    white-space: normal;
+
+}
+
+.conteudo h2{
+
+    font-size: 32px;
+    margin-bottom: 20px
+
+}
+
+.conteudo p{
+
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+
+}
+
+footer{
+
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+}
+
