@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conversor de texto para binário</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+       
+        <div class="container">
+
+            <h1>Conversor de texto para binário</h1>
+
+            <div class="input-wrapper">
+
+                <input type="text" id="textoEntrada" placeholder=" ">
+                <label for="textoEntrada">Digite um texto:</label>
+
+            </div>
+
+            <div class="botoes">
+            
+                <button id="converterTexto">Converter para binário</button>
+                <button id="converterBinario">Converter para texto</button>
+                <button id="info" onclick="abrirModal()">Informações</button>
+
+            </div>
+
+            <textarea name="resultado" id="resultado" readonly></textarea>
+
+        </div>
+
+        <div id="informacoes-modal">
+
+            <span id="fecharModal" onclick="fecharModal()">&times;</span>
+
+            <h1>Como converter um texto para binário</h1>
+
+            <p>Para converter um texto para binário, basta digitar o texto 
+                na caixa de texto e clicar no botão "Converter para binário".
+            </p>
+            
+            <h3>Lógica utilizada no código:</h3>
+
+            <ol>
+
+                <li>
+                    <strong>Obtivemos o código ASCII do caractere:</strong>
+                    Cada caractere em um texto possui um código numérico único chamado código ASCII. 
+                    Por exemplo, o caractere "A" possui o código ASCII 65.
+                </li> <br>
+
+                <li>
+                    <strong>Convertemos o código ASCII para binário:</strong>
+                    Convertemos o código ASCII de decimal para binário. O código 65 em binário é 1000001.
+                </li><br>
+
+                <li>
+                    <strong>Padronizamos a representação binária:</strong>
+                    Padronizamos a representação binária para ter 8 bits (adicionando zeros à esquerda, se necessário).
+                     O código binário 1000001 se torna 01000001.
+                </li><br>
+
+                <li>
+                    <strong>Repitimos o processo para todos os caracteres:</strong>
+                    Repitimos os passos acima para todos os caracteres do texto. Por exemplo, para o texto "AB", você teria:
+                    <ul>
+                        <li>A: 01000001</li>
+                        <li>B: 01000010</li>
+                    </ul>
+                </li><br>
+
+                <li>
+                    <strong>Juntamos todas as representações binárias:</strong>
+                    Juntamos todas as representações binárias com um espaço entre elas. 
+                    Para "AB", o resultado seria 01000001 01000010.
+                </li><br>
+            </ol>
+
+            <h3>Para converter de binário para texto, siga o processo inverso:</h3>
+
+            <ol>
+                <li>Divida a string binária em blocos de 8 bits.</li>
+                <li>Converta cada bloco de 8 bits de binário para decimal (código ASCII).</li>
+                <li>Obtenha o caractere correspondente ao código ASCII.</li>
+                <li>Junte todos os caracteres para formar o texto original.</li>
+            </ol>
+            
+
+            
+
+        </div>
+
+        <script src="script.js"></script>
+        
+    </body>
+</html>
