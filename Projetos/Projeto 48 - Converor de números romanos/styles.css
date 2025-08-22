@@ -1,0 +1,198 @@
+body{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+        animation: gradientShift 12s ease infinite;
+    background: linear-gradient(45deg, #856470, #515d6f, #aab6a3);
+    background-size: 300% 300%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+.container{
+
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    min-height: 200px;
+
+}
+
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1{
+
+    color: #333;
+    margin-bottom: 34px;
+
+}
+
+.input-wrapper{
+
+    margin-bottom: 20px;
+    position: relative;
+
+}
+
+input, #resultado{
+
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+
+}
+
+input:focus, #resultado:focus{
+
+    outline: none;
+    border-color: #007BFF;
+
+}
+
+label{
+
+    position: absolute;
+    top: 50%;
+    left: 80px;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    padding: 0 5px;
+
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label{
+
+    transform: translateY(-30px);
+    font-size: 12px;
+    color: #007BFF;
+
+}
+
+.botoes{
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+}
+
+button{
+
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, scale 0.3s ease;
+
+}
+
+button:hover{
+
+    background-color: #0056b3;
+
+}
+
+button:active{
+
+    transform: scale(0.95);
+
+}
+
+.modal-info{
+
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+
+}
+
+.informacoes{
+
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    color: #333;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    text-align: left;
+    position: fixed;
+    box-shadow: 0 0 10px rgba(248, 248, 248, 0.3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 400px;
+    z-index: 10000;
+    animation: crescerAoAbrir 1s ease;
+
+}
+
+@keyframes crescerAoAbrir {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+span{
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #3d3d3d;
+    transition: color 0.3s ease, scale 0.3s ease;
+
+}
+
+span:hover{
+
+    color: #0f0f0f;
+
+}
+
+span:active{
+
+    transform: scale(0.85);
+
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conversor de Números Romanos</title>
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1>Conversor de Números Romanos</h1>
+
+            <div class="input-wrapper">
+
+                <input type="text" id="valorEntrada" placeholder=" ">
+                <label for="valorEntrada">Digite um número romano ou decimal:</label>
+
+            </div>
+
+            <div class="botoes">
+                
+                <button id="converterRomano">Converter para romano</button>
+                <button id="converterDecimal">Converter para decimal</button>
+                <button id="info" onclick="abrirModal()">Informações</button>
+
+            </div>
+
+            <div class="resultado">
+
+                <textarea id="resultado" placeholder="Resultado..."></textarea>
+
+            </div>
+
+        </div>
+
+        <div class="modal-info" id="modal-info">
+            <div class="informacoes">
+
+                <span onclick="fecharModal()">&times;</span>
+
+                <h1>Significado dos Números Romanos</h1>
+
+                <ul>
+                    <li>I = 1</li>
+                    <li>IV = 4</li>
+                    <li>V = 5</li>
+                    <li>IX = 9</li>
+                    <li>X = 10</li>
+                    <li>XL = 40</li>
+                    <li>L = 50</li>
+                    <li>XC = 90</li>
+                    <li>C = 100</li>
+                    <li>CD = 400</li>
+                    <li>D = 500</li>
+                    <li>CM = 900</li>
+                    <li>M = 1000</li>
+                </ul>
+
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+        <script>
+
+            function abrirModal() {
+                
+                document.getElementById('modal-info').style.display = 'block';
+
+            }
+
+            function fecharModal(){
+
+                document.getElementById("modal-info").style.display = 'none';
+
+            }
+
+        </script>
+        
+    </body>
+</html>
