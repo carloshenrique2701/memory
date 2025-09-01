@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Assinatura</title>
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+    <body>
+        
+        <div class="assinatura">
+
+            <h1>Assinatura confirmada</h1>
+
+            <p id="mensagem-plano"></p>
+
+            <button onclick="window.location.href='index.html'">Voltar para a tabela de preços</button>
+
+        </div>
+
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function () {
+                
+                const params = new URLSearchParams(window.location.search);
+                // A lógica abaixo utiliza a interface URLSearchParams para acessar os parâmetros da URL.
+                // window.location.search retorna a parte da query string da URL que começa após a '?'.
+                // No caso o parametro passado é plano = ${planoID}, é muito similar a um array de chave valor. 
+                // Isso permite capturar qual plano foi selecionado na página anterior (index.html),
+                // pois o script lá redireciona para assinatura.html?plano=plano-escolhido.
+                // Assim, podemos personalizar a mensagem de confirmação de acordo com o plano escolhido.
+
+                const plano = params.get('plano');
+                // Pega o valor de plano = ${planoID}, no caso o id do plano.
+
+                const mensagemPlano = document.getElementById('mensagem-plano');
+
+                switch (plano) {
+                    case 'plano-gratis':
+                        
+                        mensagemPlano.textContent = 'Você escolheu nosso plano GRÁTIS. Aproveite nossos recursos limitados gratuitamente.'
+                    break;
+
+                    case 'plano-basico':
+                        
+                        mensagemPlano.textContent = 'Você escolheu nosso plano BÁSICO. Aproveite nossos recursos por R$ 9.99 por mês!'
+                    break;
+                
+                    case 'plano-padrao':
+                        
+                        mensagemPlano.textContent = 'Você escolheu nosso plano PADRÃO. Aproveite nossos recursos por R$ 19.99 por mês!'
+                    break;
+
+                    case 'plano-premium':
+                        
+                        mensagemPlano.textContent = 'Você escolheu nosso plano PREMIUM. Aproveite nossos recursos por R$ 49.99 por mês!'
+                    break;
+
+                    default:
+
+                        mensagemPlano.textContent = 'Ocorre um erro. O plano selecionado não encontrado.'
+
+                    break;
+                }
+
+
+            })
+
+        </script>
+
+    </body>
+</html>

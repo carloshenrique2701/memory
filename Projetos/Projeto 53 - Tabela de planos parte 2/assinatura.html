@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Assinatura feita!</title>
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+    <body>
+                
+            <div class="assinatura">
+
+                <h1>Assinatura confirmada</h1>
+
+                <p id="mensagem-plano"></p>
+
+                <button onclick="window.location.href='index.html'">Voltar para a tabela de preços</button>
+
+            </div>
+            
+            <script>
+
+                document.addEventListener('DOMContentLoaded', function () {
+                   
+                    const params = new URLSearchParams(window.location.search);
+
+                    const plano = params.get('plano');
+
+                    const mensagemPlano = document.getElementById('mensagem-plano');
+
+                    switch (plano) {
+                        case 'plano-padrao':
+                            
+                            mensagemPlano.textContent = 'Você comprou o plano PADRÃO. Aproveite!'
+
+                        break;
+
+                        case 'plano-premium':
+                            
+                            mensagemPlano.textContent = 'Você comprou o plano PREMIUM. Aproveite!'
+
+                        break;
+
+                        case 'plano-pro':
+                            
+                            mensagemPlano.textContent = 'Você comprou o plano PRO. Aproveite!'
+
+                        break;
+                    
+                        default:
+
+                            mensagemPlano.textContent = 'Ops! Ocorreu algum problema.'
+                        break;
+                    }
+
+
+                });
+
+            </script>
+
+    </body>
+</html>

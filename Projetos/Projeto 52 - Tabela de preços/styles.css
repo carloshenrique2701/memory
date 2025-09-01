@@ -1,0 +1,212 @@
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.tabela-precos{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 80%;
+    margin: auto;
+
+}
+
+.plano{
+
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 22%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.plano h2{
+
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    font-size: 24px;
+
+}
+
+.plano:nth-child(2) h2{ 
+    /*nth-child(2) significa que é o elemento filho 2 da classe plano, ou seja, 
+    o segundo elemento que aparece dentro de plano*/
+
+    background-color: #6a00ff;
+
+}
+
+.plano:nth-child(3) h2{
+
+    background-color: #9d00ff;
+}
+
+.plano:nth-child(4) h2{
+
+    background-color: #ff0202;
+}
+
+.preco{
+
+    font-size: 24px;
+    margin: 10px 0;
+
+}
+
+.preco span{
+
+    font-size: 16px;
+    color: #666;
+
+}
+
+ul{
+
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    flex-grow: 1;
+
+}
+
+li{
+
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+
+}
+
+.check{
+
+    color: green;
+    float: right;
+
+}
+
+.nao{
+
+    color: red;
+    float: right;
+
+}
+
+.botao-assinar{
+
+    background-color: #00aaff;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, scale 0.3s ease;
+
+}
+
+.botao-assinar:hover{
+
+    background-color: #0088ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+}
+
+.botao-assinar:active{
+
+    background-color: #0066cc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    scale: 0.98;
+
+}
+
+.plano:nth-child(2) .botao-assinar{
+
+    background-color: #6a00ff;
+}
+
+.plano:nth-child(2) .botao-assinar:hover{
+
+    background-color: #5500cc;
+
+}
+
+.plano:nth-child(3) .botao-assinar{
+
+    background-color: #9d00ff;
+}
+
+.plano:nth-child(3) .botao-assinar:hover{
+
+    background-color: #8800cc;
+
+}
+
+.plano:nth-child(4) .botao-assinar{
+
+    background-color: #ff0202;
+
+}
+
+.plano:nth-child(4) .botao-assinar:hover{
+
+    background-color: #cc0000;
+
+}
+
+.assinatura{
+
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.assinatura h1{
+
+    font-size: 24px;
+    color: #555;
+    margin: 20px 0;
+
+}
+
+.assinatura button{
+
+    background-color: #00aaff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, scale 0.3s ease;
+
+}
+
+.assinatura button:hover{
+
+    background-color: #0088ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+}
+
+.assinatura button:active{
+
+    background-color: #0066cc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    scale: 0.98;
+
+}

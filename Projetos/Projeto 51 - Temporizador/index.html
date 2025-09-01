@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Temporizador</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div class="temporizador-container">
+
+            <h1>Temporizador</h1>
+
+            <div id="temporizador">
+                <span id="horas"></span>:<span id="minutos"></span>:<span id="segundos"></span>
+            </div>
+
+            <div class="botoes">
+
+                <button id="iniciar">Iniciar</button>
+                <button id="pausar">Pausar</button>
+                <button id="continuar">Continuar</button>
+                <button id="reiniciar">Reiniciar</button>
+
+            </div>
+            
+            <div class="definir-tempo">
+
+                <div class="input-wrapper"><input type="number" id="entrada-horas" placeholder=" " min="0" max="24"><label for="entrada-horas">Horas:</label></div>
+                <div class="input-wrapper"><input type="number" id="entrada-minutos" placeholder=" " min="0" max="59"><label for="entrada-minutos">Minutos:</label></div>
+                <div class="input-wrapper"><input type="number" id="entrada-segundos" placeholder=" " min="0" max="59"><label for="entrada-segundos">Segundos:</label></div>
+
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+        
+    </body>
+</html>
