@@ -1,0 +1,120 @@
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    color: #34495e;
+    transition: all 0.5s ease-in-out;
+
+}
+
+h1{
+
+    color: #2c3e50;
+    text-align: center;
+    font-size: 24px;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.input-wrapper{
+
+    margin-bottom: 20px;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+
+}
+
+input[type="text"]{
+
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.3s ease;
+    color: #34495e;
+
+}
+
+input[type="text"]:focus{
+    
+    outline: none;
+    border-color: #3873ad;
+    color: #3873ad;
+
+}
+
+label{
+    
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 16px;
+    color: #34495e;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+    background: #fff;
+    padding: 0 5px;
+    pointer-events: none;
+
+}
+
+input[type="text"]:focus + label,
+input[type="text"]:not(:placeholder-shown) + label:focus {
+
+    transform: translateY(-20px);
+    font-size: 12px;
+    color: #3873ad;
+    
+}
+
+table{
+
+    width:100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    transition: all 0.5s ease-in-out;
+
+}
+
+th, td{
+
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+
+}
+
+th{
+
+    background-color: #fff;
+
+}
+
+.aprovado{
+
+    color: green;
+
+}
+
+.reprovado{
+
+    color: red;
+
+}
+
+.exame{
+
+    color: orange;
+
+}
+
+.icon{
+
+    font-size: 1.5em;
+    vertical-align: middle;
+
+}

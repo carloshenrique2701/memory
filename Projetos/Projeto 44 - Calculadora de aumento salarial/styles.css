@@ -79,7 +79,7 @@ label {
 }
 
 input[type="number"]:focus + label,
-input[type="number"]:not(:placeholder-shown) + label {
+input[type="number"]:not(:placeholder-shown) + label:focus  {
 
     transform: translateY(-20px);
     font-size: 12px;

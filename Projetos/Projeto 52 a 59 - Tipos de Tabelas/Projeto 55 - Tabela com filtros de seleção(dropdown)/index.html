@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela com filtros de Seleção</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <h1>Tabela com Filtros de Seleção</h1>
+
+    <button onclick="exportarParaExcel()">Exportar para Exel</button>
+    
+    <div class="info">
+
+        <p>Total de linha: <span id="contadorLinhas">0</span></p>
+
+        <p>Somatório de Salários <span id="somaSalario">R$ 0,00</span></p>
+
+    </div>
+
+    <table id="tabelaFuncionarios">
+
+        <tread>
+            <tr>
+                <th>
+
+                    Nome:
+                    <select id="filtroNome" onclick="filtrarTabela()">
+
+                        <option value="">Todos</option>
+
+                    </select>
+
+                </th>
+            
+                <th>
+
+                    Departamento:
+                    <select id="filtroDepartamento" onchange="filtrarTabela()">
+
+                        <option value="">Todos</option>
+
+                    </select>
+
+                </th>
+
+                <th>
+
+                    Cargo:
+                    <select id="filtroCargo" onchange="filtrarTabela()">
+
+                        <option value="">Todos</option>
+
+                    </select>
+
+                </th>
+
+                <th>
+
+                    Salario:
+                    <select id="filtroSalario" onchange="filtrarTabela()">
+
+                        <option value="">Todos</option>
+
+                    </select>
+
+                </th>
+
+                <th>
+
+                    Tempo:
+                    <select id="filtroTempo" onchange="filtrarTabela()">
+
+                        <option value="">Todos</option>
+
+                    </select>
+
+                </th>
+            </tr>
+        </tread>
+
+        <tbody id="corpoTabela">
+
+
+
+        </tbody>
+
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

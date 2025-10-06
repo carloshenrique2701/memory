@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tabela de funcionários</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <h1>Tabela de Funcionários</h1>
+
+        <button onclick="exportarParaExel()">Exportar para Exel</button>
+
+        <table id="tabelaFuncionarios">
+            <thead>
+                <tr>
+                    <th>Nome
+                        <input type="test" oninput="filtrarTabela()" id="filtroNome" placeholder="Filtrar por Nome"></input>
+                    </th>
+                    <th>Departamento
+                        <input type="test" oninput="filtrarTabela()" id="filtroDepartamento" placeholder="Filtrar por Departamento"></input>
+                    </th>
+                    <th>Cargo
+                        <input type="test" oninput="filtrarTabela()" id="filtroCargo" placeholder="Filtrar por Cargo"></input>
+                    </th>
+                    <th>Salario
+                        <input type="test" oninput="filtrarTabela()" id="filtroSalario" placeholder="Filtrar por Salario"></input>
+                    </th>
+                    <th>Tempo de Empresa (anos)
+                        <input type="test" oninput="filtrarTabela()" id="filtroTempo" placeholder="Filtrar por Tempo"></input>
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody id="corpoTabela"></tbody>
+
+        </table>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+        <script src="script.js"></script>
+        
+    </body>
+</html>
