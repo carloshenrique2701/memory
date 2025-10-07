@@ -1,0 +1,155 @@
+*{
+
+    transition: all 0.4s ease-in-out;
+
+}
+
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(45deg, #4a0eff, #220eff, #0e87ff, #0effe3, #0eff9b);
+    height: 100vh;
+    background-size: 200% 200%;
+    animation: gradientShift 40s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+
+}
+
+@keyframes gradientShift {
+
+    0%{
+
+        background-position: 0% 5%;
+
+    }     25%{
+
+        background-position: 5% 100%;
+
+    }    50%{
+
+        background-position: 100% 5%;
+
+    }    75%{
+
+        background-position: 5% 0%;
+
+    }    100%{
+
+        background-position: 0% 5%;
+
+    }
+
+}
+
+.container{
+
+    background-color: #efeeee;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+    border-radius: 8px;
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+h1{
+
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #000;
+
+}
+
+.conteudo{
+
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+#treeContainer{
+
+    width: 45%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #dedcdc;
+    padding: 10px;
+    overflow-y: auto;
+
+}
+
+.detalhes{
+
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #dedcdc;
+    padding: 10px;
+
+}
+
+h2{
+
+    margin-top: 0;
+
+}
+
+.detalhes .input-wrapper{
+
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+
+}
+
+.detalhes .input-wrapper input{
+
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #b4b2b2;
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 16px;
+    outline: none;
+    color: #000;
+
+}
+
+.detalhes .input-wrapper input:focus{
+
+    border-color: #0e87ff;
+
+}
+
+.detalhes .input-wrapper label{
+
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;   
+    transition: all 0.3s ease-in-out;
+    background-color: #dedcdc; 
+    padding: 0 5px;
+
+}
+
+.detalhes .input-wrapper input:focus + label,
+.detalhes .input-wrapper input:not(:placeholder-shown) + label{
+
+    transform: translateY(-30px);
+    font-size: 12px;
+    color: #0e87ff;
+
+}
+

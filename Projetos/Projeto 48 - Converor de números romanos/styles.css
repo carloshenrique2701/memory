@@ -4,7 +4,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-        animation: gradientShift 12s ease infinite;
+    animation: gradientShift 12s ease infinite;
     background: linear-gradient(45deg, #856470, #515d6f, #aab6a3);
     background-size: 300% 300%;
     display: flex;
@@ -87,7 +87,7 @@ label{
 }
 
 input:focus + label,
-input:not(:placeholder-shown) + label{
+input:not(:placeholder-shown) + label:focus{
 
     transform: translateY(-30px);
     font-size: 12px;

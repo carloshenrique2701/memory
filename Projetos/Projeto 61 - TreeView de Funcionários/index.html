@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TreeView de Funcionários</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>TreeView de Funcionários</h1>
+
+        <div class="conteudo">
+
+            <div id="treeContainer"></div>
+
+            <div class="detalhes">
+
+                <h2>Detalhes do funcionário</h2>
+
+                <div class="input-wrapper">
+
+                    <input type="text" id="departamento" readonly placeholder=" ">
+                    <label for="departamento">Departamento</label>
+
+                </div>
+
+                <div class="input-wrapper">
+
+                    <input type="text" id="cargo" readonly placeholder=" ">
+                    <label for="cargo">Cargo</label>
+
+                </div>
+
+                <div class="input-wrapper">
+
+                    <input type="text" id="nome" readonly placeholder=" ">
+                    <label for="nome">Nome</label>
+
+                </div>
+
+                <div class="input-wrapper">
+
+                    <input type="text" id="salario" readonly placeholder=" ">
+                    <label for="salario">Salário</label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Esta tag <script> inclui a biblioteca jQuery na 
+                    versão 3.5.1 através de um CDN (Content 
+                    Delivery Network).
+        jQuery é uma biblioteca JavaScript rápida e concisa que 
+                    simplifica o HTML document traversing (navegação 
+                    pelo documento), 
+        event handling (manipulação de eventos), animating (animações), 
+                    e Ajax interactions (interações Ajax) para 
+                    desenvolvimento web rápido.
+        É amplamente utilizada para facilitar a manipulação e 
+                    interação com os elementos do DOM, eventos, 
+                    animações e para o desenvolvimento de AJAX de 
+                    forma mais simples e compatível entre navegadores. -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
+    <!-- Esta tag <script> carrega a biblioteca jsTree da 
+                    versão 3.3.12. jsTree é uma biblioteca que 
+                    permite criar árvores de visualização interativas,
+                    como menus ou estruturas hierárquicas visualmente ricas.
+        É comumente usada para apresentar uma visão estruturada de 
+                    diretórios, estruturas organizacionais, ou qualquer 
+                    outro tipo de hierarquia de dados dentro de 
+                    uma interface web. 
+        Neste caso, está sendo usada para exibir a estrutura 
+                    hierárquica dos funcionários, permitindo 
+                    interatividade como seleção e expansão dos 
+                    nós da árvore. -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <!-- Esta tag <script> adiciona a biblioteca SheetJS (xlsx) 
+                    na versão 0.16.9 ao documento.
+        SheetJS é uma poderosa biblioteca que permite manipular 
+                    arquivos Excel (e outros formatos de planilhas) 
+                    diretamente no navegador.
+        Pode ser usada para ler dados de arquivos Excel, o que é 
+                    particularmente útil para carregar e exibir 
+                    dados sem a necessidade de um servidor backend 
+                    para processamento.
+        Aqui, ela é utilizada para ler dados de um arquivo Excel e 
+                    usá-los para popular a TreeView e os campos 
+                    detalhados de cada funcionário. -->
+    
+</body>
+</html>
