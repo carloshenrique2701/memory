@@ -1,0 +1,188 @@
+*{
+
+    transition: all 0.1s ease-in-out infinite;
+
+}
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    animation: gradientShift 10s ease infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+@keyframes gradientShift {
+
+    0% {
+        background-color: #2e7284;
+    }
+    25% {
+        background-color: #348ca4;
+    }
+    50% {
+        background-color: #4bdbe5;
+    }
+    75% {
+        background-color: #348ca4;
+    }
+    100% {
+        background-color: #2e7284;
+    }
+    
+}
+
+.container{
+
+    background-color: black;
+    width: 90%;
+    max-width: 1300px;
+    min-height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgb(255, 255, 255);
+    text-align: center;
+    padding: 15px;
+
+}
+
+.input-wrapper{
+
+    margin: 20px 0;
+    position: relative;
+    display: flex;
+
+}
+
+input{
+
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    color: #ffffff;
+
+}
+
+input:focus{
+
+    border-color: #2e7284;
+    box-shadow: 0 0  5px rgb(80, 200, 244);
+    outline: none;
+
+}
+
+label{
+
+    position: absolute;
+    width: 120px;
+    top: 11px;
+    left: 1%;
+    color: #7c7c7ca4;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+    padding: 0 5px;
+    font-size: 12px;
+
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label{
+
+    transform: translateY(-150%);
+    font-size: 11px;
+    color: #2e7284;
+
+}
+
+button{
+
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #348ca4;
+    box-shadow: 0 0 10px #3da3bf;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, scale 0.1s ease-in-out;
+    cursor: pointer;
+
+}
+
+button:hover{
+
+    background-color: #2e7284;
+    box-shadow: 0 0 10px #2e7284;
+
+}
+
+button:active{
+
+    scale: 0.97;
+
+}
+
+.turmas{
+
+    width: 100%;
+    justify-content: space-between;
+    font-size: 16px;
+    display: flex;
+
+}
+
+.turmas a{
+
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+
+}
+
+.turmas a:hover{
+
+    color: #2e7284;
+    text-shadow: 0 0 3px #2e7284;
+
+}
+
+.link-turma.active{
+
+    color: #2e7284;
+    text-shadow: 0 0 10px #2e7284;
+
+}
+
+
+table{
+
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+}
+
+th, td{
+
+    border: 1px solid #7c7c7ca4;
+
+}
+
+th{
+
+    background-color: #484848a4;
+
+}
+
+td{
+
+    background-color: #6e6e6e;
+
+}
