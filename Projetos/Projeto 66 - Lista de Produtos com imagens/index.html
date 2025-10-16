@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Produtos</title>
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+    <body>
+
+        <h1>Lista de Produtos</h1>
+
+        <div class="total-vendas" id="total-vendas">Total de Vendas: R$ 0,00</div>
+
+        <div class="conteudo">
+            <div class="lista-produtos">
+
+                <select id="filtro-vendedor">
+                    <option value="">Total de Vendedores</option>
+                </select>
+
+                <div class="input-wrapper">
+
+                    <input type="text" id="filtro-produto" placeholder="">
+                    <label for="filtro-produto">Filtrar por Produto</label>
+
+                </div>
+
+                <ul id="lista-produtos">
+
+                    <!--Será colocado com o js-->
+
+                </ul>
+
+                <button id="mostrar-todos">Mostrar todos os produtos</button>
+
+            </div>
+
+            <div class="detalhes-produto" id="detalhes-produto">
+
+                <!--Será colocado com o js-->
+
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+        <script src="script.js"></script>
+        
+    </body>
+</html>

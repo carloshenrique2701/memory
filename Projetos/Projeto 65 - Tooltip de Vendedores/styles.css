@@ -1,0 +1,161 @@
+*{
+
+    transition: all 0.3s ease-in-out;
+
+}
+
+body{
+
+    background-color: #f4f4f4;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+h1{
+
+    text-align: center;
+
+}
+
+.filtros{
+
+    width: 50%;
+    max-width: 650px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.input-wrapper{
+
+    margin: 20px 0;
+    position:relative;
+    display: flex;
+
+}
+
+input{
+
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #540000;
+    padding: 10px;
+    border-radius: 8px;
+    color: #000;
+    box-shadow: 0 0 5px rgb(126, 0, 0);
+
+}
+
+input:focus{
+
+    border-color: #350000;
+    box-shadow: 0 0 10px rgb(54, 0, 0);
+    outline: none;
+
+}
+
+label{
+
+    position: absolute;
+    width: 127px;
+    top: 10px;
+    left: 5%;
+    color: #7c7c7ca4;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    background-color: #f4f4f4;
+    padding: 0 5px;
+    font-size: 12px;
+    border-radius: 4px;
+
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label{
+
+    width: 110px;
+    transform: translateY(-140%);
+    font-size: 10px;
+    color: #350000;
+
+}
+
+table{
+
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+th, td{
+
+    border: 1px solid #c0c0c0;
+    padding: 8px;
+    text-align: center;
+
+}
+
+th{
+
+    background-color: #ece8e8;
+
+}
+
+th:hover{
+
+    cursor: pointer;
+    background-color: #d0cece;
+
+}
+
+tr:hover{
+
+    background-color: #dedada;
+
+}
+
+.tooltip{
+
+    position: absolute;
+    display: none;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 420px;
+    border-radius: 6px;
+
+}
+
+.tooltip img{
+
+    display: block;
+    margin: 0 auto;
+
+}
+
+.tooltip .produto-imagem{
+
+    width: 200px;
+    height: 200px;    
+
+}
+
+.tooltip .produto-nome{
+
+    text-align: center;
+    font-size: 10px;
+    margin-top: 10px;
+
+}
+
+.tooltip .total{
+
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+    font-weight: bold;
+
+}

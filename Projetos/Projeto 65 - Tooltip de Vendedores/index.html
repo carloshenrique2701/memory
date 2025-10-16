@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projeto Vendedores</title>
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+    <body>
+
+        <h1>Dados dos Vendedores</h1>
+
+        <div class="filtros">
+
+            <div class="input-wrapper">
+
+                <input type="text" id="filtro-vendedor" placeholder=" ">
+                <label for="filtro-vendedor">Filtrar por Vendedor...</label>
+
+            </div>
+
+            <div class="input-wrapper">
+
+                <input type="text" id="filtro-produto" placeholder=" ">
+                <label for="filtro-produto">Filtrar por Produto...</label>
+
+            </div>
+
+            <div class="input-wrapper">
+
+                <input type="text" id="filtro-preco" placeholder=" ">
+                <label for="filtro-preco">Filtrar por Preço...</label>
+
+            </div>
+
+        </div>
+
+        <table id="tabela-vendedores">
+
+            <thead>
+
+                <tr>
+
+                    <th>Imagem</th>
+                    <th>Vendedor</th>
+                    <th>Produto</th>
+                    <th>Total</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                
+
+            </tbody>
+
+
+        <div id="tooltip" class="tooltip"></div>
+
+        </table>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+        <script src="script.js"></script>
+        
+    </body>
+</html>
