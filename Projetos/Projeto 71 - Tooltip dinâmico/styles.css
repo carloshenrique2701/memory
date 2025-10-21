@@ -1,0 +1,74 @@
+*{
+
+    transition: all 0.4s ease-in-out;
+
+}
+
+body{
+
+    background-color: aqua;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+h1{
+
+    margin: 0;
+    text-align: center;
+    background-color: rgb(32, 201, 201);
+    margin-bottom: 40px;
+    padding: 20px;
+
+}
+
+table{
+
+    border-collapse: collapse;
+    width: 95%;
+    margin: 0 auto;
+
+}
+
+th, td{
+
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid rgba(189, 189, 189, 0.933);
+
+}
+
+.tooltip{
+
+    background-color: rgba(0, 0, 0, 0.617);
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(36, 230, 230);
+    color: #fff;
+    display: none;
+    width: 350px;
+    height: auto;
+    position: absolute;
+
+}
+
+.tooltip button{
+
+    background-color: rgb(32, 201, 201);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(189, 189, 189, 0.933);
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+}
+
+.tooltip button:hover{
+
+    background-color: rgb(36, 230, 230);
+    box-shadow: 0 0 10px rgba(189, 189, 189, 0.933);
+
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tabela de Vendas com Gráficos no Tooltip</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <h1>Tabela de Vendas com Gráficos no Tooltip</h1>
+
+        <table id="tabela-produtos">
+
+            <thead>
+
+                <tr>
+
+                    <th>Produto</th>
+                    <th>Total de Vendas</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody></tbody>
+
+        </table>
+        
+        <div class="tooltip" id="tooltip">
+
+            <canvas id="grafico-vendas" width="300" height="150"></canvas>
+
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="script.js"></script>
+
+    </body>
+</html>

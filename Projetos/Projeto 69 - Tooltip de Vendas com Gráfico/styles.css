@@ -1,0 +1,97 @@
+*{
+
+    transition: all 0.4s ease-in-out;
+
+}
+
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+
+}
+
+h1{
+
+    margin: 0;
+    width: 100%;
+    background-color: mediumaquamarine;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+table{
+
+    width: 95%;
+    margin: 0 auto;
+    border-collapse: collapse;
+
+}
+
+th, td{
+
+    border: 1px solid #000000;
+    text-align: left;
+    padding: 7px;
+
+}
+
+th{
+
+    background-color: mediumaquamarine;
+
+}
+
+td{
+
+    background-color: #d5d5d5d5;
+
+}
+
+.tooltip{
+
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 350px;
+    color: #000;
+    font-size: 14px;
+
+}
+
+canvas{
+
+    display: block;
+
+}
+
+.tooltip p {
+
+    margin: 5px 0;
+    line-height: 1.4;
+    font-size: 14px;
+
+}
+
+.tooltip strong{
+
+    color: #ffd700;
+
+}
+
+.tooltip p:first-child {
+
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #2f13ae;
+    padding-bottom: 5px;
+
+}

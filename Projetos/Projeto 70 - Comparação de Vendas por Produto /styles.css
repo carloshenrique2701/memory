@@ -1,0 +1,58 @@
+*{
+
+    transition: all 0.3s ease-in-out;
+
+}
+body {
+
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    height: 100vh;
+    animation: gradientShift 15s ease infinite;
+    padding: 0;
+
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+
+}
+
+canvas{
+
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+
+}
+
+.tooltip{
+
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #ecf0f1;
+    font-size: 14px;
+
+}

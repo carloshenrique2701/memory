@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Produtos</title>
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1>Tabela de Produtos</h1>
+
+            <button id="filtrar-vencidos">Filtrar Produtos Vencidos</button>
+            <button id="limpar-filtro">Limpar Filtro</button>
+            <button id="exportar-excel">Exportar Para Excel</button>
+
+            <table id="tabela-produtos">
+
+                <thead>
+                    <tr>
+                        
+                        <th>Produto</th>
+                        <th>Data de Pagamento</th>
+                        <th>Valor</th>
+
+                    </tr>
+                </thead>
+                <tbody></tbody>
+
+            </table>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="script.js"></script>
+        
+    </body>
+</html>
