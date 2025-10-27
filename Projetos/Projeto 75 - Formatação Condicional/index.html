@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formatação Condicional</title>
+        <link rel="stylesheet" href="styles.css">
+        
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1>Formatação Condicionar em Tabela</h1>
+
+            <div id="inputFileContainer">
+
+                <input type="file" id="carregarArquivo" accept=".xlsx, .xls" style="display: none;">
+                <label for="carregarArquivo" id="labelCarregarArquivo" class="botaoArquivo">Escolher Arquivo</label>
+                <span id="nomeArquivo">Nenhum arquivo escolhido</span>
+
+            </div>
+
+            <div id="menu">
+
+                <label for="selecaoColuna">Selecione a Coluna</label>
+                <select id="selecaoColuna"></select>
+
+                <label for="condicao">Condição:</label>
+                <select id="condicao">
+
+                    <option value="maiorQue">Maior que</option>
+
+                    <option value="menorQue">Menor que</option>
+
+                    <option value="igualA">Iqual a</option>
+
+                    <option value="entre">Entre</option>
+
+                    <option value="contemTexto">Texto que Contém</option>
+
+                    <option value="dataOcorre">Uma Data que ocorre</option>
+
+                    <option value="valoresDuplicados">Valores Duplicados</option>
+
+                </select>
+
+                <input type="text" id="valor1" placeholder="">
+                <label for="valor1">Texto ou Número</label>
+
+                <input type="text" id="valor2" placeholder="" style="display: none;">
+                <label for="valor2">Número</label>
+
+                
+
+                <label for="mostrarSomenteFiltrados" id="labelCheckbox">
+
+                    <input type="checkbox" id="mostrarSomenteFiltrados">Mostrar Somente Filtrados
+
+                </label>
+
+                <button id="aplicarFormatacao">Aplicar Formatação</button>
+                
+                <button id="exportarDados">Exportar Dados Filtrados</button>
+
+            </div>
+
+            <div id="tabelaContainer">
+
+
+
+            </div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="script.js"></script>
+        
+    </body>
+</html>

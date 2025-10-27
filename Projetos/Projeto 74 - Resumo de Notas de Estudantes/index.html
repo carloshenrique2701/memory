@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resumo de Notas dos Alunos</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1>Resumo de Notas dos Alunos</h1>
+
+            <table id="tabela-central">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Turma</th>
+                        <th>Média das Notas</th>
+                        <th>Total de Faltas</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div id="serie-tooltip" class="tooltip">
+
+            <h2 id="serie"></h2>
+
+            <div class="input-wrapper">
+
+                <input type="text" id="filtro" placeholder="">
+                <label for="filtro">Filtrar alunos...</label>
+
+            </div>
+
+            <table id="tabela-serie">
+                <thead>
+
+                    <tr>
+
+                        <th>Nome</th>
+                        <th>Média</th>
+                        <th>Situação</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody></tbody>
+            </table>
+
+        </div>
+
+        <div id="detalhes-tooltip" class="tooltip">
+
+            
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="script.js"></script>
+        
+    </body>
+</html>
