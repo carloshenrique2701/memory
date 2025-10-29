@@ -1,0 +1,212 @@
+*{
+
+    transition: all 0.2s ease-in-out;
+
+}
+
+body{
+
+    background-color: #e9e9e9;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    padding: 0;
+    text-align: center;
+
+}
+
+h1{
+
+    margin-bottom: 20px;
+
+}
+
+.container{
+
+    margin: 0 auto;
+    display: flex;
+    width: 90%;
+    height: 80vh;
+    flex-direction: column;
+
+}
+
+.filtros{
+
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 20px;
+
+}
+
+.input-wrapper{
+
+    width: 20%;
+    position: relative;
+
+}
+
+input{
+
+    width: 90%;
+    padding: 5px;
+    border: 1px solid #777;
+    border-radius: 8px;
+    background-color: transparent;
+    outline: none;
+    box-shadow: 6px 5px 2px rgba(0, 0, 0, 0.4);
+
+}
+
+input:focus{
+
+    border-color: #333;
+    box-shadow: 6px 5px 2px rgba(0, 0, 0, 0.6);
+
+}
+
+label{
+
+    position: absolute;
+    left: 7%;
+    top: 15%;
+    font-size: 14px;
+    color: #777;
+    pointer-events: none;
+    background-color: #e9e9e9;
+
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label{
+
+    transform: translateY(-80%);
+    color: #333;
+    font-size: 12px;
+
+}
+
+button{
+
+    padding: 8px;
+    border: none;
+    background-color: #555;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 6px 5px 2px rgba(0, 0, 0, 0.4);
+
+}
+
+button:hover{
+
+    background-color: #333;
+    box-shadow: 8px 5px 2px rgba(0, 0, 0, 0.6);
+
+}
+
+.tabela-container{
+
+    margin: 20px auto;
+    width: 700px;
+    height: 600px;
+    overflow: auto;
+
+}
+#tabela-estudantes {
+
+    width: 1000px;
+    border-collapse: collapse;
+    margin: 0 auto;
+
+}
+
+#tabela-estudantes th, #tabela-estudantes td {
+
+    border: 1px solid rgb(0, 0, 0);
+    padding: 8px;
+    text-align: center;
+    white-space: nowrap;
+
+}
+
+#tabela-estudantes thead th {
+
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background-color: #d5d5d5;
+
+}
+
+#tabela-estudantes th.celula-fixa:nth-child(1) {
+
+    position: sticky;
+    left: 0;
+    z-index: 50;
+    border-right: 2px solid #000;
+    background-color: #d5d5d5; 
+
+}
+
+#tabela-estudantes th.celula-fixa:nth-child(2) {
+
+    position: sticky;
+    z-index: 50;
+    left: 140px; 
+    border-right: 2px solid #000;
+    background-color: #d5d5d5; 
+
+}
+
+#tabela-estudantes td.celula-fixa:nth-child(1) {
+
+    position: sticky;
+    left: 0;
+    z-index: 30;
+    border-right: 1px solid #000;
+    background-color: inherit; /* Herda o background da linha */
+    min-width:  130px;
+
+}
+
+#tabela-estudantes td.celula-fixa:nth-child(2) {
+
+    position: sticky;
+    z-index: 30;
+    left: 140px; 
+    border-right: 1px solid #000;
+    background-color: inherit; /* Herda o background da linha */
+
+}
+
+#tabela-estudantes tbody tr {
+
+    background-color: #f8f8f8;
+    cursor: pointer;
+
+}
+
+#tabela-estudantes tbody tr:hover {
+    background-color: #e9e9e9;
+}
+
+/* Aumente a especificidade para garantir que funcione nas células fixas */
+#tabela-estudantes tbody tr:hover td.celula-fixa {
+
+    background-color: #e9e9e9; /* Mesma cor do hover */
+
+}
+
+.linha-destacada {
+
+    background-color: #add8e6 !important;
+
+}
+
+/* Específico para células fixas quando a linha está selecionada */
+.linha-destacada td.celula-fixa {
+
+    background-color: #add8e6 !important;
+
+}

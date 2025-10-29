@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tabela com agrupamento de Colunas</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <h1>Tabela com agrupamento de Colunas</h1>
+
+        <table id="tabela">
+
+            <thead>
+
+                <tr>
+
+                    <th>Nome</th>
+                    <th class="coluna-oculta">Idade</th>
+                    <th class="coluna-oculta">Cidade</th>
+                    <th class="coluna-oculta">Profissão</th>
+                    <th><span id="toggle" class="botao-toggle" onclick="alterarColunas()">+</span>Salário</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="corpo-tabela"></tbody>
+
+        </table>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="script.js"></script>
+        
+    </body>
+</html>

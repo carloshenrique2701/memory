@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Congelando duas colunas + filtros</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <h1>Congelando duas colunas + filtros</h1>
+
+        <div class="container">
+
+            <div class="filtros">
+
+                <div class="input-wrapper">
+
+                    <input type="text" id="filtrar-nome" placeholder="">
+                    <label for="filtrar-nome">Filtrar nome</label>
+    
+                </div>
+                <div class="input-wrapper">
+    
+                    <input type="text" id="filtrar-turma" placeholder="">
+                    <label for="filtrar-turma">Filtrar turma</label>
+    
+                </div>
+                <div class="input-wrapper">
+    
+                    <input type="text" id="filtrar-nota1" placeholder="">
+                    <label for="filtrar-nota1">Filtrar nota 1</label>
+    
+                </div>
+                <div class="input-wrapper">
+    
+                    <input type="text" id="filtrar-nota2" placeholder="">
+                    <label for="filtrar-nota2">Filtrar nota 2</label>
+    
+                </div>
+                <div class="input-wrapper">
+    
+                    <input type="text" id="filtrar-nota3" placeholder="">
+                    <label for="filtrar-nota3">Filtrar nota 3</label>
+    
+                </div>
+
+            </div>
+            <div class="filtros">
+
+                <div class="input-wrapper">
+
+                    <input type="text" id="filtrar-nota4" placeholder="">
+                    <label for="filtrar-nota4">Filtrar nota 4</label>
+    
+                </div>
+                <div class="input-wrapper">
+    
+                    <input type="text" id="filtrar-nota5" placeholder="">
+                    <label for="filtrar-nota5">Filtrar nota 5</label>
+    
+                </div>
+                <div class="input-wrapper">
+    
+                    <input type="text" id="filtrar-nota6" placeholder="">
+                    <label for="filtrar-nota6">Filtrar nota 6</label>
+    
+                </div>
+                <div class="input-wrapper">
+    
+                    <input type="text" id="filtrar-nota7" placeholder="">
+                    <label for="filtrar-nota7">Filtrar nota 7</label>
+    
+                </div>
+                <div class="input-wrapper">
+    
+                    <input type="text" id="filtrar-nota8" placeholder="">
+                    <label for="filtrar-nota8">Filtrar nota 8</label>
+    
+                </div>
+
+            </div>
+            <div class="filtros">
+
+                <div class="input-wrapper">
+
+                    <input type="text" id="filtrar-media" placeholder="">
+                    <label for="filtrar-media">Filtrar média</label>
+    
+                </div>
+                <div class="input-wrapper">
+    
+                    <input type="text" id="filtrar-faltas" placeholder="">
+                    <label for="filtrar-faltas">Filtrar faltas</label>
+    
+                </div>
+                <div class="input-wrapper">
+    
+                    <input type="text" id="filtrar-status" placeholder="">
+                    <label for="filtrar-status">Filtrar status</label>
+    
+                </div>
+
+                <button id="exportar-tabela">Exportar para Excel</button>
+
+            </div>
+
+            <div class="tabela-container">
+
+                <table id="tabela-estudantes">
+
+                    <thead>
+    
+                        <tr>
+    
+                            <th class="celula-fixa">Nome</th>
+                            <th class="celula-fixa">Turma</th>
+                            <th>Nota 1</th>
+                            <th>Nota 2</th>
+                            <th>Nota 3</th>
+                            <th>Nota 4</th>
+                            <th>Nota 5</th>
+                            <th>Nota 6</th>
+                            <th>Nota 7</th>
+                            <th>Nota 8</th>
+                            <th>Média</th>
+                            <th>Faltas</th>
+                            <th>Status</th>
+    
+                        </tr>
+    
+                    </thead>
+    
+                    <tbody>
+    
+                        
+    
+                    </tbody>
+    
+                </table>
+
+            </div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="script.js"></script>
+        
+    </body>
+</html>
