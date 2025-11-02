@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Produtos Vendidos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Quantidade de Produtos Vendidos no Primeiro Bimestre</h1>
+
+    <table id="tabela">
+
+        <thead>
+
+            <th>Produtos</th>
+            <th class="coluna-oculta1" id="mes1">Semana 1 (Mês 1)</th>
+            <th class="coluna-oculta1" id="mes1">Semana 2 (Mês 1)</th>
+            <th class="coluna-oculta1" id="mes1">Semana 3 (Mês 1)</th>
+            <th class="coluna-oculta1" id="mes1">Semana 4 (Mês 1)</th>
+            <th><span class="botao-toggle" id="botao-toggle1" onclick="trocarColuna('mes1')">+</span> Mês 1</th>
+            <th class="coluna-oculta2" id="mes2">Semana 1 (Mês 2)</th>
+            <th class="coluna-oculta2" id="mes2">Semana 2 (Mês 2)</th>
+            <th class="coluna-oculta2" id="mes2">Semana 3 (Mês 2)</th>
+            <th class="coluna-oculta2" id="mes2">Semana 4 (Mês 2)</th>
+            <th><span class="botao-toggle" id="botao-toggle2" onclick="trocarColuna('mes2')">+</span> Mês 2</th>
+
+        </thead>
+
+        <tbody>
+
+
+
+        </tbody>
+
+    </table>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
