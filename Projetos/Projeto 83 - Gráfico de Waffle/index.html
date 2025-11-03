@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gráfico de Waffle</title>
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1>Gráfico de Waffle</h1>
+
+            <div class="filtro">
+
+                <label for="selecionarProduto">Filtrar por Produto</label>
+                <select id="selecionarProduto" onchange="filtrarPorProduto()">
+
+                    <option value="Produto A">Produto A</option>
+                    <option value="Produto B">Produto B</option>
+                    <option value="Produto C">Produto C</option>
+                    <option value="Produto D">Produto D</option>
+
+                </select>
+
+            </div>
+
+            <div class="grafico-waffle">
+
+                <div class="percentual">0%</div>
+                <div class="grade"></div>
+
+            </div>
+            <h2>Vendas de Produto</h2>
+
+            <table id="tabela-vendas">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Produto</th>
+                        <th>Quantidade de Vendas</th>
+                        <th>Meta</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Produto A</td>
+                        <td>25</td>
+                        <td>100</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Produto B</td>
+                        <td>45</td>
+                        <td>100</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Produto C</td>
+                        <td>78</td>
+                        <td>100</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Produto D</td>
+                        <td>100</td>
+                        <td>100</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <script src="script.js"></script>
+        
+    </body>
+</html>
