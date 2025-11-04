@@ -1,0 +1,144 @@
+*{
+
+    transition: all 0.2s ease-in-out;
+
+}
+
+body{
+
+    background-color: #e9e9e9;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.container{
+
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+
+}
+
+.container h1{
+
+    margin-bottom: 20px;
+    color: #333;
+
+}
+
+.grafico-info-container{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.grafico-container{
+
+    margin: 20px;
+
+}
+
+.info{
+
+    margin-left: 20px;
+    text-align: left;
+
+}
+
+.info h3{
+
+    margin-bottom: 10px;
+    color: #333;
+
+}
+
+.info ul{
+
+    list-style: none;
+    padding: 0;
+
+}
+
+.info li{
+
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+
+}
+
+table{
+
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+
+}
+
+th, td{
+
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+
+}
+
+th{
+
+    background-color: #ccc;
+    text-transform: uppercase;
+
+}
+
+tr:nth-child(even){
+
+    background-color: #f4f4f4;
+
+}
+
+tr:hover{
+
+    background-color: #e9e9e9;
+
+}
+
+.filtro{
+
+    margin-top: 20px;
+
+}
+
+.filtro label{
+
+    margin-right: 10px;
+    font-weight: bold;
+
+}
+
+.filtro select{
+
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+.filtro select:hover{
+
+    background-color: #f0f0f0;
+
+}
