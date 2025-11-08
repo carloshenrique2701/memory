@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gráfico de Semáforo com Excel</title>
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1>Gráfico de Semáforo com Excel</h1>
+
+            <div class="conteudo">
+
+                <div class="esquerda">
+
+                    <select id="seletorProduto"></select>
+
+                    <div id="graficoSemaforo">
+
+                        <div class="semaforo" id="semaforo">
+
+                            <div class="luz" id="vermelho"></div>
+                            <div class="luz" id="amarelo"></div>
+                            <div class="luz" id="verde"></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="indice">
+
+                        <p><span class="luz-vermelho"></span><strong>Vermelho:</strong>Vendas < 50% da meta.</p>
+                        <p><span class="luz-amarelo"></span><strong>Amarelo: </strong>Vendas entre 50% e 75% da meta.</p>
+                        <p><span class="luz-verde"></span><strong>Verde: </strong>Vendas >= 75% da meta.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="direita">
+
+
+                    <table id="tabelaProdutos">
+
+                        <thead>
+
+                            <th>Produto</th>
+                            <th>Vendas</th>
+                            <th>Meta</th>
+
+                        </thead>
+
+                        <tbody></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="script.js"></script>
+        
+    </body>
+</html>
