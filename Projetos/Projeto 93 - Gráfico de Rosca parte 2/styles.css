@@ -1,0 +1,115 @@
+*{
+
+    transition: all 0.2s ease-in-out;
+
+}
+
+body{
+
+    background-color: #e9e9e9;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 30px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container{
+
+    background-color: #fff;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+
+}
+
+h1, h4{
+
+    margin-bottom: 30px;
+
+}
+
+.grafico{
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.legenda{
+
+    text-align: left;
+
+}
+
+#graficoRosca{
+
+    max-width: 400px !important;
+    max-height: 400px !important;
+
+}
+
+ul{
+
+    list-style: none;
+    padding: 0;
+
+}
+
+.a{
+
+    background-color: #c62929;
+    width: 25px;
+    height: 10px;
+    position: relative;
+    right: 30px;
+    bottom: 15px;
+
+}
+.b{
+
+    background-color: #c67f29;
+    width: 25px;
+    height: 10px;
+    position: relative;
+    right: 30px;
+    bottom: 15px;
+
+}
+.c{
+
+    background-color: #94c629;
+    width: 25px;
+    height: 10px;
+    position: relative;
+    right: 30px;
+    bottom: 15px;
+
+}
+.d{
+
+    background-color: #29c633;
+    width: 25px;
+    height: 10px;
+    position: relative;
+    right: 30px;
+    bottom: 15px;
+
+}
+.e{
+
+    background-color: #29b9c6;
+    width: 25px;
+    height: 10px;
+    position: relative;
+    right: 30px;
+    bottom: 15px;
+
+}
