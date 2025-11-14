@@ -1,0 +1,84 @@
+*{
+
+    transition: all 0.2s ease-in-out;
+
+}
+
+#secoes-produtos .card{
+
+    margin-bottom: 20px;
+    padding: 20px;
+    cursor: pointer;
+
+}
+
+#secoes-produtos .card:hover{
+
+    scale: 1.1;
+
+}
+
+.bg-imagem-topo{
+
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    /*Garante que a imagem seja visível dentro do espaço definido sem distorção, ajustando a 
+    imagem dentro das dimensões sem recortá-la.*/
+    background: #fff;
+
+}
+
+.item-carrinho{
+
+    display: flex;
+    align-items: center;
+
+}
+
+.imagem-item-carrinho{
+
+    width: 50px;
+    height: 50;
+    object-fit: contain;
+    margin-right: 10px;
+
+}
+
+.detalhes-item-carrinho{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sidebar{
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 48px 0 0;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.355);
+    background-color: #000;
+
+}
+
+.sidebar .nav-link{
+
+    font-weight: 500;
+    color: #fff;
+    font-size: 18px;
+    width: 100%;
+    text-align: left;
+
+}
+
+.sidebar .nav-link:hover{
+
+    color: #050505;
+    background-color: rgb(182, 209, 123);
+    padding-left: 0;
+
+}
