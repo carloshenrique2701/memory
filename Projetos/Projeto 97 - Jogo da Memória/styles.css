@@ -1,0 +1,57 @@
+*{
+
+    transition: all 0.2s ease-in-out;
+
+}
+
+body{
+
+    background-color: #e9e9e9;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+}
+
+.tabuleiro{
+
+    display: grid;
+    grid-template-columns: repeat(5, 100px);/*5 colunas com 100px cada*/
+    grid-gap: 10px;
+
+}
+
+.carta{
+
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+.carta:hover{
+
+    scale: 1.1;
+
+}
+
+.carta img{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/*Garante que a imagem nao fique cortada ou distorcida*/
+
+}
