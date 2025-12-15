@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pedra, papel e tesoura</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1>Jogo de Pedra, Papel e Tesoura</h1>
+
+            <button id="regras-btn" class="regras-btn">Regras</button>
+
+            <div class="game">
+
+                <div class="opcoes">
+
+                    <img src="pedra.png" alt="Pedra" class="opcao" onclick="jogar('pedra')">
+                    <img src="papel.png" alt="Papel" class="opcao" onclick="jogar('papel')">
+                    <img src="tesoura.png" alt="Tesoura" class="opcao" onclick="jogar('tesoura')">
+
+                </div>
+
+                <div id="resultado-container" class="resultado-container">
+
+                    <div class="escolha escolha-jogador">
+
+                        <h2>Jogador</h2>
+
+                        <img src="" alt="" id="escolha-jogador-imagem" class="escolha-imagem">
+
+                        <p id="escolha-jogador-nome"></p>
+
+                    </div>
+
+                    <div class="escolha escolha-computador">
+
+                        <h2>Computador</h2>
+
+                        <img src="" alt="" id="escolha-computador-imagem" class="escolha-imagem">
+
+                        <p id="escolha-computador-nome"></p>
+
+                    </div>
+
+                </div>
+
+                <div id="resultado" class="resultado"></div>
+
+                <div id="pontuacao" class="pontuacao">
+
+                    Pontuação: Jogador: <span id="pontuacao-jogador">0</span> -
+                    Pontuação: Computador: <span id="pontuacao-computador">0</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="regras-modal" class="modal">
+
+            <div class="modal-content">
+
+                <span class="close-btn" id="close-btn">&times;</span>
+
+                <h2>Regras do Jogo</h2>
+    
+                <p>Pedra, papel e tesoura é um jogo simples de dois jogadores onde cada jogador escolhe uma das três
+                    opções ao mesmo tempo.
+                </p>
+    
+                <ul>
+                    <li>Pedra ganha de Tesoura</li>
+                    <li>Tesoura ganha de Papel</li>
+                    <li>Papel ganha de Pedra</li>
+                </ul>
+    
+                <p>Se ambos escolhem a mesma opção, o jogo resultaem empate.</p>
+
+            </div>
+
+        </div>
+        
+        <script src="script.js"></script>
+
+    </body>
+</html>

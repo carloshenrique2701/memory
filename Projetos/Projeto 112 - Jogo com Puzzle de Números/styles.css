@@ -1,0 +1,200 @@
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e9e9e9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    color: #333;
+
+}
+
+h1 {
+
+    margin-top: 20px;
+    font-size: 36px;
+
+}
+
+#interface {
+
+    margin: 20px 0;
+
+}
+
+.pontuaçao {
+
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #555;
+
+}
+
+#controles {
+
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    justify-content: space-between;
+
+}
+
+select {
+
+    width: 70%;
+    text-align: center;
+    padding: 5px;
+    background-color: transparent;
+    border: 1px solid #8b5a2b;
+    cursor: pointer;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+
+}
+select:hover {
+
+    background-color: #8b5a2b;
+    border-color: #fff;
+    color: #fff;
+    scale: 1.1;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+
+}
+
+label {
+
+    position: relative;
+    text-align: left;
+    right: 55px;
+
+}
+
+button {
+
+    background-color: transparent;
+    border: 2px solid #8b5a2b;
+    border-radius: 10px;
+    padding: 5px 20px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+
+}
+button:hover {
+
+    background-color: #8b5a2b;
+    border-color: #fff;
+    color: #fff;
+    scale: 1.1;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+
+}
+
+#containerPuzzle {
+
+    display: grid;
+    gap: 10px;
+    background-color: #8b5a2b;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.peca {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #ffdab9;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+
+}
+.peca:hover{
+
+    scale: 1.05;
+
+}
+
+
+.peca-vazia {
+
+    background-color: #8b5a2b;
+    cursor: default;
+
+}
+
+.modal {
+
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1.5s;
+
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.conteudo-modal {
+
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    position: relative;
+    animation: slideIn 1.5s;
+    width: 40%;
+
+}
+
+@keyframes slideIn {
+    
+    from {transform: translateY(-20px);}
+    to {transform: translateY(0);}
+
+}
+
+.fechar {
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.fechar:hover,
+.fechar:focus {
+
+    color: #000;
+    scale: 1.2;
+
+}
+
+p {
+
+    font-size: 20px;
+    color: #333;
+    
+}

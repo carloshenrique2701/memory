@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ptBR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jogo do TERMO</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div id="jogo">
+
+            <h1 id="titulo">TERMO</h1>
+
+            <div id="instrucoes">
+
+                <p>Descubra a palavra em 6 tentativas. Depois de cada tentativa, as peças mostram o quão
+                    perto você está da solução.
+                </p>
+
+            </div>
+
+            <div id="tabuleiro"></div>
+
+            <div id="teclado"></div>
+
+            <div id="controles">
+
+                <button id="apagar">Apagar</button>
+                <button id="enviar">Enviar</button>
+                <button id="ver-palavra">Ver Palavra</button>
+                <button id="dificuldade">Aulmentar Dificuldade</button>
+                <button id="regras">Regras</button>
+
+            </div>
+
+            <div id="mensagem" class="hidden">
+
+                <div id="modal">
+
+                    <p>Parabéns! Você acertou a palavra!</p>
+
+                    <button id="proxima-palavra">Próxima Palavra</button>
+                    
+                </div>
+
+            </div>
+
+            <div id="fim-jogo" class="hidden">
+
+                <div id="modal-fim">
+
+                    <p>Fim de Jogo! Você usou todas as suas tentativas.</p>
+
+                    <button id="tentar-novamente">Tentar Novamente</button>
+
+                </div>
+
+            </div>
+
+            <div id="modal-regras" class="hidden">
+
+                <div id="modal-conteudo">
+
+                    <h2>Regras do Jogo</h2>
+
+                    <p>Descubra a palavra certa em 6 tentativas. Depois de cada tentativa, as peças mostram o
+                         quão perto você está da solução:
+                    </p>
+
+                    <ul>
+                        <li><span class="correta exemplo">Verde</span>: Letra correta na posição correta.</li>
+                        <li><span class="incerta exemplo">Amarelo</span>: Letra correta na posição incerta.</li>
+                        <li><span class="errada exemplo">Preto</span>: Letra incorreta.</li>
+                    </ul>
+
+                    <button id="fechar-regras">Fechar</button>
+
+                </div>
+
+            </div>
+
+            <div id="pontuacao">
+
+                <p>Pontuação: <span id="pontos">0</span></p>
+
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+        
+    </body>
+</html>

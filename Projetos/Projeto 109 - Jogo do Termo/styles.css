@@ -1,0 +1,285 @@
+*{
+
+    transition: all 0.3s ease-in-out;
+    
+}
+
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #3a3a3c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 50px;
+    color: #fff;
+    overflow-y: auto;
+
+}
+
+#jogo {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #6a6a6d;
+    padding: 20px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 900px;
+    overflow-y: auto;
+    
+}
+
+#titulo {
+
+    margin-bottom: 20px;
+    font-size: 36px;
+
+}
+
+#instruções {
+
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+#tabuleiro {
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);/*Grade de 5 colunas cada uma ocupando um espço igual disponível*/
+    gap: 5px;
+    margin-bottom: 20px;
+
+}
+
+.letra {
+
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #818384;
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 5px;
+
+}
+
+.letra.correta {
+
+    background-color: #538d4e;
+
+}
+.letra.incerta {
+
+    background-color: #b59f3b;
+
+}
+.letra.errada {
+
+    background-color: #3a3a3c;
+
+}
+
+#teclado {
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+    margin-bottom: 20px;
+
+}
+
+.tecla {
+
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #818384;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #3a3a3c;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+
+}
+
+.tecla:hover {
+
+    scale: 1.1;
+    box-shadow:  2px 2px 2px rgba(0, 0, 0, 0.6);
+    background-color: #7d8282;
+
+}
+
+.tecla.correta {
+
+    background-color: #538d4e;
+
+}
+.tecla.incerta {
+
+    background-color: #b59f3b;
+
+}
+.tecla.errada {
+
+    background-color: #3a3a3c;
+
+}
+
+.tecla.errada:hover{
+
+    scale:unset;
+    cursor: not-allowed;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+
+}
+
+#controles {
+
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 700px;
+    margin-top: 20px;
+
+}
+
+button {
+
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid #3a3a3c;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 8px 5px 3px rgba(0, 0, 0, 0.2);
+
+}
+
+button:hover {
+
+    background-color: #5e5e60;
+    box-shadow: 9px 6px 4px rgba(0, 0, 0, 0.6);
+    scale: 1.1;
+
+}
+
+button:active {
+
+    background-color: #454544;
+
+}
+
+#mensagem, #fim-jogo, #modal-regras {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+#mensagem.hidden, #fim-jogo.hidden, #modal-regras.hidden {
+
+    display: none;
+
+}
+
+#modal, #modal-conteudo, #modal-fim {
+
+    background-color: #6a6a6d;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+#pontuacao {
+
+    margin-top: 20px;
+    font-size: 18px;
+
+}
+
+#modal-conteudo h2{
+
+    font-size: 24px;
+    margin-bottom: 20px;
+
+}
+
+#modal-conteudo p {
+
+    font-size: 16px;
+    margin-bottom: 20px;
+
+}
+
+#modal-conteudo ul {
+
+    list-style-type: none;
+    padding: 0;
+
+}
+
+#modal-conteudo ul li {
+
+    margin-bottom: 10px;
+    font-size: 16px;
+
+}
+
+#modal-conteudo ul li span {
+
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 5px;
+    font-weight: bold;
+
+}
+.exemplo{
+
+    color: white;
+
+}
+
+#modal-conteudo ul li .correta{
+
+    background-color: #538d4e;
+
+}
+#modal-conteudo ul li .incerta{
+
+    background-color: #b59f3b;
+    
+}
+#modal-conteudo ul li .errada{
+
+    background-color: #3a3a3c;
+    
+}

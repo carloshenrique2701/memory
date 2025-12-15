@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jogo de Anagrama</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1>Jogo de Anagrama</h1>
+
+            <p>Pontuação: <span id="pontuacao">0</span></p>
+
+            <h1 id="anagrama"></h1>
+
+            <div class="respostaJogador">
+
+                <p id="respostaJogador"></p>
+
+            </div>
+
+            <div class="teclado">
+
+                <div id="q-p"></div>
+                <div id="a-l"></div>
+                <div id="z-apagar"></div>
+
+            </div>
+
+            <div class="botoes">
+
+                <button id="verificar">Verificar</button>
+                <button id="dica-btn">Dica</button>
+
+            </div>
+
+            <div class="mensagem" id="mensagem">
+
+                <p>✅✅Muito Bem!!!✅✅</p>
+
+            </div>
+
+        </div>
+
+        <div class="modal" id="modal-dica">
+
+            <div class="modal-content">
+
+                <span id="fechar-modal">&times;</span>
+
+                <h1>Dica</h1>
+
+                <p id="dica"></p>
+
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+        
+    </body>
+</html>

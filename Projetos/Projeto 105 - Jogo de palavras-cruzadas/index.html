@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Palavras-Cruzadas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="container-jogo">
+
+        <div id="info-nivel">
+
+            <span id="moedas">💰 <span id="total-moedas">0</span></span>
+            <span id="nivel">Nível: <span id="nivel-atual">1</span></span>
+
+        </div>
+
+        <div>
+
+            <h1>Jogo de Palavras-Cruzadas</h1>
+
+        </div>
+
+        <div id="conteudo-jogo">
+
+
+            <div id="grade-palavras"></div>
+
+            <div id="circulo-letras">
+
+                <canvas id="linha-conexao"></canvas>
+
+            </div>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+        <button id="botao-dica">Dica</button>
+
+        <div id="modal-dica">
+
+            <div id="palavras-dica"></div>
+
+            <button id="fechar-dica">Fechar</button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

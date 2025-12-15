@@ -1,0 +1,208 @@
+* {
+
+    transition: all 0.3s ease-in-out;
+
+}
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e9e9e9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+}
+
+.container {
+
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+
+}
+
+h1{
+
+    color: #333;
+    
+}
+
+.pontuaçao{
+
+    font-size: 20px;
+    margin-bottom: 10px;
+
+}
+
+.forca-container {
+
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+}
+
+#forca {
+
+    position: relative;
+    width: 100%;
+    height: 250px;
+
+}
+
+.parte {
+
+    background-color: #000;
+    display: none;
+    position: absolute;
+
+}
+#corda {
+
+    width: 2px;
+    height: 40px;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);/*Corrije a posição da corda para que ela fique centralizada em relação a ela mesma*/
+    background-color: brown;
+
+}
+#cabeça {
+
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+#corpo {
+
+    width: 10px;
+    height: 60px;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+#braçoEsquerdo {
+
+    width: 10px;
+    height: 50px;
+    top: 50px;
+    left: calc(50% - 24px);
+    transform: rotate(-45deg);
+
+}
+#braçoDireito {
+
+    width: 10px;
+    height: 50px;
+    top: 50px;
+    left: calc(50% + 14px);
+    transform: rotate(45deg);
+
+}
+#pernaEsquerda {
+
+    width: 10px;
+    height: 50px;
+    top: 123px;
+    left: calc(50% - 21px);
+    transform: rotate(45deg);
+
+}
+#pernaDireita {
+
+    width: 10px;
+    height: 50px;
+    top: 123px;
+    left: calc(50% + 10px);
+    transform: rotate(-45deg);
+
+}
+
+#palavraSecreta {
+
+    font-size: 24px;
+    letter-spacing: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
+
+}
+
+#alfabeto button{
+
+    margin: 5px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+
+}
+
+#alfabeto button:hover {
+
+    scale: 1.1;
+    background-color: #026ee2;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+
+}
+
+#alfabeto button:disabled {
+
+    background-color: #ccc;
+    cursor: not-allowed;
+    scale: 1;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+
+}
+
+#dica {
+
+    margin-top: 20px;
+    font-size: 16px;
+
+}
+
+.btn-reiniciar {
+
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid #e9e9e9;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 16px;
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.2);
+
+}
+.btn-reiniciar:hover {
+
+    background-color: #e9e9e9;
+    border-color: #fff;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.6);
+    scale: 1.1;
+
+}
+
+#mensagemFinal {
+
+    font-size: 24px;
+    color: green;
+    margin-top: 20px;
+
+}

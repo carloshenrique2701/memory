@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jogo Pong</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div class="game-container">
+
+            <canvas id="pongCanvas"></canvas>
+
+            <div class="info">
+
+                <span id="pontuaçaoJogador">Jogador: 0</span>
+                <span id="pontuaçaoComputador">Computador: 0</span>
+                <span id="vidasJogador">Vidas: 3</span>
+                <span id="totalPontos">Total de Pontos: 0</span>
+
+            </div>
+
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <p id="mensagem"></p>
+                    <button id="jogarNovamente">Jogar Novamente</button>
+                    <button id="continuarJogo" style="display: none;">Continuar</button>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+        
+    </body>
+</html>

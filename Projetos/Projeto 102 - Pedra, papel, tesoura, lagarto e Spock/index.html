@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra, papel, tesoura, lagarto e Spock</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Pedra, papel, tesoura, lagarto e Spock</h1>
+
+        <button id="regras-btn">Regras</button>
+
+        <div class="escolhas">
+
+            <img src="pedra.png" alt="Pedra" class="escolha" class="escolha-R" onclick="jogar('Pedra')">
+            <img src="papel.png" alt="Papel" class="escolha" class="escolha-R" onclick="jogar('Papel')">
+            <img src="tesoura.png" alt="Tesoura" class="escolha" class="escolha-R" onclick="jogar('Tesoura')">
+            <img src="lagarto.png" alt="Lagarto" class="escolha" onclick="jogar('Lagarto')">
+            <img src="spock.png" alt="Spock" class="escolha" onclick="jogar('Spock')">
+
+        </div>
+
+        <div class="escolhas-ambos" id="escolhas-ambos">
+
+            <div class="escolha-jogador">
+
+                <h2>Jogador</h2>
+                <img src="" alt="" id="escolha-jogador-imagem" class="escolha">
+                <strong><p id="escolha-jogador-nome"></p></strong>
+
+            </div>
+            <div class="escolha-computador">
+
+                <h2>Computador</h2>
+                <img src="" alt="" id="escolha-computador-imagem" class="escolha">
+                <strong><p id="escolha-computador-nome"></p></strong>
+                
+            </div>
+
+        </div>
+
+        <div id="resultado"></div>
+
+        <div class="pontuacao">
+
+            <p>Pontuações: 
+                Jogador <span id="jogador-pontuacao">0</span> - 
+                Computador <span id="computador-pontuacao">0</span>
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <span id="close-btn">&times;</span>
+
+            <h1>Regras do jogo</h1>
+    
+            <p>Pedra, papel, tesoura, lagarto e Spock é uma variação do jogo de dois jogadores com as seguintes regras: </p>
+    
+            <ul>
+                <li>Tesoura corta Papel</li>
+                <li>Tesoura decapita Lagarto</li>
+                <li>Papel cobre Pedra</li>
+                <li>Papel refuta Spock</li>
+                <li>Pedra esmaga Lagarto</li>
+                <li>Pedra quebra a Tesoura</li>
+                <li>Lagarto envenena o Spock</li>
+                <li>Lagarto come Papel</li>
+                <li>Spock esmaga Pedra</li>
+                <li>Spock quebra Tesoura</li>
+            </ul>
+    
+            <p>Se ambos escolhem a mesma opção, o jogo resulta em empate.</p>
+    
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

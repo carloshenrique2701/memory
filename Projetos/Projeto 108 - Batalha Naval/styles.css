@@ -1,0 +1,174 @@
+*{
+
+    transition: all 0.3s ease-in-out;
+
+}
+
+body{
+
+    background-color: #e9e9e9;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+}
+
+.container{
+
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    border: none;
+    border-radius: 10px;
+    box-shadow:  2px 4px 8px rgba(0, 0, 0, 0.224);
+
+}
+
+h1{
+
+    margin-bottom: 20px;
+
+}
+
+.game-conainer{
+
+    border: 2px solid #000;
+    display: grid;
+    grid-template-columns: repeat(15, 30px);
+    grid-template-rows: repeat(15, 30px);
+    height: 450px;
+    width: 450px;
+    margin: 0 auto;
+
+}
+
+.celula.agua {
+    background-color: aqua;
+}
+
+.celula.navio {
+    background-color: red;
+}
+
+.celula {
+    background-color: aliceblue;
+    border: 1px solid #000;
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    transition: all 0.2s ease;
+}
+
+.celula:hover {
+    scale: 1.2;
+}
+
+.celula:active {
+    scale: 0.99;
+}
+
+/* Classes para desativar interação */
+.celula.destruido {
+    cursor: default;
+    pointer-events: none;
+}
+
+.celula.destruido:hover {
+    scale: 1;
+    transform: none;
+}
+
+/* Animação de destruição do navio */
+@keyframes destruirNavio {
+    0% {
+        transform: scale(1) rotateY(0deg);
+        background-color: red;
+    }
+    25% {
+        transform: scale(1.5) rotateY(90deg);
+        background-color: #ff4444;
+    }
+    50% {
+        transform: scale(1.8) rotateY(180deg);
+        background-color: #ff2222;
+    }
+    75% {
+        transform: scale(1.5) rotateY(270deg);
+        background-color: #ff0000;
+    }
+    100% {
+        transform: scale(1) rotateY(360deg);
+        background-color: #990000;
+    }
+}
+
+.celula.destruindo {
+    animation: destruirNavio 1.5s ease-in-out forwards;
+    z-index: 10;
+    position: relative;
+}
+
+/* Desativa hover/click em células viradas */
+.celula.virada {
+    pointer-events: none;
+}
+
+.celula.virada:hover {
+    scale: 1;
+    transform: none;
+}
+
+/* Feedback visual para acerto que não destruiu */
+.celula.navio:not(.destruido) {
+    background-color: #ff6666;
+    transition: background-color 0.3s;
+}
+
+button{
+
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    box-shadow: 9px 3px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    background-color: transparent;
+
+}
+
+button:hover{
+
+    scale: 1.1;
+    box-shadow: 9px 3px 1px rgba(0, 0, 0, 0.5);
+
+}
+
+.modal {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal-content{
+
+    background-color: #fff;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+
+}

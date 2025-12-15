@@ -1,0 +1,202 @@
+*{
+
+    transition: all 0.3s ease-in-out;
+
+}
+
+body{
+
+    background: linear-gradient(#aaa, #fff);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+
+}
+
+.container{
+
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    border: 2px solid #999;
+    border-radius: 10px;
+    box-shadow: 8px 4px 2px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+
+}
+
+h1{
+
+    margin-bottom: 10px;
+
+}
+
+#anagrama{
+
+    font-size: 70px;
+
+}
+
+.respostaJogador{
+
+    width: 95%;
+    border: 1px solid #bbb;
+    height: 40px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+
+}
+
+.teclado{
+
+    width: 95%;
+    margin: 0 auto;
+
+}
+
+#q-p{
+
+    display: grid;
+    grid-template-columns: repeat(10, 19px);
+    grid-template-rows: repeat(1, 19px);
+    gap: 60px;
+    margin-bottom: 50px;
+
+}
+
+#a-l{
+
+    display: grid;
+    grid-template-columns: repeat(9, 19px);
+    grid-template-rows: repeat(1, 19px);
+    gap: 60px;
+    margin-bottom: 50px;
+
+}
+#z-apagar{
+
+    display: grid;
+    grid-template-columns: repeat(8, 19px);
+    grid-template-rows: repeat(1, 19px);
+    gap: 60px;
+    margin-bottom: 30px;
+
+}
+
+.tecla {
+
+    background-color: rgb(53, 47, 227);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(37, 31, 226);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;/*Impede que o texto ou conteudo seja selecionado.*/
+    font-size: 1em;
+    border-radius: 8px;
+
+}
+
+.tecla.apagar{
+
+    width: 110px;
+
+}
+
+.tecla:hover{
+
+    cursor: pointer;
+    scale: 1.2;
+    background-color: rgb(49, 42, 231);
+
+}
+
+.botoes{
+
+    width: 100%;
+
+}
+
+button{
+
+    background-color: transparent;
+    border: 2px solid #bbb;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 4px 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    margin-right: 30px;
+    margin-top: 20px;
+
+}
+
+button:hover{
+
+    scale: 1.1;
+    box-shadow: 10px 5px 3px rgba(0, 0, 0, 0.4);
+
+}
+
+.mensagem{
+
+    color: green;
+    margin-top: 10px;
+    display: none;
+
+}
+
+.modal {
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.modal-content {
+
+    background-color: #fff;
+    padding: 20px;
+    border: none;
+    box-shadow: 5px 4px 2px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    border-radius: 10px;
+
+}
+
+#fechar-modal {
+
+    position: relative;
+    bottom: 10px;
+    left: 340px;
+    font-size: 30px;
+    color: #999;
+    cursor: pointer;
+
+}
+
+#fechar-modal:hover {
+
+    color: #000;
+
+}

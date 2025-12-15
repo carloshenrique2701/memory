@@ -1,0 +1,194 @@
+*{
+
+    transition: all 0.3s ease-in-out;
+
+}
+
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #c9c9c9;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+h1{
+
+    font-size: 2.5em;
+    color: #2c5e25;
+    margin-top: 20px;
+
+}
+
+#container{
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+
+}
+
+#caça-palavras{
+
+    display: grid;
+    grid-template-columns: repeat(15, 30px);
+    grid-template-rows: repeat(15, 30px);
+    gap: 2px;
+
+}
+
+#caça-palavras-dica{
+
+    display: grid;
+    grid-template-columns: repeat(15, 30px);
+    grid-template-rows: repeat(15, 30px);
+    gap: 2px;
+    margin: 20px auto;
+
+}
+
+.celula{
+
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;/*Impede que o texto ou conteudo seja selecionado.*/
+    background-color: #fff;
+    color: #333;
+    font-size: 1em;
+
+}
+.celula:hover{
+
+    scale: 1.2;
+    cursor: pointer;
+
+}
+
+.selecionada{
+
+    background-color: #4caf50;
+    color: #fff;
+
+}
+
+.dica {
+
+    background-color: yellow;
+    color: #000;
+
+}
+
+#informacoes {
+
+    margin-left: 30px;
+    text-align: left;
+
+}
+
+#palavras {
+
+    margin-bottom: 20px;
+
+}
+
+#pontuacao {
+
+    margin-bottom: 20px;
+
+}
+
+#mensagem {
+
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0  0 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+
+}
+
+button {
+
+    background-color: transparent;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0  0 10px rgba(0, 0, 0, 0.5);
+    font-size: 1em;
+
+}
+
+button:hover {
+
+    background-color: #4caf50;
+    border-color: #ffffff;
+    color: #fff;
+
+}
+
+.modal {
+
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.modal-conteudo {
+
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow:  0 4px 8px rgba(0, 0, 0, 0.3);
+
+}
+
+.fechar {
+
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+
+}
+
+.fechar:hover,
+.fechar:focus {
+
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+
+}

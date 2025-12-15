@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Space Invaiders</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div id="containerJogo">
+
+            <h1 id="tituloJogo">Space Invaiders</h1>
+
+            <p id="pontuacao">Pontuação 0</p>
+            <p id="vidas">Vidas 0</p>
+
+            <audio src="tiro.mp3" id="somTiro"></audio>
+
+            <canvas id="telaJogo" width="800" height="600"></canvas>
+
+        </div>        
+
+        <div class="modal" id="modal">
+
+            <div class="modal-content">
+
+                <p id="mensagemModal"></p>
+
+                <button id="botaoContinuar" class="botao">Continuar</button>
+                <button id="botaoTerminar" class="botao">Terminar</button>
+
+            </div>
+
+        </div>
+
+        <script src="space-invaiders.js"></script>
+        
+    </body>
+</html>
