@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Desafio de Letras</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1>Desafio de Letras</h1>
+
+            <div id="problema"></div>
+
+            <p id="questao"></p>
+
+            <div class="botoes">
+
+                <div class="input-wrapper">
+
+                    <input type="text" id="resposta" placeholder="">
+                    <label for="resposta">Digite sua resposta...</label>
+
+                </div>
+
+                <button id="verificarResposta">Verificar</button>
+                <button class="oculto" id="btnVerResposta" onclick="verResposta()">Ver resposta</button>
+
+            </div>
+
+            <p id="mensagem"></p>
+
+            <p class="pontuacao">Pontuação: <span id="pontuacao">0</span></p>
+
+        </div>
+
+        <div class="modal oculto" id="modalResposta">
+
+        </div>
+
+        <script src="script.js"></script>
+        
+    </body>
+</html>

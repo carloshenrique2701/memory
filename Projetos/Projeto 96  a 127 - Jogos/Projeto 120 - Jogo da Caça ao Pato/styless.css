@@ -1,0 +1,23 @@
+*{
+
+    transition: all 0.2s ease-in-out;
+
+}
+
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #87ceeb;
+
+}
+
+canvas {
+
+    background-color: #fff;
+    border: 2px solid #000;
+
+}

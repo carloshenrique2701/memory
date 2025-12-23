@@ -1,0 +1,68 @@
+* {
+
+    transition: all 0.2s ease-in-out;
+
+}
+
+body {
+
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+
+}
+
+canvas {
+
+    display: block;
+
+}
+
+#menu {
+
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000008e6;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+
+}
+
+#menu h1 {
+
+    margin: 0;
+
+}
+
+button {
+
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid #fff;
+    background-color: transparent;
+    box-shadow: 2px 2px 2px #ffffff2f;
+    border-radius: 8px;
+    color: #fff;
+
+}
+
+button:hover {
+
+    scale: 1.1;
+    background-color: #fff;
+    color: #000;
+    border-color: #000;
+
+}

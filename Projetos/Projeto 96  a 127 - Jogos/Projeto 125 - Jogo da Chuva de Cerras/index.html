@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Chuva de Cerras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <canvas id="gameCanvas" width="400" height="600"></canvas>
+
+    <div id="menuInicial" class="menu">
+
+        <h1>Desvie das Cerras</h1>
+
+        <p>Recorde: <span id="exibirPontuacaoMenu">0</span></p>
+
+        <button id="botaoIniciar">Jogar</button>
+
+    </div>
+
+    <div id="telaGameOver" class="menu oculto">
+
+        <h1>Game Over</h1>
+
+        <p>Pontuação: <span id="pontuacaoFinal">0</span></p>
+
+        <button id="reiniciarJogo">Tentar Novamente</button>
+
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
