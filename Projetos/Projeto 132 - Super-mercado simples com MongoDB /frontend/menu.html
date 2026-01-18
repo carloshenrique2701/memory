@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu de Configurações</title>
+        <link rel="stylesheet" href="css/global.css">
+
+        <style>
+
+            .container {
+
+                margin-top: 70px;
+
+            }
+
+            .menu-principal {
+
+                margin-top: 50px;
+
+            }
+
+            .btn-menu-esquerda, .btn-menu-direita {
+
+                padding: 20px;
+                margin-top: 5px;
+                background-color: #ccc;
+                border: none;
+                border-radius: 20px;
+                cursor: pointer;
+                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+
+            }
+
+            .btn-menu-esquerda:hover, .btn-menu-direita:hover {
+
+                background-color: #c9c9c9;
+                scale: 1.05;
+                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+                transform: translateX(+10px);
+
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <h1>Supermercado Bela</h1>
+
+        <div class="container">
+
+            <h2>Menu de Configurações</h2>
+
+            <div class="menu-principal">
+
+                <div class="btn-menu-esquerda" onclick="window.location.href='listaUsuarios.html'">
+                    Gerênciar Usuários
+                </div>
+                <div class="btn-menu-direita" onclick="window.location.href='listaProdutos.html'">
+                    Gerênciar Produtos
+                </div>
+                <div class="btn-menu-esquerda" onclick="window.location.href='listaFornecedores.html'">
+                    Gerênciar Fornecedores
+                </div>
+                <div class="btn-menu-direita" onclick="window.location.href='listaClientes.html'">
+                    Gerênciar Clientes
+                </div>
+                <div class="btn-menu-esquerda" onclick="window.location.href='relatorio.html'">
+                    Relatórios
+                </div>
+
+            </div>
+
+            <div style="margin-top: 20px;">
+
+                <button class="voltar" onclick="window.location.href='telaPrincipal.html'">Voltar</button>
+
+            </div>
+
+        </div>
+        
+    </body>
+</html>

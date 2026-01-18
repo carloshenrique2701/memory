@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Principal - Estacionamento</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+
+        .modal-container {
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .modal-content {
+
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            width: 400px;
+            position: relative;
+
+        }
+
+        .fechar-modal {
+
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+            color: #666;
+            font-size: 30px;
+            background: none;
+            border: none;
+            box-shadow: none;
+
+        }
+
+        .fechar-modal:hover {
+
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            scale: 1.03;
+            color: #222;
+            background: none;
+            border: none;
+            box-shadow: none;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Sistema de Controle de Estacionamento</h1>
+
+        <h2>Painel Principal</h2>
+
+        <nav class="menu-funcionalidades">
+
+            <button class="menu-btn" data-target="secaoMapa">Mapa de Vagas</button>
+            <button class="menu-btn" id="btnVeiculos">Veículos</button>
+            <button class="menu-btn" id="btnUsuarios">Usuários</button>
+            <button class="menu-btn" id="btnRelatorio">Relatório</button>
+
+        </nav>
+
+
+        <section id="secaoMapa" class="secao-ativa">
+
+            <h3>Mapa de Vagas por Data</h3>
+
+            <input type="date" id="dataMapa">
+
+            <button id="btnCarregarMapa">Carregar Mapa</button>
+
+            <div id="areaMapaVagas" class="mapa-vagas"></div>
+
+        </section>
+
+    </div>
+
+    <div id="modalReserva" class="modal-container" style="display: none;">
+
+        <div class="modal-content">
+
+            <button id="btnFecharModal" class="fechar-modal">&times;</button>
+
+            <h2>Fazer Reserva</h2>
+
+            <form id="formReservasModal">
+
+                <label for="dataReservaModal">Data da Reserva:</label>
+                <input type="date" id="dataReservaModal" required>
+
+                <label for="horaReservaModal">Hora da Reserva:</label>
+                <input type="time" id="horaReservaModal" required>
+
+                <label for="placaModal">Placa do Carro:</label>
+                <input type="text" id="placaModal" list="listaPlacas" required>
+                <datalist id="listaPlacas"></datalist>
+
+                <label for="modeloModal">Modelo do Carro:</label>
+                <input type="text" id="modeloModal" required>
+
+                <label for="corModal">Cor do Carro:</label>
+                <input type="text" id="corModal" required>
+
+                <label for="proprietarioModal">Proprietário do Carro:</label>
+                <input type="text" id="proprietarioModal" required>
+
+                <input type="hidden" id="vagaEscolhida">
+
+                <button type="submit">Salvar Reserva</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        window.addEventListener('load', () => {
+
+            const dataHoje = new Date().toISOString().split('T')[0];
+
+            const inputDataMapa = document.getElementById('dataMapa');
+
+            inputDataMapa.value = dataHoje;
+
+            carregarMapaVagas();
+
+        });
+
+        const btnUsuarios = document.getElementById('btnUsuarios');
+
+        if (btnUsuarios) {
+            btnUsuarios.addEventListener('click', () => {
+                window.location.href = 'cadastro.html';
+            });
+        }
+
+        const btnVeiculos = document.getElementById('btnVeiculos');
+
+        if (btnVeiculos) {
+            btnVeiculos.addEventListener('click', () => {
+                window.location.href = 'veiculos.html';
+            });
+        }
+
+        const btnRelatorio = document.getElementById('btnRelatorio');
+
+        if (btnRelatorio) {
+            btnRelatorio.addEventListener('click', () => {
+                window.location.href = 'relatorio.html';
+            });
+        }
+
+        const botoesMenu = document.querySelectorAll('.menu-btn');
+        const secoes = document.querySelectorAll('section');
+        
+        botoesMenu.forEach((botao) => {
+
+            const alvo = botao.getAttribute('data-target');
+
+            if(!alvo) return;
+
+            botao.addEventListener('click', () => {
+
+                secoes.forEach((sec) => {
+
+                    sec.classList.remove('secao-ativa');
+                    sec.classList.add('secao-inativa');
+
+                });
+
+                document.getElementById(alvo).classList.remove('secao-inativa');
+                document.getElementById(alvo).classList.add('secao-ativa');
+
+            });
+
+        });
+
+        const btnCarregarMapa = document.getElementById('btnCarregarMapa');
+
+        if (btnCarregarMapa) {
+            btnCarregarMapa.addEventListener('click', carregarMapaVagas);
+        }
+
+        async function carregarMapaVagas() {
+            
+            const dataMapa = document.getElementById('dataMapa').value;
+
+            if (!dataMapa) {
+                alert('Selecione uma data.');
+                return;
+            }
+
+            try {
+                
+                const resp = await fetch(`http://127.0.0.1:3000/api/reservas/?data=${dataMapa}`);
+                const reservas = await resp.json();
+
+                const areaMapa = document.getElementById('areaMapaVagas');
+
+                areaMapa.innerHTML = '';
+
+                const reservaMap = {};
+
+                reservas.forEach((r) => {
+
+                    reservaMap[r.vaga] = r;
+
+                });
+
+                const TOTAL_VAGAS = 10;
+
+                for (let vaga = 1; vaga <= TOTAL_VAGAS; vaga++) {
+
+                    const btnVaga = document.createElement('button');
+
+                    if (reservaMap[vaga] && reservaMap[vaga].status === 'reservada') {
+                        
+                        btnVaga.classList.add('vaga-reservada');
+                        btnVaga.textContent = `Vaga ${vaga} (Reservada)`;
+
+                       btnVaga.addEventListener('click', () => {
+
+                            window.location.href = `finalizar.html?id=${reservaMap[vaga]._id}`;
+
+                       });
+
+                    } else {
+
+                        btnVaga.classList.add('vaga-disponivel');
+                        btnVaga.textContent = `Vaga ${vaga} (Disponível)`;
+
+                        btnVaga.addEventListener('click', () => {
+
+                            abrirModalReserva(dataMapa, vaga);
+
+                        });
+
+                    }
+
+                    areaMapa.appendChild(btnVaga);
+
+                }
+
+            } catch (error) {
+                console.error('Erro ao carregar mapa: ',error);
+                alert('Erro ao carregar mapa.')
+            }
+
+        }
+
+        const modalReserva = document.getElementById('modalReserva');
+        const btnFecharModal = document.getElementById('btnFecharModal');
+        const formReservasModal = document.getElementById('formReservasModal');
+
+        let veiculosCadastrados = [];
+
+        function abrirModalReserva(dataEscolhida, vaga) {
+            modalReserva.style.display = 'flex';
+
+            document.getElementById('dataReservaModal').value = dataEscolhida;
+            document.getElementById('horaReservaModal').value = '';
+            document.getElementById('placaModal').value = '';
+            document.getElementById('modeloModal').value = '';
+            document.getElementById('corModal').value = '';
+            document.getElementById('proprietarioModal').value = '';
+            document.getElementById('vagaEscolhida').value = vaga;
+
+            carregarPlacaParaDataList();
+
+        }
+
+        function fecharModalReserva() {
+            
+            modalReserva.style.display = 'none';
+
+        }
+
+        if (btnFecharModal) btnFecharModal.addEventListener('click', fecharModalReserva);
+
+        window.addEventListener("click", (e) => {
+            if(e.target === modalReserva) fecharModalReserva();
+        });
+
+        async function carregarPlacaParaDataList(params) {
+            
+            try {
+
+                const resp = await fetch('http://127.0.0.1:3000/api/veiculos');
+
+                veiculosCadastrados = await resp.json();
+
+                const dataListPlacas = document.getElementById("listaPlacas");
+                dataListPlacas.innerHTML = '';
+
+                veiculosCadastrados.forEach((v) => {
+
+                    const opt = document.createElement('option');
+                    opt.value = v.placa;
+
+                    dataListPlacas.appendChild(opt);
+
+                });
+
+                
+            } catch (error) {
+                console.error('Erro ao carregar lista de placas: ',error);
+            }
+
+        }
+
+        const placaModalInput = document.getElementById('placaModal');
+
+        if (placaModalInput) placaModalInput.addEventListener('input', () => {
+
+            const placaDigitada = placaModalInput.value.trim().toUpperCase();
+            const encontrado = veiculosCadastrados.find((v) => v.placa.toUpperCase() === placaDigitada);
+
+            if (encontrado) {
+                
+                document.getElementById('modeloModal').value = encontrado.modelo || '';
+                document.getElementById('corModal').value = encontrado.cor || '';
+                document.getElementById('proprietarioModal').value = encontrado.proprietario || '';
+
+            } else {
+
+                document.getElementById('modeloModal').value = '';
+                document.getElementById('corModal').value = '';
+                document.getElementById('proprietarioModal').value = '';
+
+            }
+
+        });
+
+        formReservasModal.addEventListener('submit', async (e) => {
+           
+            e.preventDefault();
+
+            const dataReserva = document.getElementById('dataReservaModal').value;
+            const horaReserva = document.getElementById('horaReservaModal').value;
+            const placa = document.getElementById('placaModal').value;
+            const modelo = document.getElementById('modeloModal').value;
+            const cor = document.getElementById('corModal').value;
+            const proprietario = document.getElementById('proprietarioModal').value;
+            const vaga = document.getElementById('vagaEscolhida').value;
+
+            if (!dataReserva || !horaReserva || !placa || !vaga) {
+                alert('Preencha todosos campos obrigatórios');
+                return;
+            }
+
+            const novaReserva = new Date(`${dataReserva}T${horaReserva}:00`);
+
+            try {
+
+                const respCheck = await fetch(`http://127.0.0.1:3000/api/reservas?data=${dataReserva}`);
+                const reservasDoDia = await respCheck.json();
+
+                if (!Array.isArray(reservasDoDia)) {
+                    console.error('Resposta inesperada:', reservasDoDia);
+                    alert('Erro ao verificar reservas');
+                    return;
+                }
+
+                const jaReservada = reservasDoDia.some((r) => {
+
+                    if (r.vaga !== vaga) return false;
+
+                    const reservaExistente = new Date(r.dataHoraInicio);
+
+                    return reservaExistente.getTime() === novaReserva.getTime();
+
+                });
+
+                if (jaReservada) {
+                    alert('Essa vaga já está reservada para esse horário');
+                    return;
+                }
+
+                const respCadastro = await fetch('http://127.0.0.1:3000/api/reservas', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+
+                        data: dataReserva,
+                        hora: horaReserva,
+                        vaga,
+                        placaVeiculo: placa,
+                        modeloVeiculo: modelo,
+                        corVeiculo: cor,
+                        proprietarioVeiculo: proprietario
+
+                    })
+                });
+                
+                const dados = await respCadastro.json();
+
+                if (respCadastro.ok) {
+                    
+                    alert(dados.mensagem);
+                    formReservasModal.reset();
+
+                    fecharModalReserva();
+                    carregarMapaVagas();
+
+                } else {
+
+                    alert(dados.mensagem);
+
+                }
+
+            } catch (error) {
+                console.error('Erro ao criar reserva: ',error);
+                alert('Erro ao criar reserva ');
+            }
+        });
+
+        const formCadastroVeiculo = document.getElementById('formCadastroVeiculo');
+
+        if (formCadastroVeiculo) {
+            formCadastroVeiculo.addEventListener('submit', async (e) => {
+                
+                e.preventDefault();
+
+                const placa = document.getElementById('placaModal').value;
+                const modelo = document.getElementById('modeloModal').value;
+                const cor = document.getElementById('corModal').value;
+                const proprietario = document.getElementById('proprietarioModal').value;
+
+                try {
+
+                     const resp = await fetch('http://127.0.0.1:3000/api/veiculos/cadastrar', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'appliction/json' },
+                        body: JSON.stringify({
+
+                            placa,
+                            modelo,
+                            cor,
+                            proprietario
+
+                        })
+                    });
+
+                    const dados = await resp.json();
+
+                    if (resp.ok) {
+                        
+                        alert(dados.mensagem);
+                        formCadastroVeiculo.reset();
+                        listarVeiculos();
+
+                    } else {
+                        alert(dados.mensagem);
+                    }
+                    
+                } catch (error) {
+                    console.error('Erro ao cadastrar veículo: ',error);
+                    alert('Erro ao cadastrar veículo ');
+                }
+
+            });
+        }
+
+        async function listarVeiculos() {
+            
+            try {
+
+                const resp = await fetch('http://127.0.0.1:3000/api/veiculos');
+                const veiculos = await resp.json();
+
+                const tbody = document.querySelectorAll('#tabelaVeiculos tbody');
+
+                tbody.innerHTML = '';
+
+                veiculos.forEach((veic) => {
+
+                    const tr = document.createElement('tr');
+
+                    tr.innerHTML = `
+                        <td>${veic.placa}</td>
+                        <td>${veic.modelo}</td>
+                        <td>${veic.cor}</td>
+                        <td>${veic.proprietario}</td>
+                        <td>
+                            <button class="btnEditar" data-id="${veic._id}">Editar</button>
+                            <button class="btnExcluir" data-id="${veic._id}">Excluir</button>
+                        </td>
+                    `;
+
+                    tbody.appendChild(tr);
+
+                });
+
+                document.querySelectorAll('.btnEditar').forEach((btn) => {
+                    btn.addEventListener('click', (e) => {
+
+                        const id = e.target.getAttribute('data-id');
+                        window.location.href = `editarVeiculo.html?id=${id}`;
+
+                    });
+                });
+                document.querySelectorAll('.btnExcluir').forEach((btn) => {
+                    btn.addEventListener('click', (e) => excluirVeiculo);
+                });
+                
+            } catch (error) {
+                console.error('Erro ao listar veículos: ',error);
+                alert('Erro ao listar veículos ');
+            }
+
+        }
+        
+        async function excluirVeiculo(e) {
+            
+            const id = e.target.getAttribute('data-id');
+            
+            if (!confirm('Tem certeza em querer excluir este veiculo?')) return;
+
+            try {
+
+                const resp = await fetch(`http://127.0.0.1:3000/api/veiculos/${id}`, { method: 'DELETE' });
+                const dados = await resp.json();
+
+                if (resp.ok) {
+                    
+                    alert(dados.mensagem);
+                    listarVeiculos();
+
+                } else {
+                    alert(dados.mensagem);
+                }
+                
+            } catch (error) {
+                console.error('Erro ao excluir veículo: ',error);
+                alert('Erro ao excluir veículo ');
+            }
+
+        }
+
+    </script>
+
+    <style>
+
+        .secao-ativa {
+
+            display: block;
+
+        }
+
+        .secao-inativa {
+
+            display: none;
+
+        }
+
+    </style>
+    
+</body>
+</html>

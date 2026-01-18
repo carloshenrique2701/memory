@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog Simples</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div class="container">
+
+            <header>
+
+                <h1>Blog Simples</h1>
+
+            </header>
+
+            <section id="post-form">
+
+                <h2>Criar Nova Postagem</h2>
+
+                <form id="createPostForm">
+                    
+                    <div class="arquivo">
+
+                        <label for="postImagem">Imagem (opcional):</label>
+                        <label for="postImagem" class="botao-arquivo">Buscar Imagem</label>
+                        <span id="nomeArquivo">Nenhum arquivo escolhido.</span>
+                        <input type="file" id="postImagem" name="postImagem" accept="image/*" style="display: none;">
+
+                    </div>
+
+                    <div>
+
+                        <textarea name="postText" id="postText" rows="3" placeholder="Digite seus pensamentos..."></textarea>
+
+                    </div>
+
+                    <button type="submit">Postar</button>
+
+                </form>
+
+            </section>
+
+            <section id="posts">
+
+                <h2>Postagens</h2>
+
+                <div id="postsContainer"></div>
+
+            </section>
+
+            <footer>
+
+                <p>&copy; 2025 - Blog Simples</p>
+
+            </footer>
+
+        </div>
+
+        <script src="script.js"></script>
+        
+    </body>
+</html>

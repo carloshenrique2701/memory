@@ -1,0 +1,31 @@
+1 - Inicializar o projeto Node.js
+
+	npm init -y
+
+
+2 - Instalar as dependências necessárias
+
+	npm install express mongoose cors
+
+
+
+
+3 - Rodar o servidor, inicie o MongoDB rodando este comando no terminal
+
+	mongodb
+
+
+4 Executar.
+
+	node server.js
+
+
+5 - Se tudo estiver certo, o terminal exibirá
+
+
+	Servidor rodando na porta 3000
+
+
+
+
+

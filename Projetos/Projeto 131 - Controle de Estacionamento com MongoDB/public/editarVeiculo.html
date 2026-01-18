@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editar Veículo</title>
+
+        <style>
+
+            * {
+
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                transition: all 0.3s ease-in-out;
+
+            }
+
+            body {
+
+                background-color: #e9e9e9;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+
+            }
+
+            .container {
+
+                width: 95%;
+                max-width: 500px;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                text-align: center;
+                overflow-x: auto;
+                margin-bottom: 20px;
+
+            }
+
+            h1 {
+
+                color: #333;
+                margin-bottom: 10px;
+
+            }
+
+            h2, h3 {
+
+                color: #555;
+                font-size: 18px;
+                margin-bottom: 20px;
+
+            }
+
+            form {
+
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 15px;
+
+            }
+
+            .input-wrapper {
+
+                position: relative;
+                margin-bottom: 20px;
+
+            }
+
+            input {
+
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: transparent;
+                outline: none;
+                font-size: 16px;
+
+            }
+
+            input:focus {
+
+                border-color: #4e7aff;
+
+            }
+
+            label {
+
+                position: absolute;
+                left: 10px;
+                top: 14px;
+                background: #fff;
+                padding: 0 5px;
+                color: #666;
+                font-size: 16px;
+                pointer-events: none;
+
+            }
+
+            input:focus + label,
+            input:not(:placeholder-shown) + label {
+
+                transform: translateY(-24px);
+                font-size: 14px;
+                color: #4e7aff;
+
+            }
+
+            select {
+
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: transparent;
+                font-size: 16px;
+                cursor: pointer;
+
+            }
+
+            select:hover {
+
+                background-color: #eee;
+
+            }
+
+            .btn-group {
+
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                width: 100%;
+
+            }
+
+            button {
+
+                background-color: #4e7aff;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                padding: 10px;
+                cursor: pointer;
+                font-size: 16px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+            }
+
+            button:hover {
+
+                scale: 1.03;
+                background-color: #4873f4;
+                color: #fff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+
+            }
+
+            #btnVoltarPrincipal {
+
+                background-color: #515255;
+
+            }
+
+            .acoes {
+
+                display: flex;
+                justify-content: space-around;
+
+            }
+
+            .btnEditar {
+
+                background-color: #ffc107;
+                color: #fff;
+                padding: 6px 10px;
+                font-size: 14px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+
+            }
+
+            .btnEditar:hover {
+
+                scale: 1.03;
+                background-color: #e0a800;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+
+            }
+            .btnExcluir {
+
+                background-color: #dc3545;
+                color: #fff;
+                padding: 6px 10px;
+                font-size: 14px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+
+            }
+
+            .btnExcluir:hover {
+
+                scale: 1.03;
+                background-color: #bc2d3b;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1>Sistema de Controle de Estacionamento</h1>
+
+            <h2>Editar Veículo</h2>
+
+            <form id="formEditarVeiculo">
+
+                <input type="hidden" id="idVeiculo">
+
+                <div class="input-wrapper">
+
+                    <input type="text" id="placa" required placeholder="">
+                    <label for="placa">Digite o placa do veículo...</label>
+    
+                </div>
+    
+                <div class="input-wrapper">
+    
+                    <input type="text" id="modelo" required placeholder="">
+                    <label for="modelo">Digite o modelo do veículo...</label>
+    
+                </div>
+    
+                <div class="input-wrapper">
+    
+                    <input type="text" id="cor" required placeholder="">
+                    <label for="cor">Digite o cor do veículo...</label>
+    
+                </div>
+    
+                <select id="proprietario" required></select>
+    
+                <div class="btn-group">
+    
+                    <button id="btnVoltarPrincipal">Voltar à Página Principal</button>
+                    <button type="submit">Salvar</button>
+    
+                </div>
+
+            </form>
+
+        </div>
+
+        <script>
+
+            const formEditarVeiculo = document.getElementById("formEditarVeiculo");
+            const idVeiculoHidden = document.getElementById("idVeiculo");
+            const placaInput = document.getElementById("placa");
+            const modeloInput = document.getElementById("modelo");
+            const corInput = document.getElementById("cor");
+            const proprietarioSelect = document.getElementById("proprietario");
+            const btnVoltarPrincipal = document.getElementById("btnVoltarPrincipal");
+
+            window.addEventListener('load', async () => {
+               
+                const params = new URLSearchParams(window.location.search);
+
+                const id = params.get('id');
+
+                if (!id) {
+                    alert('ID de veículo não informado');
+                    return;
+                }
+
+                await carregarUsuariosCombo();
+
+                try {
+
+                    const resp = await fetch(`http://127.0.0.1:3000/api/veiculos/${id}`);
+
+                    if (!resp.ok) {
+                        alert('Erro ao buscar dados do veiculo');
+                        return;
+                    }
+
+                    const veiculo = await resp.json();
+
+                    idVeiculoHidden.value = veiculo._id;
+                    placaInput.value = veiculo.placa || '';
+                    modeloInput.value = veiculo.modelo || '';
+                    corInput.value = veiculo.cor || '';
+
+                    //Seo proprietário do veículo não estiver na lista de opções, criamos uma nova opção
+
+                    //Fazemos uma copia das opções no select e procuramos se há alguma opção com o nome do 
+                        //proprietário registrado no cadastro do veículo com os usuários do sistema.
+                    //Retorna tru ou false.
+                    const optExistente = [...proprietarioSelect.options].find(o => o.value === veiculo.proprietario);
+
+                    if (optExistente) {//Se o proprietário for usuário do sistema
+                        optExistente.selected = true;//seleciona
+                    } else {//Se não, cria uma nova opção contendo o nome do usuário
+                                            //define:   TEXTO VISÍVEL   ||      VALUE      || 3 e 4 INDICAM SE JÁ SERÁ SELECIONADA POR PADRÃO     
+                        const novaOpt = new Option(veiculo.proprietario, veiculo.proprietario, true, true);
+                        proprietarioSelect.appendChild(novaOpt);
+                    }
+                    
+                } catch (error) {
+                    console.log('Erro ao carregar informações do veículo: ', error);
+                    alert('Erro ao carregar informações do veículo.');
+                }
+
+            });
+
+            async function carregarUsuariosCombo() {
+                
+                try {
+
+                    const resp = await fetch(`http://127.0.0.1:3000/api/usuarios`);
+
+                    if (!resp) return;
+
+                    const usuarios = await resp.json();
+
+                    proprietarioSelect.innerHTML = '';
+
+                    usuarios.forEach(u => {
+                        
+                        const opt = document.createElement('option');
+                        opt.value = u.nome;
+                        opt.textContent = u.nome;
+
+                        proprietarioSelect.appendChild(opt);
+
+                    });
+
+                    
+                } catch (error) {
+                    console.log('Erro ao carregar usuários para combo: ', error);
+                    alert('Erro ao carregar usuários para combo.');
+                }
+
+            }
+
+            formEditarVeiculo.addEventListener('submit', async (e) => {
+                
+                e.preventDefault();
+
+                const id = idVeiculoHidden.value;
+                const placa = placaInput.value;
+                const cor = corInput.value;
+                const modelo = modeloInput.value;
+                const proprietario = proprietarioSelect.value;
+
+                try {
+                    
+                    const resp = await fetch(`http://127.0.0.1:3000/api/veiculos/${id}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ placa, modelo, cor, proprietario})
+                    });
+                    
+                    const dados = await resp.json();
+
+                    if (resp.ok) {
+                        alert(dados.mensagem);
+                        window.location.href = 'veiculos.html';
+                    } else {
+                        alert(dados.mensagem);
+                    }
+
+                } catch (error) {
+                    console.log('Erro ao editar dados do veículo: ', error);
+                    alert('Erro ao editar dados do veículo.');
+                }
+
+            });
+
+            btnVoltarPrincipal.addEventListener('click', () => window.location.href = 'veiculos.html')
+
+        </script>
+        
+    </body>
+</html>

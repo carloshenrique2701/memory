@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Álbum de Fotos</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <header>
+            <h1>Álbum de Fotos</h1>
+        </header>
+        
+       <main>
+
+            <section class="novo-album">
+
+                <h2>Criar Novo Álbum</h2>
+
+                <form id="formAlbum">
+
+                    <div class="fileInput">
+
+                        <label for="capaAlbum" class="botao-arquivo">Escolher Foto de Capa</label>
+                        <span id="nomeArquivoCapa">Nenhum arquivo escolhido.</span>
+                        <input type="file" id="capaAlbum" name="capaAlbum" accept="image/*" style="display: none;">
+                        <!--accept -> restringeos tipos de arquivos aceitos, no caso, apenas imagens.-->
+                    </div>
+
+
+                    <div class="input-wrapper">
+
+                        <input type="text" id="nomeAlbum" placeholder="">
+                        <label for="nomeAlbum">Nome do Álbum</label>
+                    
+                    </div>
+
+                    <button type="submit">Criar</button>
+
+                </form>
+
+            </section>
+
+            <section class="lista-albuns">
+
+                <h2>Meus Álbuns</h2>
+
+                <div id="containerAlbuns"></div>
+
+            </section>
+
+       </main>
+
+        <script src="scriptIndex.js"></script>
+
+    </body>
+</html>

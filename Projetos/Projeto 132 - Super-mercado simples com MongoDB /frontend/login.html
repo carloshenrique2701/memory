@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login - Supermercado</title>
+        <link rel="stylesheet" href="css/input-wrappers.css">
+        <link rel="stylesheet" href="css/global.css">
+
+        <style>
+
+            body {
+
+                position: relative;
+
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <div class="logo-mercado">
+
+            <h1 class="nome-mercado">Supermercado Bela</h1>
+
+            <img src="imgs/imagem.JPG" alt="Imagem mercado">
+
+        </div>
+
+        <div class="login-container">
+
+            <h1>Sistema de Supermercado</h1>
+            <h2>Login</h2>
+
+            <form id="loginForm">
+
+                <div class="input-wrapper">
+
+                    <input type="email" id="emailLogin" required placeholder="">
+                    <label for="emailLogin">Digite seu email...</label>
+
+                </div>
+
+                <div class="input-wrapper">
+
+                    <input type="password" id="senhaLogin" required placeholder="">
+                    <label for="senhaLogin">Digite sua senha...</label>
+
+                </div>
+
+                <div class="btn-group">
+
+                    <button  class="register" onclick="window.location.href='cadastroUsuarioPublico.html'">
+                        Cadastrar Usuário
+                    </button>
+                    <button type="submit" class="save">Entrar</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <script src="js/script.js"></script>
+        
+    </body>
+</html>

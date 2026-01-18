@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro de Clientes</title>
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/input-wrappers.css">
+
+        <style>
+
+            .form-group {
+
+                margin-bottom: 30px;
+
+            }
+
+            select {
+
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #777;
+                border-radius: 20px;
+                cursor: pointer;
+                background-color: #ffff;
+                font-size: 16px;
+                text-align: center;
+
+            }
+
+            select:hover {
+
+                background-color: #eeee;
+
+            }
+            select:focus {
+
+                border-color: cadetblue;
+
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+
+        <div class="cadastro-container">
+            <h1>Supermercado Bela</h1>
+
+            <h2 id="tituloCliente">Cadastrar Cliente</h2>
+
+            <form id="cadastroClienteForm">
+
+                <input type="hidden" id="clienteId">
+
+                <div class="input-wrapper">
+
+                    <input type="text" id="cpfCliente" placeholder="" required minlength="11" maxlength="11">
+                    <label for="cpfCliente">Digite o CPF do cliente...</label>
+
+                </div>
+                <div class="input-wrapper">
+
+                    <input type="text" id="nomeCliente" placeholder="" required>
+                    <label for="nomeCliente">Digite o nome do cliente...</label>
+
+                </div>
+                <div class="input-wrapper">
+
+                    <input type="text" id="telefoneCliente" placeholder="" required>
+                    <label for="telefoneCliente">Digite a telefone do cliente com DDD. EX: 55619xxxxxxxx</label>
+
+                </div>
+                <div class="input-wrapper">
+
+                    <input type="text" id="enderecoCliente" placeholder="" required>
+                    <label for="enderecoCliente">Digite o endereco do cliente...</label>
+
+                </div>
+
+                <div class="btn-group">
+
+                    <button class="voltar" onclick="window.location.href='listaClientes.html'">Voltar</button>
+                    <button type="submit">Salvar</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <script src="js/script.js"></script>
+        
+    </body>
+</html>

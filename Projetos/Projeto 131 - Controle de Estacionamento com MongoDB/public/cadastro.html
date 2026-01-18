@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+
+        .container {
+
+            max-width: 550px;
+
+        }
+
+        .btn-group {
+
+            margin-bottom: 30px;
+
+        }
+
+        #btnVoltarPrincipal {
+
+            background-color: #515255;
+
+
+        }
+
+        form {
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+            margin-bottom: 15px;
+
+        }
+
+        .input-wrapper {
+            
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        label {
+            
+            margin: 0 !important;
+            position: absolute;
+            left: 10px;
+            top: 14px;
+            background: #fff;
+            padding: 0 5px;
+            color: #666;
+            font-size: 16px;
+            pointer-events: none;
+
+        }
+
+        input:focus + label,
+        input:not(:placeholder-shown) + label {
+            
+            transform: translateY(-24px);
+            font-size: 14px;
+            color: #4e7aff;
+
+        }
+
+        h3 {
+
+            margin-top: 30px;
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Sistema de Controle de Estacionamento</h1>
+        <h2>Cadastro de Usuário</h2>
+
+        <form id="formCadastro">
+
+            <div class="input-wrapper">
+
+                <input type="text" id="nomeUsuario" required placeholder="">
+                <label for="nomeUsuario">Digite o seu nome...</label>
+
+            </div>
+
+            <div class="input-wrapper">
+
+                <input type="email" id="emailUsuario" required placeholder="">
+                <label for="emailUsuario">Digite o seu email...</label>
+
+            </div>
+
+            <div class="input-wrapper">
+
+                <input type="password" id="senhaUsuario" required placeholder="">
+                <label for="senhaUsuario">Digite a sua senha...</label>
+
+            </div>
+
+            <div class="btn-group">
+
+                <button id="btnVoltarPrincipal">Voltar à Página de Login</button>
+                <button type="submit">Cadastrar Usuário</button>
+
+            </div>
+
+        </form>
+
+        <hr>
+
+        <h3>Usuários Cadastrados</h3>
+
+        <table id="tabelaUsuarios">
+
+            <thead>
+
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+
+            </thead>
+
+            <tbody></tbody>
+
+        </table>
+
+    </div>
+
+    <script>
+
+        const formCadastro = document.getElementById('formCadastro');
+        const tabelaUsuarios = document.querySelector('#tabelaUsuarios tbody');
+        const btnVoltarPrincipal = document.getElementById('btnVoltarPrincipal');
+
+        window.addEventListener('load', listarUsuarios);
+
+        formCadastro.addEventListener('submit', async (e) => {
+           
+            e.preventDefault()
+
+            const nome = document.getElementById('nomeUsuario').value;
+            const email = document.getElementById('emailUsuario').value;
+            const senha = document.getElementById('senhaUsuario').value;
+            
+            try {
+                
+                const resp = await fetch(`http://127.0.0.1:3000/api/usuarios/cadastrar`, {
+                    method: 'POST',
+                    headers: { 'Content-type': 'application/json' },
+                    body: JSON.stringify({ nome,email, senha })
+                });
+
+                const dados = await resp.json();
+
+                if (resp.ok) {
+                    alert(dados.mensagem);
+                    listarUsuarios()
+                    formCadastro.reset();
+                } else {
+                    alert(dados.mensagem);
+                }
+
+            } catch (error) {
+                alert('Erro ao cadastrar usuário');
+                console.error("Erro ao cadastrar usuário: ", error);                
+            }
+
+        });
+
+        btnVoltarPrincipal.addEventListener('click', () => window.location.href = 'principal.html');
+
+        async function listarUsuarios() {
+            
+            try {
+                
+                const resp = await fetch(`http://127.0.0.1:3000/api/usuarios`);
+                const usuarios = await resp.json();
+
+                tabelaUsuarios.innerHTML = '';
+
+                usuarios.forEach(usuario => {
+                    
+                    const tr = document.createElement('tr');
+
+                    tr.innerHTML = `
+                        <td>${usuario.nome}</td>
+                        <td>${usuario.email}</td>
+                        <td class="acoes">
+                            <button class="btnEditar" data-id="${usuario._id}">Editar</button>    
+                            <button class="btnExcluir" onclick="excluirUsuario('${usuario._id}')">Excluir</button>    
+                        </td>
+                    `;
+
+                    tabelaUsuarios.appendChild(tr);
+
+                });
+
+                document.querySelectorAll('.btnEditar').forEach(btn => {
+                    btn.addEventListener('click', function () {
+                       const id = this.getAttribute('data-id');
+                       window.location.href = `editarUsuario.html?id=${id}`; 
+                    });
+                });
+
+            } catch (error) {
+                console.error('Erro ao listar usuários: ', error);
+            }
+
+        }
+
+        async function excluirUsuario(id) {
+            
+            if(!confirm('Tem certeza que deseja excluir esse usuário:'))return;
+
+            try {
+
+                const resp = await fetch(`http://127.0.0.1:3000/api/usuarios/${id}`, {
+                    method: 'DELETE'
+                });
+                const dados = await resp.json();
+
+                if (resp.ok) {
+                    alert(dados.mensagem);
+                    listarUsuarios();
+                } else {
+                    alert(dados.mensagem);
+                }
+                
+            } catch (error) {
+                console.error('Erro ao excluir usuário: ', error);
+                alert('Erro ao excluir usuário.');
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>

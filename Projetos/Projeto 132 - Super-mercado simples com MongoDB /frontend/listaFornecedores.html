@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Fornecedores</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/input-wrappers.css">
+    <link rel="stylesheet" href="css/tabelas.css">
+
+    <style>
+
+        .top-bar {
+
+            padding: 20px 30px;
+
+        }
+
+        input {
+
+            width: 100%;
+
+        }
+
+        .input-wrapper {
+            position: relative;
+            margin-bottom: 0; 
+            margin-right: 20px; 
+            flex: 1; /* Faz o input ocupar o espaço disponível */
+        }
+
+        * {
+
+            animation: fade-in-up 1s ease-in;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Supermercado Bela</h1>
+
+    <div class="container">
+
+        <h2>Lista de Fornecedores</h2>
+
+        <div class="top-bar">
+
+            <button class="voltar" onclick="window.location.href='menu.html'">Voltar</button>
+
+            <div class="input-wrapper">
+
+                <input type="text" id="filtroFornecedor" placeholder="">
+                <label for="filtroFornecedor">Busque pelo nome do fornecedor</label>
+
+            </div>
+
+            <button onclick="window.location.href='cadastroFornecedor.html'">+ Cadastrar</button>
+
+        </div>
+
+        <table>
+
+            <thead>
+                <tr>
+
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+
+                </tr>
+            </thead>
+
+            <tbody id="listaFornecedores"></tbody>
+
+        </table>
+
+    </div>
+    
+    <script src="js/script.js"></script>
+
+</body>
+</html>

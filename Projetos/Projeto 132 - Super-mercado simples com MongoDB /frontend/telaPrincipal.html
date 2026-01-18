@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tela Principal</title>
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/tabelas.css">
+
+        <style>
+
+
+
+            body {
+
+                padding: 0 10px;
+                animation: fade-in-up 1s ease-in;
+            }
+
+            .pdv-top-bar {
+
+                display: flex;
+                align-items: center;
+                position: sticky;
+                gap: 10px;
+                top: 0;
+                background-color: #f9f9f9;
+                padding: 10px;
+                border-bottom: 1px solid cadetblue;
+                border-radius: 8px;
+                z-index: 999;
+                margin-bottom: 25px;
+                width: calc(100% - 20px);
+                justify-content: space-around;
+                overflow: auto;
+
+            }
+
+            input {
+
+                padding: 8px;
+                border: 1px solid #666;
+                border-radius: 20px;
+                outline: none;
+                background-color: transparent;
+
+            }
+
+            input:focus {
+
+                border-color: #111;
+
+            }
+
+            .valorTotal {
+
+                background-color: #f9f9f9;
+                padding: 20px;
+                font-size: 20px;
+                margin-top: 25px;
+                text-align: right;
+                border-radius: 8px;
+                border: 1px solid cadetblue;
+
+            }
+
+            @media screen and (max-width: 1100px) {
+                
+                .inputs-group {
+
+                    display: flex;
+
+                }
+
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1>Supermercado Bela</h1>
+
+            <div class="pdv-top-bar">
+                
+                <div class="inputs-group">
+
+                    <label for="cpfClienteVenda" style="margin-left: 10px;">CPF Cliente (Opcional):</label>
+                    <input type="text" id="cpfClienteVenda" placeholder="Ex: 112121121" style="width: 180px;">
+    
+                    <label for="codigoProduto" style="margin-left: 20px;">Cód. Produto:</label>
+                    <input type="text" id="codigoProduto" placeholder="Ex: 12345" style="width: 130px;">
+    
+                    
+                </div>
+                <button id="btnAdicionar" class="save">Adicionar</button>
+                <button id="btnFinalizar" class="save">Finalizar Venda</button>
+                <button id="btnConfiguracoes" class="edit">Configurações</button>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Qtd.</th>
+                        <th>Subtotal</th>
+                        <th>Ações</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="tabelaVendasTbody"></tbody>
+
+            </table>
+
+            <h3 class="valorTotal">
+
+                R$<span id="valorTotal">0,00</span>
+
+            </h3>
+
+        </div>
+
+        
+        
+        <script src="js/script.js"></script>
+
+    </body>
+</html>

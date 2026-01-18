@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Reserva</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+   <style>
+
+        .container {
+
+            max-width: 500px;
+
+        }
+
+        label {
+
+            text-align: left;
+
+        }
+
+        .readOnly {
+
+            pointer-events: none;
+            background-color: #e9e9e9;
+
+        }
+
+        .btn-group {
+
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        #btnVoltarPrincipal {
+
+            background-color: #515255;
+
+        }
+
+        #resultadoValor {
+
+            color: green;
+
+        }
+
+   </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Sistema de Gerenciamento de Estacionamento</h1>
+
+        <h2>Finalizar Resverva</h2>
+
+        <form id="formFinalzarReserva">
+
+            <input type="hidden" id="idReserva">
+
+            <label for="vaga">Vaga:</label>
+            <input type="text" class="readOnly" id="vaga" readonly>
+
+            <label for="dataInicio">Data/Hora Início:</label>
+            <input type="text" class="readOnly" id="dataInicio" readonly>
+
+
+            <label for="placa">Placa do Carro:</label>
+            <input type="text" class="readOnly" id="placa" readonly>
+
+
+            <label for="modelo">Modelo do Carro:</label>
+            <input type="text" class="readOnly" id="modelo" readonly>
+
+            <label for="cor">Cor do Carro:</label>
+            <input type="text" class="readOnly" id="cor" readonly>
+
+            <label for="proprietario">Proprietário do Carro:</label>
+            <input type="text" class="readOnly" id="proprietario" readonly>
+
+            <label for="dataFim">Data Fim:</label>
+            <input type="date" id="dataFim" required>
+
+            <label for="horaFim">Hora Fim:</label>
+            <input type="time" id="horaFim" required>
+
+            <div class="btn-group">
+    
+                <button id="btnVoltarPrincipal">Voltar à Página Principal</button>
+                <button type="submit">Finalizar Reserva</button>
+
+            </div>
+
+        </form>
+
+        <div id="resultadoValor"></div>
+
+    </div>
+    
+    <script>
+
+        window.addEventListener('load', async () => {
+            
+            const params = new URLSearchParams(window.location.search);
+            const idReserva = params.get('id');
+
+            if (!idReserva) {
+                alert('Reserva não especificada!');
+                return;
+            }
+
+            try {
+                
+                const resposta = await fetch(`http://127.0.0.1:3000/api/reservas/${idReserva}`);
+
+                if (!resposta.ok) {
+                    alert('Erro em carregar os dados da reserva');
+                    return;
+                }
+
+                const reserva = await resposta.json();
+
+                document.getElementById('idReserva').value = reserva._id;
+                document.getElementById('vaga').value = reserva.vaga;
+                document.getElementById('dataInicio').value = formatarDataHora(new Date(reserva.dataHoraInicio));
+                document.getElementById('placa').value = reserva.placaVeiculo || '';
+                document.getElementById('modelo').value = reserva.modeloVeiculo || '';
+                document.getElementById('cor').value = reserva.corVeiculo || '';
+                document.getElementById('proprietario').value = reserva.proprietarioVeiculo || '';
+
+            } catch (error) {
+                console.log('Erro em carregar os dados do formulário: ', error);
+            }
+
+        });
+
+        function formatarDataHora(dt) {
+            
+            const dia = String(dt.getDate()).padStart(2, '0');
+            const mes = String(dt.getMonth() + 1).padStart(2, '0');
+            const ano = dt.getFullYear();
+            const hora = String(dt.getHours()).padStart(2, '0');
+            const min = String(dt.getMinutes()).padStart(2, '0');
+
+            return `${dia}/${mes}/${ano} - ${hora}:${min}`;
+
+        }
+
+        document.getElementById("btnVoltarPrincipal").addEventListener('click', () => window.location.href = 'principal.html');
+        
+        document.getElementById("formFinalzarReserva").addEventListener('submit', async (e) => {
+
+            e.preventDefault();
+
+            const idReserva = document.getElementById('idReserva').value;
+            const dataFim = document.getElementById('dataFim').value;
+            const horaFim = document.getElementById('horaFim').value;
+
+            if (!dataFim || !horaFim) {
+                alert('Preencha data e hora de fim');
+                return;
+            }
+
+            try {
+
+                const resposta = await fetch(`http://127.0.0.1:3000/api/reservas/finalizar/${idReserva}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ dataFim, horaFim})
+                });
+
+                const dados = await resposta.json();
+
+                if (!resposta.ok) {
+                    alert(dados.mensagem || 'Não foi possível finalizar a reserva');
+                    return;
+                }
+
+                const valorDiv = document.getElementById("resultadoValor")
+
+                valorDiv.innerHTML = `
+                    <h4><strong>Reserva finalizada</strong></h4>
+                    Você utilizou a vaga por: <strong>${dados.horas}</strong> hora(s).<br>
+                    O valor a ser pago é: <strong>R$${dados.valor},00</strong>
+                `;
+
+                e.target.querySelector('[type="submit"]').disabled = true;
+                
+            } catch (error) {
+                console.log('Erro em finalizar reserva: ', error);
+                alert('Erro em finalizar reserva.');
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fotos de Álbum</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <header>
+            <h1 id="tituloAlbum">Fotos do Álbum</h1>
+            <a href="index.html" class="voltar">Voltar aos Álbuns</a>
+        </header>
+        
+        <main>
+
+            <section class="nova-foto">
+
+                <h2>Adicionar Foto</h2>
+    
+                <form id="formFoto">
+    
+                    <div class="fileInput">
+    
+                        <label for="imagemFoto" class="botao-arquivo">Escolher Imagem</label>
+                        <span id="nomeArquivo">Nenhum arquivo escolhido.</span>
+                        <input type="file" id="imagemFoto" accept="image/*" style="display: none;">
+    
+                    </div>
+
+
+                    <div class="input-wrapper">
+    
+                        <input type="text" id="descricaoFoto" placeholder="">
+                        <label for="descricaoFoto">Descrição da Foto</label>
+    
+                    </div>
+    
+                    <button type="submit">Enviar Foto</button>
+    
+                </form>
+    
+            </section>
+    
+            <section class="lista-fotos">
+    
+                <h2>Fotos</h2>
+    
+                <div id="containerFotos"></div>
+    
+            </section>
+
+        </main>
+
+        <div class="modal" id="modal">
+
+            <span id="fecharModal" class="fechar">&times;</span>
+
+            <div class="modal-imagem-container">
+
+                <img src="" alt="" id="imagemModal" class="modal-conteudo">
+
+                <div id="descricaoSobreposta" class="descricao-sobreposta"></div>
+
+            </div>
+
+            <button id="baixar" class="navegacao">Baixar</button>
+            <button id="anterior" class="navegacao">Anterior</button>
+            <button id="proximo" class="navegacao">Próximo</button>
+
+        </div>
+
+        <script src="scriptAlbum.js"></script>
+        
+    </body>
+</html>

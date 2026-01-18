@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Relatório de Vendas</title>
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/tabelas.css">
+    
+        <style>
+
+            #form-filtros > label:not(.input-wrapper label) {
+
+                position: static;
+                transform: none;
+                color: #666;
+                background-color: transparent;
+                pointer-events: auto;
+                font-size: 14px;
+                white-space: nowrap;
+                margin-right: 5px;
+                
+            }
+
+            #form-filtros > input[type="date"] {
+
+                width: auto;
+                min-width: 150px;
+                padding: 8px 12px;
+                border: 1px solid #666;
+                border-radius: 20px;
+                background-color: transparent;
+                font-size: 14px;
+                margin-right: 10px;
+
+            }
+
+            #form-filtros > input[type="date"]:focus {
+
+                border-color: cadetblue;
+                outline: none;
+
+            }
+
+            #form-filtros .input-wrapper {
+
+                position: relative;
+                margin-bottom: 0;
+                flex: 1;
+
+            }
+
+            #form-filtros .input-wrapper input {
+
+                width: 100%;
+                padding: 10px 15px;
+                border: 1px solid #666;
+                border-radius: 20px;
+                background-color: transparent;
+                outline: none;
+                font-size: 16px;
+                box-sizing: border-box;
+
+            }
+
+            #form-filtros .input-wrapper label {
+
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #666;
+                background-color: #f9f9f9;
+                pointer-events: none;
+                font-size: 14px;
+                transition: all 0.3s ease;
+
+            }
+
+            #form-filtros .input-wrapper input:focus + label,
+            #form-filtros .input-wrapper input:not(:placeholder-shown) + label {
+
+                transform: translateY(-180%);
+                color: cadetblue;
+                font-size: 12px;
+
+            }
+
+            #form-filtros {
+                
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex: 1;
+                margin-left: 20px;
+                flex-wrap: nowrap;
+                overflow-x: auto; 
+                padding-bottom: 5px;
+                padding: 20px;
+
+            }
+
+            #form-filtros .input-wrapper {
+                min-width: 180px; /* Ligeiramente menor */
+                flex: none; /* Não expande */
+                width: auto;
+            }
+
+            #form-filtros > input[type="date"] {
+                min-width: 140px;
+            }
+
+            #form-filtros > button[type="submit"] {
+                margin-left: auto; /* Empurra o botão para a direita */
+            }
+    
+            * {
+    
+                animation: fade-in-up 1s ease-in;
+    
+            }
+
+
+            .valorTotal {
+
+                background-color: #f9f9f9;
+                padding: 20px;
+                font-size: 20px;
+                margin-top: 25px;
+                text-align: right;
+                border-radius: 8px;
+                border: 1px solid cadetblue;
+                color: rgb(80, 137, 138);
+
+            }
+
+            .exportar {
+
+                position: fixed;
+                left: 15px;
+                bottom: 15px;
+                z-index: 10000;
+
+            }
+    
+        </style>
+    </head>
+    <body>
+
+        <h1>Supermercado Bela</h1>
+
+        <div class="container">
+
+            <h2>Relatório de Vendas</h2>
+
+            <div class="top-bar">
+
+                <button class="voltar" onclick="window.location.href='menu.html'">Voltar</button>
+
+                <form id="form-filtros">
+
+                    <label>Data Inicial:</label><input type="date" id="dataInicial">
+                    <label>Data Final:</label><input type="date" id="dataFinal">
+
+                    <div class="input-wrapper">
+
+                        <input type="text" id="fornecedor" placeholder="">
+                        <label for="fornecedor">Busque pelo nome do fornecedor</label>
+    
+                    </div>
+                    <div class="input-wrapper">
+
+                        <input type="text" id="produto" placeholder="">
+                        <label for="produto">Busque pelo nome do produto</label>
+    
+                    </div>
+                    <div class="input-wrapper">
+
+                        <input type="text" id="cpf" placeholder="">
+                        <label for="cpf">Busque pelo cpf do cliente</label>
+    
+                    </div>
+    
+                    <button type="submit">Filtrar</button>
+    
+
+                </form>
+
+            </div>
+
+            <table id="tabela-relatorio">
+
+                <thead>
+                    <tr>
+
+                        <th>Data</th>
+                        <th>CPF</th>
+                        <th>Fornecedor</th>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Subtotal</th>
+                        <th>Total da Venda</th>
+
+                    </tr>
+                </thead>
+
+                <tbody></tbody>
+
+            </table>
+
+
+            <h3 class="valorTotal">
+
+                <span id="valorTotal">0,00</span>
+
+            </h3>
+
+        </div>
+
+
+        <button class="exportar" onclick="exportarRelatorioParaExcel()">Exportar o relatório para Excel</button>
+
+        <script>
+
+            async function carregaRelatorio(dataInicial = '', dataFinal = '', fornecedor = '', produto = '', cpf = '') {
+                console.log("Carregando Relatório");
+                
+                try {
+
+                    const params = new URLSearchParams();
+
+                    if (dataInicial) params.append('dataInicial', dataInicial);
+                    if (dataFinal) params.append('dataFinal', dataFinal);
+                    if (fornecedor) params.append('fornecedorNome', fornecedor);
+                    if (produto) params.append('produtoNome', produto);
+                    if (cpf) params.append('cpfCliente', cpf);
+                    
+                    const url = `http://127.0.0.1:3000/relatorio/vendas?${params.toString()}`;
+
+                    const resp = await fetch(url);
+
+                    if (!resp.ok) throw new Error(`Erro ao buscar relatório. HTTP Status: ${resp.status}`);
+                    
+                    const vendas = await resp.json();
+
+                    const tabela = document.querySelector('#tabela-relatorio tbody');
+                    tabela.innerHTML = '';
+
+                    let somaTotal = 0;
+
+                    vendas.forEach((venda) => {
+                        
+                        const dataVenda = venda.data ? new Date(venda.data).toLocaleDateString('pt-BR') : '';
+                        const cpfCliente = venda.clienteCpf || '';
+                        const valorTotal = venda.total || 0;
+                        somaTotal += valorTotal;
+
+                        if (Array.isArray(venda.itens)) {
+
+                            venda.itens.forEach((item) => {
+
+                                const fornecedorNome = item.nomeFornecedor || '';
+                                const produtoNome = item.nomeProduto || '';
+                                const qtd = item.quantidade || 0;
+                                const sub = item.subtotal || 0;
+
+                                const tr = document.createElement('tr');
+                                tr.innerHTML = `
+                                    <td>${dataVenda}</td>
+                                    <td>${cpfCliente ? formatarCPF(cpfCliente) : 'Cliente Não Solicitou'}</td>
+                                    <td>${fornecedorNome}</td>
+                                    <td>${produtoNome}</td>
+                                    <td>${qtd}</td>
+                                    <td>${sub.toFixed(2)}</td>
+                                    <td>${valorTotal.toFixed(2)}</td>
+                                `;
+
+                                tabela.appendChild(tr);
+
+                            });
+                            
+                        } 
+
+                    });
+
+                    document.getElementById('valorTotal').textContent = 'Valor Total das Vendas: R$' + somaTotal.toFixed(2);
+
+                } catch (error) {
+                    console.error('Erro ao carregar relatório: ', error);
+                    alert('Erro ao carregar relatório');
+                }
+
+            }
+
+            document.getElementById('form-filtros').addEventListener('submit', (ev) => {
+                console.log("Aplicando filtros");
+                ev.preventDefault();
+
+                const di = document.getElementById('dataInicial').value;
+                const df = document.getElementById('dataFinal').value;
+                const forn = document.getElementById('fornecedor').value.trim();
+                const prod = document.getElementById('produto').value.trim();
+                const cpf = document.getElementById('cpf').value.trim();
+
+                carregaRelatorio(di, df, forn, prod,cpf)
+
+            });
+
+            function exportarRelatorioParaExcel() {
+
+                const tabela = document.getElementById("tabela-relatorio");
+                const tabelaHead = tabela.querySelector('thead');
+                const tabelaBody = tabela.querySelector('tbody');
+
+                if ( !tabelaBody || tabelaBody.rows.length === 0 ) {
+                    alert("Não há dados na tabela de relatórios para exportar!");
+                    return;
+                }
+
+                let csvContent = '';
+                const headersCells = tabelaHead.querySelectorAll('th');
+                const headerArray = Array.from(headersCells).map(th => th.innerText);
+
+                csvContent += headerArray.join(';') + '\n';
+
+                const rows = tabelaBody.querySelectorAll('tr');
+                rows.forEach(row => {
+
+                    const cells = row.querySelectorAll('td');
+                    const rowData = Array.from(cells).map(td => td.innerText);
+                    csvContent += rowData.join(';') + '\n';
+
+                });
+
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                
+                link.href = url;
+                link.setAttribute('download', 'relatório.csv');
+                
+                document.body.appendChild(link);
+
+                link.click();
+
+                document.body.removeChild(link);
+
+                URL.revokeObjectURL(url);
+
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+
+                const hoje = new Date();
+                const umaSemanaAtras = new Date();
+
+                umaSemanaAtras.setDate(hoje.getDate() - 7);
+
+                const dataIniStr = umaSemanaAtras.toISOString().split('T')[0];
+                const dataFimStr = hoje.toISOString().split('T')[0];
+
+                document.getElementById('dataInicial').value = dataIniStr;
+                document.getElementById('dataFinal').value = dataFimStr;
+
+                carregaRelatorio(dataIniStr, dataFimStr);
+
+            });
+
+        </script>
+
+        <script src="js/script.js"></script>
+
+    </body>
+</html>

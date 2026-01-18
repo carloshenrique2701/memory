@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro de Fornecedores</title>
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/input-wrappers.css">
+
+        <style>
+
+            .form-group {
+
+                margin-bottom: 30px;
+
+            }
+
+            select {
+
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #777;
+                border-radius: 20px;
+                cursor: pointer;
+                background-color: #ffff;
+                font-size: 16px;
+                text-align: center;
+
+            }
+
+            select:hover {
+
+                background-color: #eeee;
+
+            }
+            select:focus {
+
+                border-color: cadetblue;
+
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+
+        <div class="cadastro-container">
+            <h1>Supermercado Bela</h1>
+
+            <h2 id="tituloFornecedor">Cadastrar Fornecedor</h2>
+
+            <form id="cadastroFornecedorForm">
+
+                <input type="hidden" id="fornecedorId">
+
+                <div class="input-wrapper">
+
+                    <input type="text" id="nomeFornecedor" placeholder="" required>
+                    <label for="nomeFornecedor">Digite o nome do fornecedor...</label>
+
+                </div>
+                <div class="input-wrapper">
+
+                    <input type="email" id="emailFornecedor" placeholder="" required>
+                    <label for="emailFornecedor">Digite a email do fornecedor...</label>
+
+                </div>
+                <div class="input-wrapper">
+
+                    <input type="number" id="telefoneFornecedor" placeholder="" required>
+                    <label for="telefoneFornecedor">Digite o telefone do fornecedor...</label>
+
+                </div>
+
+                <div class="btn-group">
+
+                    <button class="voltar" onclick="window.location.href='listaFornecedores.html'">Voltar</button>
+                    <button type="submit">Salvar</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <script src="js/script.js"></script>
+        
+    </body>
+</html>

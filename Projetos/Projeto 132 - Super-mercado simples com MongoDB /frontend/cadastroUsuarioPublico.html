@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro de Usuário (Público)</title>
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/input-wrappers.css">
+
+    </head>
+    <body>
+        
+        <div class="container cadastro-container">
+
+            <h1>Supermercado Bela</h1>
+            <h2>Cadastro de Usuário</h2>
+
+            <form id="cadastroUsuarioPublicoForm">
+
+                <div class="input-wrapper">
+
+                    <input type="text" id="nomeUsuarioPub" required placeholder="">
+                    <label for="nomeUsuarioPub">Digite seu nome...</label>
+
+                </div>
+
+                <div class="input-wrapper">
+
+                    <input type="email" id="emailUsuarioPub" required placeholder="">
+                    <label for="emailUsuarioPub">Digite seu email...</label>
+
+                </div>
+
+                <div class="input-wrapper">
+
+                    <input type="password" id="senhaUsuarioPub" required placeholder="">
+                    <label for="senhaUsuarioPub">Digite sua senha...</label>
+
+                </div>
+
+                <div class="input-wrapper">
+
+                    <input type="number" id="idadeUsuarioPub" required placeholder="">
+                    <label for="idadeUsuarioPub">Digite seu idade...</label>
+
+                </div>
+
+                <div class="btn-group">
+
+                    <button  class="voltar" onclick="window.location.href='login.html'">
+                        Voltar para Página de Login
+                    </button>
+                    <button type="submit" class="save">Salvar</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <script src="js/script.js"></script>
+
+    </body>
+</html>

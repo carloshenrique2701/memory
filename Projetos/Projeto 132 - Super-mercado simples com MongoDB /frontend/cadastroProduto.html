@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro de Produtos</title>
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/input-wrappers.css">
+
+        <style>
+
+            .form-group {
+
+                margin-bottom: 30px;
+
+            }
+
+            select {
+
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #777;
+                border-radius: 20px;
+                cursor: pointer;
+                background-color: #ffff;
+                font-size: 16px;
+                text-align: center;
+
+            }
+
+            select:hover {
+
+                background-color: #eeee;
+
+            }
+            select:focus {
+
+                border-color: cadetblue;
+
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+
+        <div class="cadastro-container">
+            <h1>Supermercado Bela</h1>
+
+            <h2 id="tituloProduto">Cadastrar Produto</h2>
+
+            <form id="cadastroProdutoForm">
+
+                <input type="hidden" id="produtoId">
+
+                <div class="input-wrapper">
+
+                    <input type="number" id="codigoProduto" placeholder="" required>
+                    <label for="codigoProduto">Digite o código do produto...</label>
+
+                </div>
+                <div class="input-wrapper">
+
+                    <input type="text" id="nomeProduto" placeholder="" required>
+                    <label for="nomeProduto">Digite o nome do produto...</label>
+
+                </div>
+                <div class="input-wrapper">
+
+                    <input type="text" id="descricaoProduto" placeholder="" required>
+                    <label for="descricaoProduto">Digite a descrição do produto...</label>
+
+                </div>
+                <div class="input-wrapper">
+
+                    <input type="number" id="precoProduto" placeholder="" required step="0.01">
+                    <label for="precoProduto">Digite o preço do produto...</label>
+
+                </div>
+                <div class="input-wrapper">
+
+                    <input type="number" id="estoqueProduto" placeholder="" required>
+                    <label for="estoqueProduto">Digite o estoque do produto...</label>
+
+                </div>
+
+                <div class="form-group">
+
+                    <select id="fornecedorProduto">
+
+                        <option value="">-- Selecione um Fornecedor --</option>
+
+                    </select>
+
+                </div>
+
+                <div class="btn-group">
+
+                    <button class="voltar" onclick="window.location.href='listaProdutos.html'">Voltar</button>
+                    <button type="submit">Salvar</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <script src="js/script.js"></script>
+        
+    </body>
+</html>

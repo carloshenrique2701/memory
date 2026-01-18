@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div class="cadatrar-container">
+
+            <h2 id="tituloPagina">Cadastrar Usuário</h2>
+
+            <form id="formularioCadastro">
+
+                <input type="hidden" id="idUsuario">
+
+                <div class="input-wrapper">
+
+                    <input type="text" id="nome" placeholder="" required>
+                    <label for="nome">Digite o nome...</label>
+    
+                </div>
+    
+                <div class="input-wrapper">
+    
+                    <input type="email" id="email" placeholder="" required>
+                    <label for="email">Digite o email...</label>
+    
+                </div>
+    
+                <div class="input-wrapper">
+    
+                    <input type="number" id="idade" placeholder="" required>
+                    <label for="idade">Digite a idade...</label>
+    
+                </div>
+
+                <div class="acoes-formulario">
+
+                    <button class="salvar" type="submit">Salvar</button>
+                    <button class="cancelar" type="button" onclick="window.location.href='index.html'">Cancelar</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <script src="script.js"></script>
+        
+    </body>
+</html>

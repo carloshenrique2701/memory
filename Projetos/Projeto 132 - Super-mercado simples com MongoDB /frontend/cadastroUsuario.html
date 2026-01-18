@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro de Usuário</title>
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/input-wrappers.css">
+    </head>
+    <body>
+
+
+        <div class="cadastro-container">
+            <h1>Supermercado Bela</h1>
+
+            <h2 id="tituloUsuario">Cadastrar Usuário</h2>
+
+            <form id="cadastroUsuarioForm">
+
+                <input type="hidden" id="usuarioId">
+
+                <div class="input-wrapper">
+
+                    <input type="text" id="nomeUsuario" placeholder="" required>
+                    <label for="nomeUsuario">Digite o nome do usuário...</label>
+
+                </div>
+                <div class="input-wrapper">
+
+                    <input type="text" id="emailUsuario" placeholder="" required>
+                    <label for="emailUsuario">Digite o email do usuário...</label>
+
+                </div>
+                <div class="input-wrapper">
+
+                    <input type="password" id="senhaUsuario" placeholder="" required>
+                    <label for="senhaUsuario">Digite o senha do usuário...</label>
+
+                </div>
+                <div class="input-wrapper">
+
+                    <input type="number" id="idadeUsuario" placeholder="" required>
+                    <label for="idadeUsuario">Digite o idade do usuário...</label>
+
+                </div>
+
+                <div class="btn-group">
+
+                    <button class="voltar" onclick="window.location.href='listaUsuarios.html'">Voltar</button>
+                    <button type="submit">Salvar</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <script src="js/script.js"></script>
+        
+    </body>
+</html>

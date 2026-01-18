@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Reservas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    
+
+    <style>
+
+        .container {
+
+            max-width: 1400px;
+
+        }
+
+        .form-inputs {
+
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .direita, .esquerda {
+
+            width: calc(50% - 10px);
+
+        }
+
+        input {
+
+            max-width: 100%;
+
+        }
+
+        hr {
+
+            margin: 30px 0;
+
+        }
+
+        table {
+
+            margin-bottom: 30px;
+
+        }
+
+        .total {
+
+            margin-bottom: 30px;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        .btn-group {
+
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        #btnVoltarPrincipal {
+
+            background-color: #515255;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Relatório de Reservas</h1>
+
+        <form id="form-filtros">
+
+            <div class="form-inputs">
+
+                <div class="esquerda">
+
+                    <div class="inputs">
+                        <label>Data de Período Inicial:</label>
+                        <input type="date" id="dataInicio">
+        
+                    </div>
+        
+                    <div class="inputs">
+        
+                        <label>Data de Período Final:</label>
+                        <input type="date" id="dataFim">
+        
+                    </div>
+    
+                </div>
+    
+                <div class="direita">
+    
+                    <div class="inputs">
+    
+                        <label>Placa:</label>
+                        <input type="text" id="placa" placeholder="Ex: ABC-1234">
+        
+                    </div>
+        
+                    <div class="inputs">
+        
+                        <label>Proprietário:</label>
+                        <input type="text" id="proprietario" placeholder="Ex: João">
+        
+                    </div>
+    
+                </div>
+
+            </div>
+
+            <button type="submit">Filtrar</button>
+
+        </form>
+
+        <hr>
+
+        <table id="tabela-relatorio">
+
+            <thead>
+
+                <tr>
+                    <th>Data/Hora Inicial</th>
+                    <th>Data/Hora Final</th>
+                    <th>Vaga</th>
+                    <th>Placa</th>
+                    <th>Proprietário</th>
+                    <th>Valor Pago</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+            <tbody></tbody>
+
+        </table>
+
+        <div class="total">
+            Total: R$ <span id="valorTotal">0.00</span>
+        </div>
+
+        <div class="btn-group">
+    
+            <button id="btnVoltarPrincipal" onclick="voltarPrincipal()">Voltar à Página Principal</button>
+            <button onclick="exportarExcel()">Exportar para o Excel</button>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script>
+
+        async function carregarRelatorio(dataInicio = '', dataFim = '', placa = '', proprietario = '') {
+            
+            try {
+                
+                const params = new URLSearchParams();
+
+                if (dataInicio) params.append('dataInicio',dataInicio);
+                if (dataFim) params.append('dataFim',dataFim);
+                if (placa) params.append('placa',placa);
+                if (proprietario) params.append('proprietario',proprietario);
+                
+                const url = `http://127.0.0.1:3000/api/reservas/relatorio?${params.toString()}`;
+                const resp = await fetch(url); 
+
+                if (!resp.ok) {
+                    throw new Error(`Erro ao buscar relatório. HTTP status: ${resp.status}`);
+                }
+
+                const reservas = await resp.json();
+
+                const tabela = document.querySelector('#tabela-relatorio tbody');
+                tabela.innerHTML = '';
+
+                let soma = 0;
+
+                reservas.forEach((res)=> {
+
+                    const tr = document.createElement('tr');
+                    const dtIni = res.dataHoraInicio ? new Date(res.dataHoraInicio).toLocaleString('pt-BR') : 'Sem registro';
+                    const dtFim = res.status !== 'reservada' ? new Date(res.dataHoraFim).toLocaleString('pt-BR') : 'Em aberto';
+
+                    soma += (res.valorPago || 0);
+
+                    tr.innerHTML = `
+                        <td>${dtIni}</td>
+                        <td>${dtFim}</td>
+                        <td>${res.vaga}</td>
+                        <td>${res.placaVeiculo}</td>
+                        <td>${res.proprietarioVeiculo}</td>
+                        <td>R$${(res.valorPago || 0).toFixed(2)}</td>
+                        <td>${res.status.charAt(0).toUpperCase() + res.status.slice(1) || '-'}</td>
+                    `;  //Faz a primeira letra de uma string ser maiuscula.
+
+                    tabela.appendChild(tr);
+
+                });
+
+                document.getElementById('valorTotal').textContent = soma.toFixed(2);
+
+            } catch (error) {
+                console.error('Erro ao carregar relatório: ', error);
+                alert('Erro ao carregar Relatório.')
+            }
+
+        }
+
+        document.getElementById('form-filtros').addEventListener('submit', (event) => {
+
+            event.preventDefault();
+
+            const dataInicio = document.getElementById("dataInicio").value;
+            const dataFim = document.getElementById("dataFim").value;
+            const placa = document.getElementById("placa").value;
+            const proprietario = document.getElementById("proprietario").value;
+
+            carregarRelatorio(dataInicio, dataFim, placa, proprietario);
+
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const hoje = new Date();
+            const seteDiasAtras = new Date();
+            seteDiasAtras.setDate(hoje.getDate() - 7);
+
+            const dataInicio = seteDiasAtras.toISOString().split('T')[0];
+            const dataFim = hoje.toISOString().split('T')[0];
+
+            document.getElementById("dataInicio").value = dataInicio;
+            document.getElementById("dataFim").value = dataFim;
+
+            carregarRelatorio(dataInicio, dataFim);
+
+        });
+
+        function exportarExcel() {
+
+            const tabela = document.getElementById('tabela-relatorio');
+
+            const wb = XLSX.utils.table_to_book(tabela);
+
+            XLSX.writeFile(wb, 'Relatório.xlsx');
+            
+        }
+
+        function voltarPrincipal() {
+            window.location.href = 'principal.html';
+        }
+
+    </script>
+    
+</body>
+</html>
