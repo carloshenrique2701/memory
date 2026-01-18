@@ -4,13 +4,13 @@ Descrição: Este repositório armazena os projetos que utilizo para aprender so
 🚀 Projetos de Destaque
 
     Sistema de Supermercado Simples
-    → /Projetos 128 a 132 - MongoDB/Projeto 132 - Super-mercado simples com MongoDB
+    → /Projetos/Projetos 128 a 132 - MongoDB/Projeto 132 - Super-mercado simples com MongoDB
 
     Sistema de Álbum de Fotos
-    → /Projetos 128 a 132 - MongoDB/Projeto 130 - Álbum de Fotos com MongoDB
+    → /Projetos/Projetos 128 a 132 - MongoDB/Projeto 130 - Álbum de Fotos com MongoDB
 
     Sistema de Blog Simples
-    → /Projetos 128 a 132 - MongoDB/Projeto 129 - Blog simples com MongoDB
+    → /Projetos/Projetos 128 a 132 - MongoDB/Projeto 129 - Blog simples com MongoDB
 
 💻 Tecnologias Estudadas Até o Momento
 
