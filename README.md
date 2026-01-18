@@ -1,39 +1,65 @@
-📚 Aprendendo JavaScript Puro + Node.js + MongoDB
+# 📚 Aprendendo JavaScript Puro, Node.js e MongoDB
 
-Descrição: Este repositório armazena os projetos que utilizo para aprender sobre HTML, CSS, JavaScript, Node.js e MongoDB, desde o básico (/Inicio) até projetos mais avançados (/Projetos).
-🚀 Projetos de Destaque
+Este repositório reúne meus **projetos de estudo e prática** voltados ao aprendizado de **HTML, CSS, JavaScript puro, Node.js e MongoDB**, evoluindo desde conceitos básicos até aplicações mais completas e estruturadas.
 
-    Sistema de Supermercado Simples
-    → /Projetos/Projetos 128 a 132 - MongoDB/Projeto 132 - Super-mercado simples com MongoDB
+Os projetos estão organizados de forma progressiva, começando pela pasta **/Inicio**, com exercícios introdutórios, e avançando para a pasta **/Projetos**, que contém aplicações mais elaboradas e integradas com banco de dados.
 
-    Sistema de Álbum de Fotos
-    → /Projetos/Projetos 128 a 132 - MongoDB/Projeto 130 - Álbum de Fotos com MongoDB
+---
 
-    Sistema de Blog Simples
-    → /Projetos/Projetos 128 a 132 - MongoDB/Projeto 129 - Blog simples com MongoDB
+## 🚀 Projetos em Destaque
 
-💻 Tecnologias Estudadas Até o Momento
+### 🛒 Sistema de Supermercado Simples
 
-    Manipulação de Dados (especialmente com Excel)
+Aplicação completa com operações básicas de um sistema de vendas, utilizando MongoDB para persistência de dados.
+📂 **Caminho:**
+`/Projetos/Projetos 128 a 132 - MongoDB/Projeto 132 - Super-mercado simples com MongoDB`
 
-    Iteração do Usuário com a Página usando JavaScript
+---
 
-    Criação de Gráficos com Chart.js
+### 🖼️ Sistema de Álbum de Fotos
 
-    MongoDB
+Projeto focado em armazenamento, listagem e organização de imagens utilizando MongoDB.
+📂 **Caminho:**
+`/Projetos/Projetos 128 a 132 - MongoDB/Projeto 130 - Álbum de Fotos com MongoDB`
 
-📌 Estrutura do Repositório
-text
+---
 
+### 📝 Sistema de Blog Simples
+
+Aplicação de blog com criação e exibição de conteúdos, utilizando banco de dados MongoDB.
+📂 **Caminho:**
+`/Projetos/Projetos 128 a 132 - MongoDB/Projeto 129 - Blog simples com MongoDB`
+
+---
+
+## 💻 Tecnologias e Conceitos Estudados
+
+* HTML e CSS
+* JavaScript Puro (DOM, eventos, lógica e manipulação de dados)
+* Iteração do usuário com a página
+* Manipulação de dados (incluindo uso de Excel)
+* Criação de gráficos com **Chart.js**
+* **Node.js**
+* **MongoDB**
+* Organização de projetos e boas práticas iniciais
+
+---
+
+## 📌 Estrutura do Repositório
+
+```
 📁 memory/
-├── 📁 Inicio/           # Projetos básicos de introdução
-├── 📁 Projetos/         # Projetos intermediários e avançados
+├── 📁 Inicio/            # Projetos básicos e introdutórios
+├── 📁 Projetos/          # Projetos intermediários e avançados
 │   ├── 📁 Projetos 128 a 132 - MongoDB/
 │   │   ├── Projeto 129 - Blog simples com MongoDB/
 │   │   ├── Projeto 130 - Álbum de Fotos com MongoDB/
 │   │   └── Projeto 132 - Super-mercado simples com MongoDB/
 │   └── ... outros projetos
-└── README.md           # Este arquivo
+└── README.md             # Documentação do repositório
+```
 
+---
 
-✨ Em constante aprendizado e evolução! ✨
+✨ **Repositório em constante evolução**, acompanhando meu aprendizado e aprofundamento no desenvolvimento web e back-end. ✨
+Sinta-se à vontade para explorar, estudar e acompanhar o progresso!
